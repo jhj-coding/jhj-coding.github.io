@@ -1,0 +1,396 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>jhj-coding</title><meta name="author" content="jhj,hnjzjhj@163.com"><meta name="copyright" content="jhj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="努力学习，努力爱你!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="jhj-coding">
+<meta property="og:url" content="http://example.com/page/6/index.html">
+<meta property="og:site_name" content="jhj-coding">
+<meta property="og:description" content="努力学习，努力爱你!">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg">
+<meta property="article:author" content="jhj">
+<meta property="article:tag" content="努力学习，努力爱你!">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/page/6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"MN792LJJVS","apiKey":"e946d312db0afe9b3f7d3e71f5f7585b","indexName":"jhj","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: jhj","link":"链接: ","source":"来源: jhj-coding","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'jhj-coding',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-03-14 21:40:54'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4464920_sugj9c5f13.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.1.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://id.ouc.edu.cn/sso/casLogin/img/banner2-1694742541774.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="jhj-coding"><span class="site-name">jhj-coding</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">jhj-coding</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://gitee.com/jhj-coding" target="_blank" title="gitee"><i class="iconfont icon-gitee" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:jhjcoding@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/qq.jpg" target="_blank" title="qq"><i class="fa-brands fa-qq" style="color: #hdhfbb;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/post/3ac6990a.html" title="算法第一天——数组理论基础"><img class="post-bg" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法第一天——数组理论基础"></a></div><div class="recent-post-info"><a class="article-title" href="/post/3ac6990a.html" title="算法第一天——数组理论基础">算法第一天——数组理论基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-30T02:41:11.000Z" title="发表于 2023-08-30 10:41:11">2023-08-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/leetcode/">leetcode</a></span></div><div class="content">数组数组是存放连续内存空间上的相同类型数据的集合，数组的下标都是从0开始，数组内存空间的地址是连续的。数组元素不能删除，只能修改。即数组数组一旦分配了内存空间就不能修改空间大小。但是在java中，java的内存的空间地址不允许用户访问，完全交给虚拟机寻址。所以不知道java中的内存地址是否连续，通过hashcode打印的值也是经过处理的。所以猜测java 中数组是这样排列的。
+优缺点针对数组而言，最大的优点是存取速度快，其缺点包括插入和删除的效率非常低。最坏情况下时间复杂度是O(N) 。
+补充基本数据类型byte、short、int、long 符号位+数值负数用补码表示float、double符号位+指数位+尾数位10.625(10)&#x3D;1010.101(2)&#x3D;符号位1 阶码为+3 尾数位010101float 符号位1位 阶码8位 尾数为23位double 符号位1位 阶码11位 尾数为52位 阶码也有符号位称为阶符
+JAVA 中 ArraylistArrayList的底层实现是数组，是一个顺序容器，存放的数据和放进去的顺序相同。但是没有实现同步，有一个容量限制表示 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/post/cf4734be.html" title="Future"><img class="post-bg" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Future"></a></div><div class="recent-post-info"><a class="article-title" href="/post/cf4734be.html" title="Future">Future</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-29T12:53:17.000Z" title="发表于 2023-08-29 20:53:17">2023-08-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/juc/">juc</a></span></div><div class="content">FutureFuture接口由FutureTask 实现类定义了操作异步任务执行的一些方法，比如异步任务的执行结果、取消任务的执行、判断任务是否被取消、判断任务执行是否完毕等。Future 接口可以为主线程开一个分支任务，专门为主线程处理耗时和费力的业务。
+Future是java5新加的一个借口，提供了一种异步并行计算的功能。目的异步多线程任务执行且返回有结果三个特点多线程&#x2F;有返回&#x2F;异步任务
+runable 实现run方法 没有返回值 无异常callable 实现call方法 有返回值 有异常
+多线程只能接受Runable，RunableFuture同时满足了线程和异步FutureTask 这个类支持构造注入，满足三个要求多线程&#x2F;有返回&#x2F;异步任务
+FutureTask 继承实现关系图
+futuretask demo123456789101112131415161718192021222324252627282930313233343536373839package com.jhj.Thread.future;import java.util.co ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/post/122a869e.html" title="mysql调优"><img class="post-bg" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/50195fa8344b061b78a2d7aaafcc2b9d8e7956ad/img/f63f1c575e3c48d9a3f7e4ba9bd460d2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mysql调优"></a></div><div class="recent-post-info"><a class="article-title" href="/post/122a869e.html" title="mysql调优">mysql调优</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-24T03:02:37.000Z" title="发表于 2023-08-24 11:02:37">2023-08-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/sql/">sql</a></span></div><div class="content">索引索引是帮助mysql 高效获取数据的排好序的数据结构红黑树就是平衡二叉树，mysql 不同红黑树 是因为树太高了b树 存储更多的索引元素 在树高度可控制的前提下 存储更多数据（多路搜索）b+树 非叶子节点不存储data 只存储第一个叶子节点数据的索引（冗余）叶子节点包含所有索引字段，叶子节点用指针连接查找过程折半查找，进行一次I&#x2F;Ohash 一维数组加二维链表 虽然效率高但是几乎不用hash hash 仅能满足&#x3D; in 不支持范围查询
+b树与b+树区别叶子节点没有双向指针，查询范围不能连续b树没有冗余索引 b+树有
+存储引擎存储引擎形容数据库表的 表结构 存储引擎 索引等存储在data 目录下用的比较多的 InnoDB 索引和数据都放在ibd 文件中 叶节点放data 所在行的其他列数据聚集索引 叶子节点包含了完整的数据记录 非聚集索引是索引和数据没有存放在一起就是非聚集的 一般情况下聚集索引查询会快一点
+为什么推荐使用自增整数主键如果innoDB 如果找不到主键索引那么就去找一列唯一的 来构建B+树，如果找不到唯一的会帮你维护一个隐藏了rowid,自己键主键的 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/post/d4097377.html" title="JVM性能调优"><img class="post-bg" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JVM性能调优"></a></div><div class="recent-post-info"><a class="article-title" href="/post/d4097377.html" title="JVM性能调优">JVM性能调优</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-22T07:28:28.000Z" title="发表于 2023-08-22 15:28:28">2023-08-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/jvm/">jvm</a></span></div><div class="content">java 如何跨平台，如何一次编译到处执行是由于java在不同的jvm上编译，jvm在软件层面屏蔽不同操作系统在底层硬件与指令上的区别。
+jvm 包括new 的对象都是放在堆中栈，给线程单独使用（线程私有），存储一个一个栈帧（存储局部变量）给方法分配一个栈帧，放方法自己的局部变量 一个方法对应一个栈帧内存，方法结束，栈帧销毁。栈帧由 局部变量表（局部变量（对象的话存的是对象在堆中的内存地址），还有其索引）、操作数栈（操作的 加载到操作数栈）、动态链接（把一些符号引用转换为直接引用 类名方法名都是符号引用 通过符号引用找到直接引用的位置（方法的话就是方法区域的内存的地址））、方法出口（方法返回）组成。程序计数器（线程私有），马上要执行的一行代码的行号或者位置（方法区的内存地址）（存在原因 多线程安全，被另一个线程抢占了 重新回到本线程时怎么知道我执行到那里了）类通过类加载子系统 主要将类加载到方法区，字节码执行引擎主要执行方法区里面的代码，程序计数器的值是字节码执行引擎动态修改的。方法区 1.8之前 持久代 永久代 1.8后元空间 存放常量+静态变量+类信息本地方法栈：存储 native ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/post/f40e081a.html" title="docker-compose 部署ELK"><img class="post-bg" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="docker-compose 部署ELK"></a></div><div class="recent-post-info"><a class="article-title" href="/post/f40e081a.html" title="docker-compose 部署ELK">docker-compose 部署ELK</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-12T06:37:01.000Z" title="发表于 2023-03-12 14:37:01">2023-03-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/SpringBoot/">SpringBoot</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/SpringBoot/SpringCloud/">SpringCloud</a></span></div><div class="content">目录结构docker-compose 文件1234567891011121314151617181920212223242526272829303132333435363738394041424344454647version: &#x27;3&#x27;services:  elasticsearch:    image: elasticsearch:7.17.2    container_name: elasticsearch    restart: always    ports:      - 9200:9200      - 9300:9300    environment:      # 设置集群名称      cluster.name: elasticsearch      # 以单一节点模式启动      discovery.type: single-node      ES_JAVA_OPTS: &quot;-Xms512m -Xmx512m&quot;    volumes:      - ./elk/elasticsearch/plugins:/usr/share ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/post/b71fa77c.html" title="sleuth-zipkin springcloud"><img class="post-bg" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="sleuth-zipkin springcloud"></a></div><div class="recent-post-info"><a class="article-title" href="/post/b71fa77c.html" title="sleuth-zipkin springcloud">sleuth-zipkin springcloud</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-24T07:34:54.000Z" title="发表于 2023-02-24 15:34:54">2023-02-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/SpringBoot/">SpringBoot</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/SpringBoot/SpringCloud/">SpringCloud</a></span></div><div class="content">docker-compose文件123456789101112zipkin:    image: openzipkin/zipkin:2.21    container_name: zipkin    depends_on:      - elasticsearch    restart: always    ports:      - 9411:9411    environment:      - TZ=Asia/Shanghai      - STORAGE_TYPE=elasticsearch      - ES_HOSTS=ES_HOSTS
+
+springCloud 集成pom 文件引入
+12345678&lt;dependency&gt;    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;    &lt;artifactId&gt;spring-cloud-starter-sleuth&lt;/artifactId&gt;&lt;/dependency&gt;&lt;dependency&gt;    &l ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/post/45ff65ac.html" title="SEATAdocker-compose部署"><img class="post-bg" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SEATAdocker-compose部署"></a></div><div class="recent-post-info"><a class="article-title" href="/post/45ff65ac.html" title="SEATAdocker-compose部署">SEATAdocker-compose部署</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-22T14:36:04.000Z" title="发表于 2023-02-22 22:36:04">2023-02-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/SpringBoot/">SpringBoot</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/SpringBoot/SpringCloud/">SpringCloud</a></span></div><div class="content">docker-compose 文件1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283version: &#x27;3&#x27;services:  mysql7:    image: mysql:5.7    container_name: mysql7    restart: always    environment:      MYSQL_ROOT_PASSWORD: $&#123;    MYSQL_ROOT_PASSWORD&#125;      TZ: Asia/Shanghai    command:      --character-set-server=utf8mb4      --collation-server=utf8mb4_general_ci      --default-authenticati ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/post/23ccefd3.html" title="深拷贝与浅拷贝"><img class="post-bg" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="深拷贝与浅拷贝"></a></div><div class="recent-post-info"><a class="article-title" href="/post/23ccefd3.html" title="深拷贝与浅拷贝">深拷贝与浅拷贝</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-19T15:53:05.000Z" title="发表于 2023-02-19 23:53:05">2023-02-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/SpringBoot/">SpringBoot</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/SpringBoot/SpringCloud/">SpringCloud</a></span></div><div class="content">深拷贝是将类的属性类也进行拷贝，而浅拷贝对于类的属性类进行公用操作。即深拷贝改变属性类的值拷贝对象不会随其变化，而浅拷贝会变化。
+1234567891011121314151617181920212223public static void main(String[] args)  &#123;            test s=new test();        s.setA(1);        test1 test1 = new test1();        test1.setT(s);        test1.setA(1);        test1 test2 = new test1();        //浅拷贝                org.springframework.beans.BeanUtils.copyProperties(test1,test2);        // 序列化 深拷贝        test1 clone = org.apache.commons.lang3.SerializationUtils.clone(test1);   ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/post/ea469257.html" title="阻塞车间调度"><img class="post-bg" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141738639.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阻塞车间调度"></a></div><div class="recent-post-info"><a class="article-title" href="/post/ea469257.html" title="阻塞车间调度">阻塞车间调度</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-23T12:51:04.000Z" title="发表于 2022-11-23 20:51:04">2022-11-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/">优化算法</a></span></div><div class="content">阻塞车间调度当前机器上的作业处理必须保留在该机器上，直到下一台机器可用于处理为止。也就是说如果该作业要执行的下一个工序的机器被使用，则该机器必须被占用。
+n个作业必须在m个机器f个工厂上进行处理，在每一个工厂中连续机器之间没有缓冲区，该作业被分配给工厂，随后必须在所有机器上按相同的顺序进行加工。一旦一项工作被分配到一家工厂，它就不能转移到另一家工厂。一旦一项工作被分配到一家工厂，它就不能转移到另一家工厂。在一台机器上完成处理的作业不允许离开当前机器，直到下一台机器可用于处理，因为连续机器之间没有缓冲区。每台机器，有各种处理速度。在作业的加工过程中，机器速度没有变化。对于任意两个连续操作，速度的转换时间将被忽略。该开始每个作业在不同的机器上有一个标准时间，若更换速度 则实际使用时间为标准时间除以速度。速度越快时间越短能耗越高
+NP-HardNP是指非确定性多项式（non-deterministic polynomial，缩写NP）。所谓的非确定性是指，可用一定数量的运算去解决多项式时间内可解决的问题。也就是说无法通过计算实现的。
+模型总结n 作业总数m 分布式工厂机器的数量F 工厂的数量 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/post/97254dc.html" title="擂台赛法则构造非支配集"><img class="post-bg" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141738639.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="擂台赛法则构造非支配集"></a></div><div class="recent-post-info"><a class="article-title" href="/post/97254dc.html" title="擂台赛法则构造非支配集">擂台赛法则构造非支配集</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-15T08:57:03.000Z" title="发表于 2022-11-15 16:57:03">2022-11-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/">优化算法</a></span></div><div class="content">擂台赛法个人理解 就是将x个体与其中所有的个体进行作比较，如果x支配y，删除y如果y支配x则让y作为擂主重新开始比较否则将x并入非支配集。
+作者声明1如有问题，欢迎指正！</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/5/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/#content-inner">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/#content-inner">19</a><a class="extend next" rel="next" href="/page/7/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jhj</div><div class="author-info__description">努力学习，努力爱你!</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/jhj-coding"><i class="iconfont icon-gitee"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://gitee.com/jhj-coding" target="_blank" title="gitee"><i class="iconfont icon-gitee" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:jhjcoding@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/qq.jpg" target="_blank" title="qq"><i class="fa-brands fa-qq" style="color: #hdhfbb;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/167997d8.html" title="jconsole与jvisualvm"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jconsole与jvisualvm"/></a><div class="content"><a class="title" href="/post/167997d8.html" title="jconsole与jvisualvm">jconsole与jvisualvm</a><time datetime="2023-12-18T09:11:18.000Z" title="发表于 2023-12-18 17:11:18">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/1bfbf0ea.html" title="压力测试详解"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="压力测试详解"/></a><div class="content"><a class="title" href="/post/1bfbf0ea.html" title="压力测试详解">压力测试详解</a><time datetime="2023-12-18T06:26:44.000Z" title="发表于 2023-12-18 14:26:44">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阿里云部署k8s with kubesphere"/></a><div class="content"><a class="title" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere">阿里云部署k8s with kubesphere</a><time datetime="2023-12-17T09:21:04.000Z" title="发表于 2023-12-17 17:21:04">2023-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/2d8b6a16.html" title="性能测试入门"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="性能测试入门"/></a><div class="content"><a class="title" href="/post/2d8b6a16.html" title="性能测试入门">性能测试入门</a><time datetime="2023-12-10T08:15:58.000Z" title="发表于 2023-12-10 16:15:58">2023-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/6998f00a.html" title="冗余设计思想"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="冗余设计思想"/></a><div class="content"><a class="title" href="/post/6998f00a.html" title="冗余设计思想">冗余设计思想</a><time datetime="2023-12-10T08:06:13.000Z" title="发表于 2023-12-10 16:06:13">2023-12-10</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">70</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/SpringBoot/"><span class="card-category-list-name">SpringBoot</span><span class="card-category-list-count">70</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/SpringBoot/SpringCloud/"><span class="card-category-list-name">SpringCloud</span><span class="card-category-list-count">70</span></a></li></ul></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Netty/"><span class="card-category-list-name">Netty</span><span class="card-category-list-count">20</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/geoserver/"><span class="card-category-list-name">geoserver</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/juc/"><span class="card-category-list-name">juc</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/jvm/"><span class="card-category-list-name">jvm</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/leetcode/"><span class="card-category-list-name">leetcode</span><span class="card-category-list-count">12</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 1.34em; color: rgb(179, 92, 38)">运维</a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.3em; color: rgb(157, 66, 141)">前端</a><a href="/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/" style="font-size: 1.41em; color: rgb(6, 37, 164)">开发语言</a><a href="/tags/c/" style="font-size: 1.19em; color: rgb(53, 110, 160)">c++</a><a href="/tags/python/" style="font-size: 1.26em; color: rgb(4, 142, 150)">python</a><a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 1.22em; color: rgb(181, 77, 138)">网络</a><a href="/tags/linux/" style="font-size: 1.34em; color: rgb(195, 72, 163)">linux</a><a href="/tags/udp/" style="font-size: 1.15em; color: rgb(18, 137, 48)">udp</a><a href="/tags/java/" style="font-size: 1.45em; color: rgb(184, 122, 171)">java</a><a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 1.15em; color: rgb(45, 102, 120)">面试</a><a href="/tags/elasticsearch/" style="font-size: 1.19em; color: rgb(110, 190, 165)">elasticsearch</a><a href="/tags/dubbo/" style="font-size: 1.15em; color: rgb(76, 91, 173)">dubbo</a><a href="/tags/big/" style="font-size: 1.15em; color: rgb(118, 29, 189)">big</a><a href="/tags/data/" style="font-size: 1.15em; color: rgb(127, 199, 69)">data</a><a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 1.15em; color: rgb(80, 57, 176)">大数据</a><a href="/tags/spring/" style="font-size: 1.3em; color: rgb(67, 138, 133)">spring</a><a href="/tags/cloud/" style="font-size: 1.19em; color: rgb(186, 142, 47)">cloud</a><a href="/tags/javascript/" style="font-size: 1.15em; color: rgb(186, 69, 155)">javascript</a><a href="/tags/html/" style="font-size: 1.15em; color: rgb(48, 162, 61)">html</a><a href="/tags/jvm/" style="font-size: 1.19em; color: rgb(132, 150, 197)">jvm</a><a href="/tags/redis/" style="font-size: 1.19em; color: rgb(11, 163, 84)">redis</a><a href="/tags/docker/" style="font-size: 1.26em; color: rgb(2, 14, 186)">docker</a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.38em; color: rgb(77, 95, 101)">算法</a><a href="/tags/%E8%81%8C%E5%9C%BA%E5%92%8C%E5%8F%91%E5%B1%95/" style="font-size: 1.15em; color: rgb(176, 126, 107)">职场和发展</a><a href="/tags/mongodb/" style="font-size: 1.15em; color: rgb(111, 109, 179)">mongodb</a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 1.26em; color: rgb(186, 190, 165)">服务器</a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.3em; color: rgb(139, 94, 134)">数据库</a><a href="/tags/mysql/" style="font-size: 1.19em; color: rgb(154, 92, 75)">mysql</a><a href="/tags/servlet/" style="font-size: 1.15em; color: rgb(146, 23, 69)">servlet</a><a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 1.15em; color: rgb(68, 16, 44)">网络协议</a><a href="/tags/rpc/" style="font-size: 1.15em; color: rgb(9, 141, 19)">rpc</a><a href="/tags/boot/" style="font-size: 1.19em; color: rgb(150, 148, 136)">boot</a><a href="/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" style="font-size: 1.15em; color: rgb(101, 18, 113)">搜索引擎</a><a href="/tags/ubuntu/" style="font-size: 1.15em; color: rgb(186, 101, 126)">ubuntu</a><a href="/tags/%E5%AE%B9%E5%99%A8/" style="font-size: 1.26em; color: rgb(127, 193, 77)">容器</a><a href="/tags/git/" style="font-size: 1.15em; color: rgb(129, 37, 157)">git</a><a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 1.15em; color: rgb(33, 80, 108)">缓存</a><a href="/tags/gradle/" style="font-size: 1.15em; color: rgb(129, 95, 125)">gradle</a><a href="/tags/ide/" style="font-size: 1.15em; color: rgb(75, 130, 32)">ide</a><a href="/tags/intellij/" style="font-size: 1.15em; color: rgb(101, 167, 1)">intellij</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">18</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">18</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">185</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-12-31T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">288.1k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-03-14T13:40:52.974Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://id.ouc.edu.cn/sso/casLogin/img/banner2-1694742541774.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024  <i id="heartbeat" class="fa fas fa-heartbeat"></i> jhj</div><div class="footer_custom_text">welcome to my blob</div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = []
+        sub.unshift(data.hitokoto, from)
+        typedJSFn.init(sub)
+      } else {
+        document.getElementById('subtitle').textContent = data.hitokoto
+      }
+    })
+}
+typedJSFn.run(subtitleType)
+</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.jhj-coding.top/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.31/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script src="/js/custom.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="//code.tidio.co/th7rc6a4lyprr1ddkuejkobcxcttlbcr.js" async="async"></script><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = true
+
+  if (isChatBtn) {
+    let isShow = false
+    const close = () => {
+      window.tidioChatApi.hide()
+      isShow = false
+    }
+    
+    const open = () => {
+      window.tidioChatApi.open()
+      window.tidioChatApi.show()
+      isShow = true
+    }
+
+    const onTidioChatApiReady = () => {
+      window.tidioChatApi.hide()
+      window.tidioChatApi.on("close", close)
+    }
+    if (window.tidioChatApi) {
+      window.tidioChatApi.on("ready", onTidioChatApiReady)
+    } else {
+      document.addEventListener("tidioChat-ready", onTidioChatApiReady)
+    }
+
+    window.chatBtnFn = () => {
+      if (!window.tidioChatApi) return
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        window.tidioChatApi && window.tidioChatApi.hide()
+      },
+      show: () => {
+        window.tidioChatApi && window.tidioChatApi.show()
+      }
+    }
+  }
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.65.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.13.0"></script></div></div></body></html>

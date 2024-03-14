@@ -1,0 +1,451 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>gradle | jhj-coding</title><meta name="author" content="jhj,hnjzjhj@163.com"><meta name="copyright" content="jhj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="GradleGradle 介绍Gradle 官方文档是这样介绍的 Gradle 的：Gradle is an open-source build automationopen in new windowhttps:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Build_automation tool flexible enough to build almost any type of sof">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gradle">
+<meta property="og:url" content="http://example.com/post/1ff56f08.html">
+<meta property="og:site_name" content="jhj-coding">
+<meta property="og:description" content="GradleGradle 介绍Gradle 官方文档是这样介绍的 Gradle 的：Gradle is an open-source build automationopen in new windowhttps:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Build_automation tool flexible enough to build almost any type of sof">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/default_bg.png">
+<meta property="article:published_time" content="2023-10-12T10:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-14T09:06:41.147Z">
+<meta property="article:author" content="jhj">
+<meta property="article:tag" content="gradle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/default_bg.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/post/1ff56f08.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"MN792LJJVS","apiKey":"e946d312db0afe9b3f7d3e71f5f7585b","indexName":"jhj","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: jhj","link":"链接: ","source":"来源: jhj-coding","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'gradle',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-14 17:06:41'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4464920_sugj9c5f13.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.1.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/default_bg.png')"><nav id="nav"><span id="blog-info"><a href="/" title="jhj-coding"><span class="site-name">jhj-coding</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">gradle</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-12T10:00:00.000Z" title="发表于 2023-10-12 18:00:00">2023-10-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-14T09:06:41.147Z" title="更新于 2024-03-14 17:06:41">2024-03-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="gradle"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h2><h3 id="Gradle-介绍"><a href="#Gradle-介绍" class="headerlink" title="Gradle 介绍"></a>Gradle 介绍</h3><p>Gradle 官方文档是这样介绍的 Gradle 的：<br>Gradle is an open-source build automationopen in new window<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Build_automation">https://en.wikipedia.org/wiki/Build_automation</a> tool flexible enough to build almost any type of software. Gradle makes few assumptions about what you’re trying to build or how to build it. This makes Gradle particularly flexible.</p>
+<p>Gradle 是一个开源的构建自动化工具，它足够灵活，可以构建几乎任何类型的软件。Gradle 对你要构建什么或者如何构建它做了很少的假设。这使得 Gradle 特别灵活。</p>
+<p>简单来说，Gradle 就是一个运行在 JVM 上的自动化的项目构建工具，用来帮助我们自动构建项目。</p>
+<p>对于开发者来说，Gradle 的主要作用主要有 3 个：</p>
+<ol>
+<li><strong>项目构建</strong>：提供标准的、跨平台的自动化项目构建方式。</li>
+<li><strong>依赖管理</strong>：方便快捷的管理项目依赖的资源（jar 包），避免资源间的版本冲突问题。</li>
+<li><strong>统一开发结构</strong>：提供标准的、统一的项目结构。</li>
+</ol>
+<p>Gradle 构建脚本是使用 Groovy 或 Kotlin 语言编写的，表达能力非常强，也足够灵活。</p>
+<p>Gradle 是运行在 JVM 上的一个程序，它可以使用 Groovy 来编写构建脚本。</p>
+<p>Groovy 是运行在 JVM 上的脚本语言，是基于 Java 扩展的动态语言，它的语法和 Java 非常的相似，可以使用 Java 的类库。Groovy 可以用于面向对象编程，也可以用作纯粹的脚本语言。在语言的设计上它吸纳了 Java、Python、Ruby 和 Smalltalk 语言的优秀特性，比如动态类型转换、闭包和元编程支持。</p>
+<p>我们可以用学习 Java 的方式去学习 Groovy ，学习成本相对来说还是比较低的，即使开发过程中忘记 Groovy 语法，也可以用 Java 语法继续编码。</p>
+<p>基于 JVM 的语言有很多种比如 Groovy，Kotlin，Java，Scala，他们最终都会编译生成 Java 字节码文件并在 JVM 上运行。</p>
+<h3 id="Gradle-优势"><a href="#Gradle-优势" class="headerlink" title="Gradle 优势"></a>Gradle 优势</h3><p>Gradle 是新一代的构建系统，具有高效和灵活等诸多优势，广泛用于 Java 开发。不仅 Android 将其作为官方构建系统, 越来越多的 Java 项目比如 Spring Boot 也慢慢迁移到 Gradle。</p>
+<ul>
+<li>在灵活性上，Gradle 支持基于 Groovy 语言编写脚本，侧重于构建过程的灵活性，适合于构建复杂度较高的项目，可以完成非常复杂的构建。</li>
+<li>在粒度性上，Gradle 构建的粒度细化到了每一个 task 之中。并且它所有的 Task 源码都是开源的，在我们掌握了这一整套打包流程后，我们就可以通过去修改它的 Task 去动态改变其执行流程。</li>
+<li>在扩展性上，Gradle 支持插件机制，所以我们可以复用这些插件，就如同复用库一样简单方便。</li>
+</ul>
+<h3 id="Gradle-Wrapper-介绍"><a href="#Gradle-Wrapper-介绍" class="headerlink" title="Gradle Wrapper 介绍"></a>Gradle Wrapper 介绍</h3><p>Gradle 官方文档是这样介绍的 Gradle Wrapper 的：<br>The recommended way to execute any Gradle build is with the help of the Gradle Wrapper (in short just “Wrapper”). The Wrapper is a script that invokes a declared version of Gradle, downloading it beforehand if necessary. As a result, developers can get up and running with a Gradle project quickly without having to follow manual installation processes saving your company time and money.</p>
+<p>执行 Gradle 构建的推荐方法是借助 Gradle Wrapper(简而言之就是“Wrapper”)。Wrapper 它是一个脚本，调用了已经声明的 Gradle 版本，如果需要的话，可以预先下载它。因此，开发人员可以快速启动并运行 Gradle 项目，而不必遵循手动安装过程，从而为公司节省时间和金钱。</p>
+<p>我们可以称 Gradle Wrapper 为 Gradle 包装器，它将 Gradle 再次包装，让所有的 Gradle 构建方法在 Gradle 包装器的帮助下运行。</p>
+<p>Gradle Wrapper 的工作流程图如下（图源Gradle Wrapper 官方文档介绍open in new window<a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/gradle_wrapper.html%EF%BC%89%EF%BC%9A">https://docs.gradle.org/current/userguide/gradle_wrapper.html）：</a></p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141706939.png" alt="包装器工作流程"></p>
+<p>整个流程主要分为下面 3 步：</p>
+<ol>
+<li>首先当我们刚创建的时候，如果指定的版本没有被下载，就先会去 Gradle 的服务器中下载对应版本的压缩包；</li>
+<li>下载完成后需要先进行解压缩并且执行批处理文件；</li>
+<li>后续项目每次构建都会重用这个解压过的 Gradle 版本。</li>
+</ol>
+<p>Gradle Wrapper 会给我们带来下面这些好处：</p>
+<ol>
+<li>在给定的 Gradle 版本上标准化项目，从而实现更可靠和健壮的构建。</li>
+<li>可以让我们的电脑中不安装 Gradle 环境也可以运行 Gradle 项目。</li>
+<li>为不同的用户和执行环境（例如 IDE 或持续集成服务器）提供新的 Gradle 版本就像更改 Wrapper 定义一样简单。</li>
+</ol>
+<h4 id="生成-Gradle-Wrapper"><a href="#生成-Gradle-Wrapper" class="headerlink" title="生成 Gradle Wrapper"></a>生成 Gradle Wrapper</h4><p>如果想要生成 Gradle Wrapper 的话，需要本地配置好 Gradle 环境变量。Gradle 中已经内置了内置了 Wrapper Task，在项目根目录执行执行<code>gradle wrapper</code>命令即可帮助我们生成 Gradle Wrapper。</p>
+<p>执行命令 <code>gradle wrapper</code> 命令时可以指定一些参数来控制 wrapper 的生成。具体有如下两个配置参数：</p>
+<ul>
+<li><pre><code class="js">
+</code></pre>
+</li>
+</ul>
+<p>–gradle-version</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">用于指定使用的 Gradle 的版本</span><br><span class="line">* ```js </span><br><span class="line">--gradle-distribution-url</span><br></pre></td></tr></table></figure>
+<p>用于指定下载 Gradle 版本的 URL，该值的规则是</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">http</span>:<span class="comment">//services.gradle.org/distributions/gradle-$&#123;gradleVersion&#125;-bin.zip</span></span><br></pre></td></tr></table></figure>
+
+<p>执行<code>gradle wrapper</code>命令之后，Gradle Wrapper 就生成完成了，项目根目录中生成如下文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">├── gradle</span><br><span class="line">│   └── wrapper</span><br><span class="line">│       ├── gradle-wrapper.<span class="property">jar</span></span><br><span class="line">│       └── gradle-wrapper.<span class="property">properties</span></span><br><span class="line">├── gradlew</span><br><span class="line">└── gradlew.<span class="property">bat</span></span><br></pre></td></tr></table></figure>
+
+<p>每个文件的含义如下：</p>
+<ul>
+<li><pre><code class="js">
+</code></pre>
+</li>
+</ul>
+<p>gradle-wrapper.jar</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">：包含了 Gradle 运行时的逻辑代码。</span><br><span class="line">* ```js </span><br><span class="line">gradle-wrapper.properties</span><br></pre></td></tr></table></figure>
+<p>：定义了 Gradle 的版本号和 Gradle 运行时的行为属性。</p>
+<ul>
+<li><pre><code class="js">
+</code></pre>
+</li>
+</ul>
+<p>gradlew</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">：Linux 平台下，用于执行 Gralde 命令的包装器脚本。</span><br><span class="line">* ```js </span><br><span class="line">gradlew.bat</span><br></pre></td></tr></table></figure>
+<p>：Windows 平台下，用于执行 Gralde 命令的包装器脚本。</p>
+<p><code>gradle-wrapper.properties</code> 文件的内容如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">distributionBase=<span class="variable constant_">GRADLE_USER_HOME</span></span><br><span class="line">distributionPath=wrapper/dists</span><br><span class="line">distributionUrl=https\:<span class="comment">//services.gradle.org/distributions/gradle-6.0.1-bin.zip</span></span><br><span class="line">zipStoreBase=<span class="variable constant_">GRADLE_USER_HOME</span></span><br><span class="line">zipStorePath=wrapper/dists</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><pre><code class="js">
+</code></pre>
+</li>
+</ul>
+<p>distributionBase</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">：Gradle 解包后存储的父目录。</span><br><span class="line">* ```js </span><br><span class="line">distributionPath</span><br></pre></td></tr></table></figure>
+<p>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">distributionBase</span><br></pre></td></tr></table></figure>
+<p>指定目录的子目录。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">distributionBase+distributionPath</span><br></pre></td></tr></table></figure>
+<p>就是 Gradle 解包后的存放的具体目录。</p>
+<ul>
+<li><pre><code class="js">
+</code></pre>
+</li>
+</ul>
+<p>distributionUrl</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">：Gradle 指定版本的压缩包下载地址。</span><br><span class="line">* ```js </span><br><span class="line">zipStoreBase</span><br></pre></td></tr></table></figure>
+<p>：Gradle 压缩包下载后存储父目录。</p>
+<ul>
+<li><pre><code class="js">
+</code></pre>
+</li>
+</ul>
+<p>zipStorePath</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">：</span><br><span class="line"></span><br><span class="line">```js </span><br><span class="line">zipStoreBase</span><br></pre></td></tr></table></figure>
+<p>指定目录的子目录。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zipStoreBase+zipStorePath</span><br></pre></td></tr></table></figure>
+<p>就是 Gradle 压缩包的存放位置。</p>
+<h4 id="更新-Gradle-Wrapper"><a href="#更新-Gradle-Wrapper" class="headerlink" title="更新 Gradle Wrapper"></a>更新 Gradle Wrapper</h4><p>更新 Gradle Wrapper 有 2 种方式：</p>
+<ol>
+<li>接修改</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">distributionUrl</span><br></pre></td></tr></table></figure>
+<p>字段，然后执行 Gradle 命令。</p>
+<ol>
+<li>执行 gradlew 命令</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradlew wrapper –-gradle-version [version]</span><br></pre></td></tr></table></figure>
+<p>。</p>
+<p>下面的命令会将 Gradle 版本升级为 7.6。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradlew wrapper --gradle-version <span class="number">7.6</span></span><br></pre></td></tr></table></figure>
+
+<p><code>gradle-wrapper.properties</code> 文件中的 <code>distributionUrl</code> 属性也发生了改变。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">distributionUrl=https\:<span class="comment">//services.gradle.org/distributions/gradle-7.6-all.zip</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="自定义-Gradle-Wrapper"><a href="#自定义-Gradle-Wrapper" class="headerlink" title="自定义 Gradle Wrapper"></a>自定义 Gradle Wrapper</h4><p>Gradle 已经内置了 Wrapper Task，因此构建 Gradle Wrapper 会生成 Gradle Wrapper 的属性文件，这个属性文件可以通过自定义 Wrapper Task 来设置。比如我们想要修改要下载的 Gralde 版本为 7.6，可以这么设置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">task <span class="title function_">wrapper</span>(<span class="params">type: Wrapper</span>) &#123;</span><br><span class="line">    </span><br><span class="line">    gradleVersion = <span class="string">&#x27;7.6&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>也可以设置 Gradle 发行版压缩包的下载地址和 Gradle 解包后的本地存储路径等配置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">task <span class="title function_">wrapper</span>(<span class="params">type: Wrapper</span>) &#123;</span><br><span class="line">    </span><br><span class="line">    gradleVersion = <span class="string">&#x27;7.6&#x27;</span></span><br><span class="line">    distributionUrl = <span class="string">&#x27;../../gradle-7.6-bin.zip&#x27;</span></span><br><span class="line">    distributionPath=wrapper/dists</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>distributionUrl</code> 属性可以设置为本地的项目目录，你也可以设置为网络地址。</p>
+<h3 id="Gradle-任务"><a href="#Gradle-任务" class="headerlink" title="Gradle 任务"></a>Gradle 任务</h3><p>在 Gradle 中，任务(Task)是构建执行的单个工作单元。</p>
+<p>Gradle 的构建是基于 Task 进行的，当你运行项目的时候，实际就是在执行了一系列的 Task 比如编译 Java 源码的 Task、生成 jar 文件的 Task。</p>
+<p>Task 声明方式如下（还有其他几种声明方式）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明一个名字为 helloTask 的 Task</span></span><br><span class="line">task helloTask&#123;</span><br><span class="line">    </span><br><span class="line">     doLast&#123;</span><br><span class="line">    </span><br><span class="line">       println <span class="string">&quot;Hello&quot;</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建一个 Task 后，可以根据需要给 Task 添加不同的 Action，上面的“doLast”就是给队列尾增加一个 Action。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在Action 队列头部添加Action</span></span><br><span class="line"> <span class="title class_">Task</span> <span class="title function_">doFirst</span>(<span class="title class_">Action</span>&lt;? <span class="variable language_">super</span> <span class="title class_">Task</span>&gt; action);</span><br><span class="line"> <span class="title class_">Task</span> <span class="title function_">doFirst</span>(<span class="title class_">Closure</span> action);</span><br><span class="line"></span><br><span class="line"> <span class="comment">//在Action 队列尾部添加Action</span></span><br><span class="line"> <span class="title class_">Task</span> <span class="title function_">doLast</span>(<span class="title class_">Action</span>&lt;? <span class="variable language_">super</span> <span class="title class_">Task</span>&gt; action);</span><br><span class="line"> <span class="title class_">Task</span> <span class="title function_">doLast</span>(<span class="title class_">Closure</span> action);</span><br><span class="line"></span><br><span class="line"> <span class="comment">//删除所有的Action</span></span><br><span class="line"> <span class="title class_">Task</span> <span class="title function_">deleteAllActions</span>();</span><br></pre></td></tr></table></figure>
+
+<p>一个 Task 中可以有多个 Acton，从队列头部开始向队列尾部执行 Acton。</p>
+<p>Action 代表的是一个个函数、方法，每个 Task 都是一堆 Action 按序组成的执行图。</p>
+<p>Task 声明依赖的关键字是<code>dependsOn</code>，支持声明一个或多个依赖：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">task first &#123;</span><br><span class="line">    </span><br><span class="line"> doLast &#123;</span><br><span class="line">    </span><br><span class="line">        println <span class="string">&quot;+++++first+++++&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">task second &#123;</span><br><span class="line">    </span><br><span class="line"> doLast &#123;</span><br><span class="line">    </span><br><span class="line">        println <span class="string">&quot;+++++second+++++&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 指定多个 task 依赖</span></span><br><span class="line">task <span class="title function_">print</span>(<span class="params">dependsOn :[second,first]</span>) &#123;</span><br><span class="line">    </span><br><span class="line"> doLast &#123;</span><br><span class="line">    </span><br><span class="line">      logger.<span class="property">quiet</span> <span class="string">&quot;指定多个task依赖&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 指定一个 task 依赖</span></span><br><span class="line">task <span class="title function_">third</span>(<span class="params">dependsOn : print</span>) &#123;</span><br><span class="line">    </span><br><span class="line"> doLast &#123;</span><br><span class="line">    </span><br><span class="line">      println <span class="string">&#x27;+++++third+++++&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行 Task 之前，会先执行它的依赖 Task。</p>
+<p>我们还可以设置默认 Task，脚本中我们不调用默认 Task ，也会执行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">defaultTasks <span class="string">&#x27;clean&#x27;</span>, <span class="string">&#x27;run&#x27;</span></span><br><span class="line"></span><br><span class="line">task clean &#123;</span><br><span class="line">    </span><br><span class="line">    doLast &#123;</span><br><span class="line">    </span><br><span class="line">        println <span class="string">&#x27;Default Cleaning!&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task run &#123;</span><br><span class="line">    </span><br><span class="line">    doLast &#123;</span><br><span class="line">    </span><br><span class="line">        println <span class="string">&#x27;Default Running!&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Gradle 本身也内置了很多 Task 比如 copy（复制文件）、delete（删除文件）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">task <span class="title function_">deleteFile</span>(<span class="params">type: Delete</span>) &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">delete</span> <span class="string">&quot;C:\\Users\\guide\\Desktop\\test&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Gradle-插件"><a href="#Gradle-插件" class="headerlink" title="Gradle 插件"></a>Gradle 插件</h3><p>Gradle 提供的是一套核心的构建机制，而 Gradle 插件则是运行在这套机制上的一些具体构建逻辑，其本质上和 <code>.gradle</code> 文件是相同。你可以将 Gradle 插件看作是封装了一系列 Task 并执行的工具。</p>
+<p>Gradle 插件主要分为两类：</p>
+<ul>
+<li>脚本插件：脚本插件就是一个普通的脚本文件，它可以被导入都其他构建脚本中。</li>
+<li>二进制插件 &#x2F; 对象插件：在一个单独的插件模块中定义，其他模块通过 Plugin ID 应用插件。因为这种方式发布和复用更加友好，我们一般接触到的 Gradle 插件都是指二进制插件的形式。</li>
+</ul>
+<p>虽然 Gradle 插件与 .gradle 文件本质上没有区别，<code>.gradle</code> 文件也能实现 Gradle 插件类似的功能。但是，Gradle 插件使用了独立模块封装构建逻辑，无论是从开发开始使用来看，Gradle 插件的整体体验都更友好。</p>
+<ul>
+<li><strong>逻辑复用：</strong> 将相同的逻辑提供给多个相似项目复用，减少重复维护类似逻辑开销。当然 .gradle 文件也能做到逻辑复用，但 Gradle 插件的封装性更好；</li>
+<li><strong>组件发布：</strong> 可以将插件发布到 Maven 仓库进行管理，其他项目可以使用插件 ID 依赖。当然 .gradle 文件也可以放到一个远程路径被其他项目引用；</li>
+<li><strong>构建配置：</strong> Gradle 插件可以声明插件扩展来暴露可配置的属性，提供定制化能力。当然 .gradle 文件也可以做到，但实现会麻烦些。</li>
+</ul>
+<h3 id="Gradle-构建生命周期"><a href="#Gradle-构建生命周期" class="headerlink" title="Gradle 构建生命周期"></a>Gradle 构建生命周期</h3><p>Gradle 构建的生命周期有三个阶段：<strong>初始化阶段，配置阶段</strong>和<strong>运行阶段</strong>。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141706940.png" alt="img"></p>
+<p>在初始化阶段与配置阶段之间、配置阶段结束之后、执行阶段结束之后，我们都可以加一些定制化的 Hook。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141706941.png" alt="img"></p>
+<h4 id="初始化阶段"><a href="#初始化阶段" class="headerlink" title="初始化阶段"></a>初始化阶段</h4><p>Gradle 支持单项目和多项目构建。在初始化阶段，Gradle 确定哪些项目将参与构建，并为每个项目创建一个 Project 实例open in new window<a target="_blank" rel="noopener" href="https://docs.gradle.org/current/dsl/org.gradle.api.Project.html">https://docs.gradle.org/current/dsl/org.gradle.api.Project.html</a> 。本质上也就是执行 <code>settings.gradle</code> 脚本，从而读取整个项目中有多少个 Project 实例。</p>
+<h4 id="配置阶段"><a href="#配置阶段" class="headerlink" title="配置阶段"></a>配置阶段</h4><p>在配置阶段，Gradle 会解析每个工程的 <code>build.gradle</code> 文件，创建要执行的任务子集和确定各种任务之间的关系，以供执行阶段按照顺序执行，并对任务的做一些初始化配置。</p>
+<p>每个 <code>build.gradle</code> 对应一个 Project 对象，配置阶段执行的代码包括 <code>build.gradle</code> 中的各种语句、闭包以及 Task 中的配置语句。</p>
+<p>在配置阶段结束后，Gradle 会根据 Task 的依赖关系会创建一个 <strong>有向无环图</strong> 。</p>
+<h4 id="运行阶段"><a href="#运行阶段" class="headerlink" title="运行阶段"></a>运行阶段</h4><p>在运行阶段，Gradle 根据配置阶段创建和配置的要执行的任务子集，执行任务。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">jhj</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/1ff56f08.html">http://example.com/post/1ff56f08.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">jhj-coding</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/gradle/">gradle</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/default_bg.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/c6e613d8.html" title="maven"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">maven</div></div></a></div><div class="next-post pull-right"><a href="/post/11de7df3.html" title="MyBatis常见面试题总结"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MyBatis常见面试题总结</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jhj</div><div class="author-info__description">努力学习，努力爱你!</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/jhj-coding"><i class="iconfont icon-gitee"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://gitee.com/jhj-coding" target="_blank" title="gitee"><i class="iconfont icon-gitee" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:jhjcoding@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/qq.jpg" target="_blank" title="qq"><i class="fa-brands fa-qq" style="color: #hdhfbb;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Gradle"><span class="toc-number">1.</span> <span class="toc-text">Gradle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradle-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">Gradle 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradle-%E4%BC%98%E5%8A%BF"><span class="toc-number">1.2.</span> <span class="toc-text">Gradle 优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradle-Wrapper-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.3.</span> <span class="toc-text">Gradle Wrapper 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90-Gradle-Wrapper"><span class="toc-number">1.3.1.</span> <span class="toc-text">生成 Gradle Wrapper</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0-Gradle-Wrapper"><span class="toc-number">1.3.2.</span> <span class="toc-text">更新 Gradle Wrapper</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89-Gradle-Wrapper"><span class="toc-number">1.3.3.</span> <span class="toc-text">自定义 Gradle Wrapper</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradle-%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.4.</span> <span class="toc-text">Gradle 任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradle-%E6%8F%92%E4%BB%B6"><span class="toc-number">1.5.</span> <span class="toc-text">Gradle 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradle-%E6%9E%84%E5%BB%BA%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.6.</span> <span class="toc-text">Gradle 构建生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%98%B6%E6%AE%B5"><span class="toc-number">1.6.1.</span> <span class="toc-text">初始化阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%98%B6%E6%AE%B5"><span class="toc-number">1.6.2.</span> <span class="toc-text">配置阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E9%98%B6%E6%AE%B5"><span class="toc-number">1.6.3.</span> <span class="toc-text">运行阶段</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/167997d8.html" title="jconsole与jvisualvm"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jconsole与jvisualvm"/></a><div class="content"><a class="title" href="/post/167997d8.html" title="jconsole与jvisualvm">jconsole与jvisualvm</a><time datetime="2023-12-18T09:11:18.000Z" title="发表于 2023-12-18 17:11:18">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/1bfbf0ea.html" title="压力测试详解"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="压力测试详解"/></a><div class="content"><a class="title" href="/post/1bfbf0ea.html" title="压力测试详解">压力测试详解</a><time datetime="2023-12-18T06:26:44.000Z" title="发表于 2023-12-18 14:26:44">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阿里云部署k8s with kubesphere"/></a><div class="content"><a class="title" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere">阿里云部署k8s with kubesphere</a><time datetime="2023-12-17T09:21:04.000Z" title="发表于 2023-12-17 17:21:04">2023-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/2d8b6a16.html" title="性能测试入门"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="性能测试入门"/></a><div class="content"><a class="title" href="/post/2d8b6a16.html" title="性能测试入门">性能测试入门</a><time datetime="2023-12-10T08:15:58.000Z" title="发表于 2023-12-10 16:15:58">2023-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/6998f00a.html" title="冗余设计思想"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="冗余设计思想"/></a><div class="content"><a class="title" href="/post/6998f00a.html" title="冗余设计思想">冗余设计思想</a><time datetime="2023-12-10T08:06:13.000Z" title="发表于 2023-12-10 16:06:13">2023-12-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/default_bg.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024  <i id="heartbeat" class="fa fas fa-heartbeat"></i> jhj</div><div class="footer_custom_text">welcome to my blob</div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.31/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/custom.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="//code.tidio.co/th7rc6a4lyprr1ddkuejkobcxcttlbcr.js" async="async"></script><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = true
+
+  if (isChatBtn) {
+    let isShow = false
+    const close = () => {
+      window.tidioChatApi.hide()
+      isShow = false
+    }
+    
+    const open = () => {
+      window.tidioChatApi.open()
+      window.tidioChatApi.show()
+      isShow = true
+    }
+
+    const onTidioChatApiReady = () => {
+      window.tidioChatApi.hide()
+      window.tidioChatApi.on("close", close)
+    }
+    if (window.tidioChatApi) {
+      window.tidioChatApi.on("ready", onTidioChatApiReady)
+    } else {
+      document.addEventListener("tidioChat-ready", onTidioChatApiReady)
+    }
+
+    window.chatBtnFn = () => {
+      if (!window.tidioChatApi) return
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        window.tidioChatApi && window.tidioChatApi.hide()
+      },
+      show: () => {
+        window.tidioChatApi && window.tidioChatApi.show()
+      }
+    }
+  }
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.65.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.13.0"></script></div></div></body></html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Spring Cloud Gateway常见问题 | jhj-coding</title><meta name="author" content="jhj,hnjzjhj@163.com"><meta name="copyright" content="jhj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="Spring Cloud Gateway常见问题什么是 Spring Cloud Gateway？Spring Cloud Gateway 属于 Spring Cloud 生态系统中的网关，其诞生的目标是为了替代老牌网关 Zuul。准确点来说，应该是 Zuul 1.x。Spring Cloud Gateway 起步要比 Zuul 2.x 更早。 为了提升网关的性能，Spring Cloud Gat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Cloud Gateway常见问题">
+<meta property="og:url" content="http://example.com/post/f33b8738.html">
+<meta property="og:site_name" content="jhj-coding">
+<meta property="og:description" content="Spring Cloud Gateway常见问题什么是 Spring Cloud Gateway？Spring Cloud Gateway 属于 Spring Cloud 生态系统中的网关，其诞生的目标是为了替代老牌网关 Zuul。准确点来说，应该是 Zuul 1.x。Spring Cloud Gateway 起步要比 Zuul 2.x 更早。 为了提升网关的性能，Spring Cloud Gat">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png">
+<meta property="article:published_time" content="2023-12-05T08:56:48.000Z">
+<meta property="article:modified_time" content="2024-03-14T13:13:47.731Z">
+<meta property="article:author" content="jhj">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/post/f33b8738.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"MN792LJJVS","apiKey":"e946d312db0afe9b3f7d3e71f5f7585b","indexName":"jhj","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: jhj","link":"链接: ","source":"来源: jhj-coding","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Spring Cloud Gateway常见问题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-14 21:13:47'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4464920_sugj9c5f13.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.1.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png')"><nav id="nav"><span id="blog-info"><a href="/" title="jhj-coding"><span class="site-name">jhj-coding</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Spring Cloud Gateway常见问题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-05T08:56:48.000Z" title="发表于 2023-12-05 16:56:48">2023-12-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-14T13:13:47.731Z" title="更新于 2024-03-14 21:13:47">2024-03-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/">Java</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/SpringBoot/">SpringBoot</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/SpringBoot/SpringCloud/">SpringCloud</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Spring Cloud Gateway常见问题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Spring-Cloud-Gateway常见问题"><a href="#Spring-Cloud-Gateway常见问题" class="headerlink" title="Spring Cloud Gateway常见问题"></a>Spring Cloud Gateway常见问题</h2><h3 id="什么是-Spring-Cloud-Gateway？"><a href="#什么是-Spring-Cloud-Gateway？" class="headerlink" title="什么是 Spring Cloud Gateway？"></a>什么是 Spring Cloud Gateway？</h3><p>Spring Cloud Gateway 属于 Spring Cloud 生态系统中的网关，其诞生的目标是为了替代老牌网关 <strong>Zuul</strong>。准确点来说，应该是 Zuul 1.x。Spring Cloud Gateway 起步要比 Zuul 2.x 更早。</p>
+<p>为了提升网关的性能，Spring Cloud Gateway 基于 Spring WebFlux 。Spring WebFlux 使用 Reactor 库来实现响应式编程模型，底层基于 Netty 实现同步非阻塞的 I&#x2F;O。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142113422.png" alt="img"></p>
+<p>Spring Cloud Gateway 不仅提供统一的路由方式，并且基于 Filter 链的方式提供了网关基本的功能，例如：安全，监控&#x2F;指标，限流。</p>
+<p>Spring Cloud Gateway 和 Zuul 2.x 的差别不大，也是通过过滤器来处理请求。不过，目前更加推荐使用 Spring Cloud Gateway 而非 Zuul，Spring Cloud 生态对其支持更加友好。</p>
+<ul>
+<li>GitHub 地址： <a target="_blank" rel="noopener" href="https://github.com/spring-cloud/spring-cloud-gatewayopen">https://github.com/spring-cloud/spring-cloud-gatewayopen</a> in new window<a target="_blank" rel="noopener" href="https://github.com/spring-cloud/spring-cloud-gateway">https://github.com/spring-cloud/spring-cloud-gateway</a></li>
+<li>官网： <a target="_blank" rel="noopener" href="https://spring.io/projects/spring-cloud-gateway">https://spring.io/projects/spring-cloud-gateway</a></li>
+</ul>
+<h3 id="Spring-Cloud-Gateway-的工作流程？"><a href="#Spring-Cloud-Gateway-的工作流程？" class="headerlink" title="Spring Cloud Gateway 的工作流程？"></a>Spring Cloud Gateway 的工作流程？</h3><p>Spring Cloud Gateway 的工作流程如下图所示：</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142113423.png" alt="Spring Cloud Gateway 的工作流程"></p>
+<p>具体的流程分析：</p>
+<ol>
+<li><strong>路由判断</strong>：客户端的请求到达网关后，先经过 Gateway Handler Mapping 处理，这里面会做断言（Predicate）判断，看下符合哪个路由规则，这个路由映射后端的某个服务。</li>
+<li><strong>请求过滤</strong>：然后请求到达 Gateway Web Handler，这里面有很多过滤器，组成过滤器链（Filter Chain），这些过滤器可以对请求进行拦截和修改，比如添加请求头、参数校验等等，有点像净化污水。然后将请求转发到实际的后端服务。这些过滤器逻辑上可以称作 Pre-Filters，Pre 可以理解为“在…之前”。</li>
+<li><strong>服务处理</strong>：后端服务会对请求进行处理。</li>
+<li><strong>响应过滤</strong>：后端处理完结果后，返回给 Gateway 的过滤器再次做处理，逻辑上可以称作 Post-Filters，Post 可以理解为“在…之后”。</li>
+<li><strong>响应返回</strong>：响应经过过滤处理后，返回给客户端。</li>
+</ol>
+<p>总结：客户端的请求先通过匹配规则找到合适的路由，就能映射到具体的服务。然后请求经过过滤器处理后转发给具体的服务，服务处理后，再次经过过滤器处理，最后返回给客户端。</p>
+<h3 id="Spring-Cloud-Gateway-的断言是什么？"><a href="#Spring-Cloud-Gateway-的断言是什么？" class="headerlink" title="Spring Cloud Gateway 的断言是什么？"></a>Spring Cloud Gateway 的断言是什么？</h3><p>断言（Predicate）这个词听起来极其深奥，它是一种编程术语，我们生活中根本就不会用它。说白了它就是对一个表达式进行 if 判断，结果为真或假，如果为真则做这件事，否则做那件事。</p>
+<p>在 Gateway 中，如果客户端发送的请求满足了断言的条件，则映射到指定的路由器，就能转发到指定的服务上进行处理。</p>
+<p>断言配置的示例如下，配置了两个路由规则，有一个 predicates 断言配置，当请求 url 中包含 <code>api/thirdparty</code>，就匹配到了第一个路由 <code>route_thirdparty</code>。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142113424.png" alt="断言配置示例"></p>
+<p>常见的路由断言规则如下图所示：</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142113425.png" alt="Spring Cloud GateWay 路由断言规则"></p>
+<h3 id="Spring-Cloud-Gateway-的路由和断言是什么关系？"><a href="#Spring-Cloud-Gateway-的路由和断言是什么关系？" class="headerlink" title="Spring Cloud Gateway 的路由和断言是什么关系？"></a>Spring Cloud Gateway 的路由和断言是什么关系？</h3><p>Route 路由和 Predicate 断言的对应关系如下：：</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142113426.png" alt="路由和断言的对应关系"></p>
+<ul>
+<li><strong>一对多</strong>：一个路由规则可以包含多个断言。如上图中路由 Route1 配置了三个断言 Predicate。</li>
+<li><strong>同时满足</strong>：如果一个路由规则中有多个断言，则需要同时满足才能匹配。如上图中路由 Route2 配置了两个断言，客户端发送的请求必须同时满足这两个断言，才能匹配路由 Route2。</li>
+<li><strong>第一个匹配成功</strong>：如果一个请求可以匹配多个路由，则映射第一个匹配成功的路由。如上图所示，客户端发送的请求满足 Route3 和 Route4 的断言，但是 Route3 的配置在配置文件中靠前，所以只会匹配 Route3。</li>
+</ul>
+<h3 id="Spring-Cloud-Gateway-如何实现动态路由？"><a href="#Spring-Cloud-Gateway-如何实现动态路由？" class="headerlink" title="Spring Cloud Gateway 如何实现动态路由？"></a>Spring Cloud Gateway 如何实现动态路由？</h3><p>在使用 Spring Cloud Gateway 的时候，官方文档提供的方案总是基于配置文件或代码配置的方式。</p>
+<p>Spring Cloud Gateway 作为微服务的入口，需要尽量避免重启，而现在配置更改需要重启服务不能满足实际生产过程中的动态刷新、实时变更的业务需求，所以我们需要在 Spring Cloud Gateway 运行时动态配置网关。</p>
+<p>实现动态路由的方式有很多种，其中一种推荐的方式是基于 Nacos 注册中心来做。 Spring Cloud Gateway 可以从注册中心获取服务的元数据（例如服务名称、路径等），然后根据这些信息自动生成路由规则。这样，当你添加、移除或更新服务实例时，网关会自动感知并相应地调整路由规则，无需手动维护路由配置。</p>
+<p>其实这些复杂的步骤并不需要我们手动实现，通过 Nacos Server 和 Spring Cloud Alibaba Nacos Config 即可实现配置的动态变更，官方文档地址：<a target="_blank" rel="noopener" href="https://github.com/alibaba/spring-cloud-alibaba/wiki/Nacos-configopen">https://github.com/alibaba/spring-cloud-alibaba/wiki/Nacos-configopen</a> in new window<a target="_blank" rel="noopener" href="https://github.com/alibaba/spring-cloud-alibaba/wiki/Nacos-config">https://github.com/alibaba/spring-cloud-alibaba/wiki/Nacos-config</a> 。</p>
+<h3 id="Spring-Cloud-Gateway-的过滤器有哪些？"><a href="#Spring-Cloud-Gateway-的过滤器有哪些？" class="headerlink" title="Spring Cloud Gateway 的过滤器有哪些？"></a>Spring Cloud Gateway 的过滤器有哪些？</h3><p>过滤器 Filter 按照请求和响应可以分为两种：</p>
+<ul>
+<li><strong>Pre 类型</strong>：在请求被转发到微服务之前，对请求进行拦截和修改，例如参数校验、权限校验、流量监控、日志输出以及协议转换等操作。</li>
+<li><strong>Post 类型</strong>：微服务处理完请求后，返回响应给网关，网关可以再次进行处理，例如修改响应内容或响应头、日志输出、流量监控等。</li>
+</ul>
+<p>另外一种分类是按照过滤器 Filter 作用的范围进行划分：</p>
+<ul>
+<li><strong>GatewayFilter</strong>：局部过滤器，应用在单个路由或一组路由上的过滤器。标红色表示比较常用的过滤器。</li>
+<li><strong>GlobalFilter</strong>：全局过滤器，应用在所有路由上的过滤器。</li>
+</ul>
+<h4 id="局部过滤器"><a href="#局部过滤器" class="headerlink" title="局部过滤器"></a>局部过滤器</h4><p>常见的局部过滤器如下图所示：</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142113427.png" alt="img"></p>
+<p>具体怎么用呢？这里有个示例，如果 URL 匹配成功，则去掉 URL 中的 “api”。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">filters</span>: #过滤器</span><br><span class="line">  - <span class="title class_">RewritePath</span>=<span class="regexp">/api/</span>(?&lt;segment&gt;.*),/$\&#123;</span><br><span class="line">    segment&#125; # 将跳转路径中包含的 “api” 替换成空</span><br></pre></td></tr></table></figure>
+
+<p>当然我们也可以自定义过滤器，本篇不做展开。</p>
+<h4 id="全局过滤器"><a href="#全局过滤器" class="headerlink" title="全局过滤器"></a>全局过滤器</h4><p>常见的全局过滤器如下图所示：</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142113428.png" alt="img"></p>
+<p>全局过滤器最常见的用法是进行负载均衡。配置如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring</span>:</span><br><span class="line">  <span class="attr">cloud</span>:</span><br><span class="line">    <span class="attr">gateway</span>:</span><br><span class="line">      <span class="attr">routes</span>:</span><br><span class="line">        - <span class="attr">id</span>: route_member # 第三方微服务路由规则</span><br><span class="line">          <span class="attr">uri</span>: <span class="attr">lb</span>:<span class="comment">//passjava-member # 负载均衡，将请求转发到注册中心注册的 passjava-member 服务</span></span><br><span class="line">          <span class="attr">predicates</span>: # 断言</span><br><span class="line">            - <span class="title class_">Path</span>=<span class="regexp">/api/m</span>ember<span class="comment">/** # 如果前端请求路径包含 api/member，则应用这条路由规则</span></span><br><span class="line"><span class="comment">          filters: #过滤器</span></span><br><span class="line"><span class="comment">            - RewritePath=/api/(?&lt;segment&gt;.*),/$\&#123;</span></span><br><span class="line"><span class="comment">    segment&#125; # 将跳转路径中包含的api替换成空</span></span><br></pre></td></tr></table></figure>
+
+<p>这里有个关键字 <code>lb</code>，用到了全局过滤器 <code>LoadBalancerClientFilter</code>，当匹配到这个路由后，会将请求转发到 passjava-member 服务，且支持负载均衡转发，也就是先将 passjava-member 解析成实际的微服务的 host 和 port，然后再转发给实际的微服务。</p>
+<h3 id="Spring-Cloud-Gateway-支持限流吗？"><a href="#Spring-Cloud-Gateway-支持限流吗？" class="headerlink" title="Spring Cloud Gateway 支持限流吗？"></a>Spring Cloud Gateway 支持限流吗？</h3><p>Spring Cloud Gateway 自带了限流过滤器，对应的接口是 <code>RateLimiter</code>，<code>RateLimiter</code> 接口只有一个实现类 <code>RedisRateLimiter</code> （基于 Redis + Lua 实现的限流），提供的限流功能比较简易且不易使用。</p>
+<p>从 Sentinel 1.6.0 版本开始，Sentinel 引入了 Spring Cloud Gateway 的适配模块，可以提供两种资源维度的限流：route 维度和自定义 API 维度。也就是说，Spring Cloud Gateway 可以结合 Sentinel 实现更强大的网关流量控制。</p>
+<h3 id="Spring-Cloud-Gateway-如何自定义全局异常处理？"><a href="#Spring-Cloud-Gateway-如何自定义全局异常处理？" class="headerlink" title="Spring Cloud Gateway 如何自定义全局异常处理？"></a>Spring Cloud Gateway 如何自定义全局异常处理？</h3><p>在 SpringBoot 项目中，我们捕获全局异常只需要在项目中配置 <code>@RestControllerAdvice</code>和 <code>@ExceptionHandler</code>就可以了。不过，这种方式在 Spring Cloud Gateway 下不适用。</p>
+<p>Spring Cloud Gateway 提供了多种全局处理的方式，比较常用的一种是实现<code>ErrorWebExceptionHandler</code>并重写其中的<code>handle</code>方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@<span class="title class_">Order</span>(-<span class="number">1</span>)</span><br><span class="line">@<span class="title class_">Component</span></span><br><span class="line">@<span class="title class_">RequiredArgsConstructor</span></span><br><span class="line">public <span class="keyword">class</span> <span class="title class_">GlobalErrorWebExceptionHandler</span> implements <span class="title class_">ErrorWebExceptionHandler</span> &#123;</span><br><span class="line">    </span><br><span class="line">    private final <span class="title class_">ObjectMapper</span> objectMapper;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">Override</span></span><br><span class="line">    public <span class="title class_">Mono</span>&lt;<span class="title class_">Void</span>&gt; <span class="title function_">handle</span>(<span class="params">ServerWebExchange exchange, Throwable ex</span>) &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="作者声明"><a href="#作者声明" class="headerlink" title="作者声明"></a>作者声明</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如有问题，欢迎指正！</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">jhj</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/f33b8738.html">http://example.com/post/f33b8738.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">jhj-coding</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/java/">java</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/704abbcc.html" title="api 网关"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">api 网关</div></div></a></div><div class="next-post pull-right"><a href="/post/f5518be.html" title="分布式 ID"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">分布式 ID</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/e32c9fec.html" title="ConcurrentHashMap源码分析"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-12</div><div class="title">ConcurrentHashMap源码分析</div></div></a></div><div><a href="/post/e787ea05.html" title="CopyOnWriteArrayList源码分析"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-13</div><div class="title">CopyOnWriteArrayList源码分析</div></div></a></div><div><a href="/post/790f419d.html" title="DelayQueue源码分析"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-14</div><div class="title">DelayQueue源码分析</div></div></a></div><div><a href="/post/cf4734be.html" title="Future"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-29</div><div class="title">Future</div></div></a></div><div><a href="/post/6001717d.html" title="Gossip 协议"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-03</div><div class="title">Gossip 协议</div></div></a></div><div><a href="/post/f98de0e4.html" title="GeoServer安装"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/default_bg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-28</div><div class="title">GeoServer安装</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jhj</div><div class="author-info__description">努力学习，努力爱你!</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/jhj-coding"><i class="iconfont icon-gitee"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://gitee.com/jhj-coding" target="_blank" title="gitee"><i class="iconfont icon-gitee" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:jhjcoding@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/qq.jpg" target="_blank" title="qq"><i class="fa-brands fa-qq" style="color: #hdhfbb;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Cloud-Gateway%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">Spring Cloud Gateway常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Spring-Cloud-Gateway%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">什么是 Spring Cloud Gateway？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Gateway-%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">Spring Cloud Gateway 的工作流程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Gateway-%E7%9A%84%E6%96%AD%E8%A8%80%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">Spring Cloud Gateway 的断言是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Gateway-%E7%9A%84%E8%B7%AF%E7%94%B1%E5%92%8C%E6%96%AD%E8%A8%80%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="toc-number">1.4.</span> <span class="toc-text">Spring Cloud Gateway 的路由和断言是什么关系？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Gateway-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%EF%BC%9F"><span class="toc-number">1.5.</span> <span class="toc-text">Spring Cloud Gateway 如何实现动态路由？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Gateway-%E7%9A%84%E8%BF%87%E6%BB%A4%E5%99%A8%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.6.</span> <span class="toc-text">Spring Cloud Gateway 的过滤器有哪些？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-number">1.6.1.</span> <span class="toc-text">局部过滤器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-number">1.6.2.</span> <span class="toc-text">全局过滤器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Gateway-%E6%94%AF%E6%8C%81%E9%99%90%E6%B5%81%E5%90%97%EF%BC%9F"><span class="toc-number">1.7.</span> <span class="toc-text">Spring Cloud Gateway 支持限流吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud-Gateway-%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%EF%BC%9F"><span class="toc-number">1.8.</span> <span class="toc-text">Spring Cloud Gateway 如何自定义全局异常处理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E8%80%85%E5%A3%B0%E6%98%8E"><span class="toc-number">1.9.</span> <span class="toc-text">作者声明</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/167997d8.html" title="jconsole与jvisualvm"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jconsole与jvisualvm"/></a><div class="content"><a class="title" href="/post/167997d8.html" title="jconsole与jvisualvm">jconsole与jvisualvm</a><time datetime="2023-12-18T09:11:18.000Z" title="发表于 2023-12-18 17:11:18">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/1bfbf0ea.html" title="压力测试详解"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="压力测试详解"/></a><div class="content"><a class="title" href="/post/1bfbf0ea.html" title="压力测试详解">压力测试详解</a><time datetime="2023-12-18T06:26:44.000Z" title="发表于 2023-12-18 14:26:44">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阿里云部署k8s with kubesphere"/></a><div class="content"><a class="title" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere">阿里云部署k8s with kubesphere</a><time datetime="2023-12-17T09:21:04.000Z" title="发表于 2023-12-17 17:21:04">2023-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/2d8b6a16.html" title="性能测试入门"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="性能测试入门"/></a><div class="content"><a class="title" href="/post/2d8b6a16.html" title="性能测试入门">性能测试入门</a><time datetime="2023-12-10T08:15:58.000Z" title="发表于 2023-12-10 16:15:58">2023-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/6998f00a.html" title="冗余设计思想"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="冗余设计思想"/></a><div class="content"><a class="title" href="/post/6998f00a.html" title="冗余设计思想">冗余设计思想</a><time datetime="2023-12-10T08:06:13.000Z" title="发表于 2023-12-10 16:06:13">2023-12-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024  <i id="heartbeat" class="fa fas fa-heartbeat"></i> jhj</div><div class="footer_custom_text">welcome to my blob</div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.31/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/custom.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="//code.tidio.co/th7rc6a4lyprr1ddkuejkobcxcttlbcr.js" async="async"></script><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = true
+
+  if (isChatBtn) {
+    let isShow = false
+    const close = () => {
+      window.tidioChatApi.hide()
+      isShow = false
+    }
+    
+    const open = () => {
+      window.tidioChatApi.open()
+      window.tidioChatApi.show()
+      isShow = true
+    }
+
+    const onTidioChatApiReady = () => {
+      window.tidioChatApi.hide()
+      window.tidioChatApi.on("close", close)
+    }
+    if (window.tidioChatApi) {
+      window.tidioChatApi.on("ready", onTidioChatApiReady)
+    } else {
+      document.addEventListener("tidioChat-ready", onTidioChatApiReady)
+    }
+
+    window.chatBtnFn = () => {
+      if (!window.tidioChatApi) return
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        window.tidioChatApi && window.tidioChatApi.hide()
+      },
+      show: () => {
+        window.tidioChatApi && window.tidioChatApi.show()
+      }
+    }
+  }
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.65.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.13.0"></script></div></div></body></html>

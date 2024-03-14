@@ -1,0 +1,306 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>SpringSession | jhj-coding</title><meta name="author" content="jhj,hnjzjhj@163.com"><meta name="copyright" content="jhj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="主要解决session共享不同步问题 使用redis存储sessionpom 1234&lt;dependency&gt;    &lt;groupId&gt;org.springframework.session&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;spring-session-data-redis&lt;&#x2F;artifactId&gt;&lt;&#x2F;depend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringSession">
+<meta property="og:url" content="http://example.com/post/d8d898e3.html">
+<meta property="og:site_name" content="jhj-coding">
+<meta property="og:description" content="主要解决session共享不同步问题 使用redis存储sessionpom 1234&lt;dependency&gt;    &lt;groupId&gt;org.springframework.session&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;spring-session-data-redis&lt;&#x2F;artifactId&gt;&lt;&#x2F;depend">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png">
+<meta property="article:published_time" content="2022-07-23T07:30:00.000Z">
+<meta property="article:modified_time" content="2024-03-14T13:33:21.082Z">
+<meta property="article:author" content="jhj">
+<meta property="article:tag" content="开发语言">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/post/d8d898e3.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"MN792LJJVS","apiKey":"e946d312db0afe9b3f7d3e71f5f7585b","indexName":"jhj","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: jhj","link":"链接: ","source":"来源: jhj-coding","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SpringSession',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-14 21:33:21'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4464920_sugj9c5f13.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.1.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png')"><nav id="nav"><span id="blog-info"><a href="/" title="jhj-coding"><span class="site-name">jhj-coding</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SpringSession</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-23T07:30:00.000Z" title="发表于 2022-07-23 15:30:00">2022-07-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-14T13:33:21.082Z" title="更新于 2024-03-14 21:33:21">2024-03-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/">Java</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/SpringBoot/">SpringBoot</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/SpringBoot/SpringCloud/">SpringCloud</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">454</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="SpringSession"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="主要解决"><a href="#主要解决" class="headerlink" title="主要解决"></a>主要解决</h3><p>session共享不同步问题</p>
+<h3 id="使用redis存储session"><a href="#使用redis存储session" class="headerlink" title="使用redis存储session"></a>使用redis存储session</h3><p>pom</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.session<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-session-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#方式</span><br><span class="line"><span class="attr">spring</span>:</span><br><span class="line">	<span class="attr">session</span>:</span><br><span class="line">	    store-<span class="attr">type</span>: redis</span><br><span class="line">	    #redis连接信息</span><br><span class="line">	<span class="attr">redis</span>:</span><br><span class="line">	    <span class="attr">host</span>: localhost</span><br><span class="line">	    <span class="attr">port</span>: <span class="number">6379</span></span><br><span class="line"><span class="attr">server</span>:</span><br><span class="line">  <span class="attr">servlet</span>:</span><br><span class="line">    <span class="attr">session</span>:</span><br><span class="line">    #超时</span><br><span class="line">      <span class="attr">timeout</span>: 30m</span><br></pre></td></tr></table></figure>
+
+<p>整合</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package com.<span class="property">jhj</span>.<span class="property">gulimall</span>.<span class="property">auth</span>.<span class="property">server</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">boot</span>.<span class="property">SpringApplication</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">boot</span>.<span class="property">autoconfigure</span>.<span class="property">SpringBootApplication</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">cloud</span>.<span class="property">client</span>.<span class="property">discovery</span>.<span class="property">EnableDiscoveryClient</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">cloud</span>.<span class="property">openfeign</span>.<span class="property">EnableFeignClients</span>;</span><br><span class="line"></span><br><span class="line">@<span class="title class_">EnableRedisHttpSession</span> <span class="comment">//整合redis session</span></span><br><span class="line">@<span class="title class_">EnableDiscoveryClient</span></span><br><span class="line">@<span class="title class_">EnableFeignClients</span></span><br><span class="line">@<span class="title class_">SpringBootApplication</span></span><br><span class="line">public <span class="keyword">class</span> <span class="title class_">GulimallAuthServerApplication</span> &#123;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span>(<span class="params"><span class="built_in">String</span>[] args</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="title class_">SpringApplication</span>.<span class="title function_">run</span>(<span class="title class_">GulimallAuthServerApplication</span>.<span class="property">class</span>, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意</p>
+<p>如果想要将对象 作为session 存入redis中 需要将对象实现序列化（implements Serializable）</p>
+<p>在每个服务中使用的对象要放到common 防止序列化与反序列化失败</p>
+<p>实现下面可忽略上面注意</p>
+<p>放到公共里面 或者用到的都放</p>
+<ol>
+<li>默认发的令牌 作用域为当前域</li>
+<li>使用json的序列化方式进行对象数据序列化<br><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142133311.png" alt="在这里插入图片描述"><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package com.<span class="property">jhj</span>.<span class="property">gulimall</span>.<span class="property">auth</span>.<span class="property">server</span>.<span class="property">config</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">context</span>.<span class="property">annotation</span>.<span class="property">Bean</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">context</span>.<span class="property">annotation</span>.<span class="property">Configuration</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">data</span>.<span class="property">redis</span>.<span class="property">serializer</span>.<span class="property">GenericJackson2JsonRedisSerializer</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">data</span>.<span class="property">redis</span>.<span class="property">serializer</span>.<span class="property">RedisSerializer</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">session</span>.<span class="property">web</span>.<span class="property">http</span>.<span class="property">CookieSerializer</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">session</span>.<span class="property">web</span>.<span class="property">http</span>.<span class="property">DefaultCookieSerializer</span>;</span><br><span class="line"></span><br><span class="line">@<span class="title class_">Configuration</span></span><br><span class="line">public <span class="keyword">class</span> <span class="title class_">GulimallSessionConfig</span> &#123;</span><br><span class="line">    </span><br><span class="line">    @<span class="title class_">Bean</span></span><br><span class="line">    <span class="comment">// 作用域 和名字</span></span><br><span class="line">    public <span class="title class_">CookieSerializer</span> <span class="title function_">cookieSerializer</span>(<span class="params"></span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="title class_">DefaultCookieSerializer</span> defaultCookieSerializer = <span class="keyword">new</span> <span class="title class_">DefaultCookieSerializer</span>();</span><br><span class="line">        <span class="comment">//作用域 全域 父域名</span></span><br><span class="line">        defaultCookieSerializer.<span class="title function_">setDomainName</span>(<span class="string">&quot;gulimall.com&quot;</span>);</span><br><span class="line">        defaultCookieSerializer.<span class="title function_">setCookieName</span>(<span class="string">&quot;GULISESSION&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> defaultCookieSerializer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    @<span class="title class_">Bean</span></span><br><span class="line">    <span class="comment">//Json序列化</span></span><br><span class="line">    public <span class="title class_">RedisSerializer</span>&lt;<span class="title class_">Object</span>&gt; <span class="title function_">springSessionDefaultRedisSerializer</span>(<span class="params"></span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">GenericJackson2JsonRedisSerializer</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package com.<span class="property">jhj</span>.<span class="property">gulimall</span>.<span class="property">auth</span>.<span class="property">server</span>.<span class="property">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">stereotype</span>.<span class="property">Controller</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">web</span>.<span class="property">bind</span>.<span class="property">annotation</span>.<span class="property">GetMapping</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.<span class="property">servlet</span>.<span class="property">http</span>.<span class="property">HttpSession</span>;</span><br><span class="line"><span class="keyword">import</span> java.<span class="property">util</span>.<span class="property">HashMap</span>;</span><br><span class="line"></span><br><span class="line">@<span class="title class_">Controller</span></span><br><span class="line">public <span class="keyword">class</span> <span class="title class_">LoginController</span> &#123;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    @<span class="title class_">GetMapping</span>(<span class="string">&quot;/login.html&quot;</span>)</span><br><span class="line">    public <span class="keyword">void</span> <span class="title function_">loginPage</span>(<span class="params">HttpSession session</span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="title class_">HashMap</span>&lt;<span class="title class_">Object</span>, <span class="title class_">Object</span>&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.<span class="title function_">put</span>(<span class="string">&quot;userName&quot;</span>,<span class="string">&quot;aaa&quot;</span>);</span><br><span class="line">        map.<span class="title function_">put</span>(<span class="string">&quot;password&quot;</span>,<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        session.<span class="title function_">setAttribute</span>(<span class="string">&quot;user&quot;</span>,map);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">GetMapping</span>(<span class="string">&quot;/reg.html&quot;</span>)</span><br><span class="line">    public <span class="keyword">void</span> <span class="title function_">regPage</span>(<span class="params">HttpSession session</span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(session.<span class="title function_">getAttribute</span>(<span class="string">&quot;user&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142133312.png" alt="在这里插入图片描述"></p>
+<h3 id="作者声明"><a href="#作者声明" class="headerlink" title="作者声明"></a>作者声明</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如有问题，欢迎指正！</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">jhj</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/d8d898e3.html">http://example.com/post/d8d898e3.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">jhj-coding</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/22c36e99.html" title="RabbitMq介绍 docker-compose安装 springboot整合"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">RabbitMq介绍 docker-compose安装 springboot整合</div></div></a></div><div class="next-post pull-right"><a href="/post/1130bea.html" title="OpenFegin远程调用丢失请求头问题"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">OpenFegin远程调用丢失请求头问题</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/2d3995b4.html" title="ArrayBlockingQueue源码分析"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-14</div><div class="title">ArrayBlockingQueue源码分析</div></div></a></div><div><a href="/post/4d60196d.html" title="CAP &amp; BASE理论"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-02</div><div class="title">CAP &amp; BASE理论</div></div></a></div><div><a href="/post/e8bd864a.html" title="JMM(java 内存模型)"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-20</div><div class="title">JMM(java 内存模型)</div></div></a></div><div><a href="/post/b96f0a54.html" title="LinkedHashMap源码分析"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-12</div><div class="title">LinkedHashMap源码分析</div></div></a></div><div><a href="/post/cd6e7788.html" title="Md5&amp;Md5盐值加密"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-21</div><div class="title">Md5&amp;Md5盐值加密</div></div></a></div><div><a href="/post/65ad3070.html" title="NIO实现简单群聊系统"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-31</div><div class="title">NIO实现简单群聊系统</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jhj</div><div class="author-info__description">努力学习，努力爱你!</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/jhj-coding"><i class="iconfont icon-gitee"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://gitee.com/jhj-coding" target="_blank" title="gitee"><i class="iconfont icon-gitee" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:jhjcoding@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/qq.jpg" target="_blank" title="qq"><i class="fa-brands fa-qq" style="color: #hdhfbb;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%A7%A3%E5%86%B3"><span class="toc-number">1.</span> <span class="toc-text">主要解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8redis%E5%AD%98%E5%82%A8session"><span class="toc-number">2.</span> <span class="toc-text">使用redis存储session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E6%9E%9C"><span class="toc-number">4.</span> <span class="toc-text">效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E8%80%85%E5%A3%B0%E6%98%8E"><span class="toc-number">5.</span> <span class="toc-text">作者声明</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/167997d8.html" title="jconsole与jvisualvm"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jconsole与jvisualvm"/></a><div class="content"><a class="title" href="/post/167997d8.html" title="jconsole与jvisualvm">jconsole与jvisualvm</a><time datetime="2023-12-18T09:11:18.000Z" title="发表于 2023-12-18 17:11:18">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/1bfbf0ea.html" title="压力测试详解"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="压力测试详解"/></a><div class="content"><a class="title" href="/post/1bfbf0ea.html" title="压力测试详解">压力测试详解</a><time datetime="2023-12-18T06:26:44.000Z" title="发表于 2023-12-18 14:26:44">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阿里云部署k8s with kubesphere"/></a><div class="content"><a class="title" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere">阿里云部署k8s with kubesphere</a><time datetime="2023-12-17T09:21:04.000Z" title="发表于 2023-12-17 17:21:04">2023-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/2d8b6a16.html" title="性能测试入门"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="性能测试入门"/></a><div class="content"><a class="title" href="/post/2d8b6a16.html" title="性能测试入门">性能测试入门</a><time datetime="2023-12-10T08:15:58.000Z" title="发表于 2023-12-10 16:15:58">2023-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/6998f00a.html" title="冗余设计思想"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="冗余设计思想"/></a><div class="content"><a class="title" href="/post/6998f00a.html" title="冗余设计思想">冗余设计思想</a><time datetime="2023-12-10T08:06:13.000Z" title="发表于 2023-12-10 16:06:13">2023-12-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024  <i id="heartbeat" class="fa fas fa-heartbeat"></i> jhj</div><div class="footer_custom_text">welcome to my blob</div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.31/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/custom.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="//code.tidio.co/th7rc6a4lyprr1ddkuejkobcxcttlbcr.js" async="async"></script><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = true
+
+  if (isChatBtn) {
+    let isShow = false
+    const close = () => {
+      window.tidioChatApi.hide()
+      isShow = false
+    }
+    
+    const open = () => {
+      window.tidioChatApi.open()
+      window.tidioChatApi.show()
+      isShow = true
+    }
+
+    const onTidioChatApiReady = () => {
+      window.tidioChatApi.hide()
+      window.tidioChatApi.on("close", close)
+    }
+    if (window.tidioChatApi) {
+      window.tidioChatApi.on("ready", onTidioChatApiReady)
+    } else {
+      document.addEventListener("tidioChat-ready", onTidioChatApiReady)
+    }
+
+    window.chatBtnFn = () => {
+      if (!window.tidioChatApi) return
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        window.tidioChatApi && window.tidioChatApi.hide()
+      },
+      show: () => {
+        window.tidioChatApi && window.tidioChatApi.show()
+      }
+    }
+  }
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.65.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.13.0"></script></div></div></body></html>

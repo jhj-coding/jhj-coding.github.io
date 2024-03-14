@@ -1,0 +1,455 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Dubbo | jhj-coding</title><meta name="author" content="jhj,hnjzjhj@163.com"><meta name="copyright" content="jhj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="DubboDubbo 基础什么是 Dubbo?Apache Dubboopen in new windowhttps:&#x2F;&#x2F;github.com&#x2F;apache&#x2F;dubbo |ˈdʌbəʊ| 是一款高性能、轻量级的开源 WEB 和 RPC 框架。 根据 Dubbo 官方文档open in new windowhttps:&#x2F;&#x2F;dubbo.apache.org&#x2F;zh&#x2F;的介绍，Dubbo 提供了六大核心能力">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dubbo">
+<meta property="og:url" content="http://example.com/post/f6253398.html">
+<meta property="og:site_name" content="jhj-coding">
+<meta property="og:description" content="DubboDubbo 基础什么是 Dubbo?Apache Dubboopen in new windowhttps:&#x2F;&#x2F;github.com&#x2F;apache&#x2F;dubbo |ˈdʌbəʊ| 是一款高性能、轻量级的开源 WEB 和 RPC 框架。 根据 Dubbo 官方文档open in new windowhttps:&#x2F;&#x2F;dubbo.apache.org&#x2F;zh&#x2F;的介绍，Dubbo 提供了六大核心能力">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png">
+<meta property="article:published_time" content="2023-12-10T07:31:02.000Z">
+<meta property="article:modified_time" content="2024-03-14T13:11:40.082Z">
+<meta property="article:author" content="jhj">
+<meta property="article:tag" content="dubbo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/post/f6253398.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"MN792LJJVS","apiKey":"e946d312db0afe9b3f7d3e71f5f7585b","indexName":"jhj","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: jhj","link":"链接: ","source":"来源: jhj-coding","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Dubbo',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-14 21:11:40'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4464920_sugj9c5f13.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.1.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png')"><nav id="nav"><span id="blog-info"><a href="/" title="jhj-coding"><span class="site-name">jhj-coding</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Dubbo</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-10T07:31:02.000Z" title="发表于 2023-12-10 15:31:02">2023-12-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-14T13:11:40.082Z" title="更新于 2024-03-14 21:11:40">2024-03-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/">Java</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/SpringBoot/">SpringBoot</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/SpringBoot/SpringCloud/">SpringCloud</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Dubbo"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h2><h3 id="Dubbo-基础"><a href="#Dubbo-基础" class="headerlink" title="Dubbo 基础"></a>Dubbo 基础</h3><h4 id="什么是-Dubbo"><a href="#什么是-Dubbo" class="headerlink" title="什么是 Dubbo?"></a>什么是 Dubbo?</h4><p>Apache Dubboopen in new window<a target="_blank" rel="noopener" href="https://github.com/apache/dubbo">https://github.com/apache/dubbo</a> |ˈdʌbəʊ| 是一款高性能、轻量级的开源 WEB 和 RPC 框架。</p>
+<p>根据 Dubbo 官方文档open in new window<a target="_blank" rel="noopener" href="https://dubbo.apache.org/zh/%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%8CDubbo">https://dubbo.apache.org/zh/的介绍，Dubbo</a> 提供了六大核心能力</p>
+<ol>
+<li>面向接口代理的高性能 RPC 调用。</li>
+<li>智能容错和负载均衡。</li>
+<li>服务自动注册和发现。</li>
+<li>高度可扩展能力。</li>
+<li>运行期流量调度。</li>
+<li>可视化的服务治理与运维。</li>
+</ol>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111499.png" alt="Dubbo提供的六大核心能力"></p>
+<p>简单来说就是：<strong>Dubbo 不光可以帮助我们调用远程服务，还提供了一些其他开箱即用的功能比如智能负载均衡。</strong></p>
+<h4 id="为什么要用-Dubbo"><a href="#为什么要用-Dubbo" class="headerlink" title="为什么要用 Dubbo?"></a>为什么要用 Dubbo?</h4><p>随着互联网的发展，网站的规模越来越大，用户数量越来越多。单一应用架构、垂直应用架构无法满足我们的需求，这个时候分布式服务架构就诞生了。</p>
+<p>分布式服务架构下，系统被拆分成不同的服务比如短信服务、安全服务，每个服务独立提供系统的某个核心服务。</p>
+<p>我们可以使用 Java RMI（Java Remote Method Invocation）、Hessian 这种支持远程调用的框架来简单地暴露和引用远程服务。但是！当服务越来越多之后，服务调用关系越来越复杂。当应用访问压力越来越大后，负载均衡以及服务监控的需求也迫在眉睫。我们可以用 F5 这类硬件来做负载均衡，但这样增加了成本，并且存在单点故障的风险。</p>
+<p>不过，Dubbo 的出现让上述问题得到了解决。<strong>Dubbo 帮助我们解决了什么问题呢？</strong></p>
+<ol>
+<li><strong>负载均衡</strong>：同一个服务部署在不同的机器时该调用哪一台机器上的服务。</li>
+<li><strong>服务调用链路生成</strong>：随着系统的发展，服务越来越多，服务间依赖关系变得错踪复杂，甚至分不清哪个应用要在哪个应用之前启动，架构师都不能完整的描述应用的架构关系。Dubbo 可以为我们解决服务之间互相是如何调用的。</li>
+<li><strong>服务访问压力以及时长统计、资源调度和治理</strong>：基于访问压力实时管理集群容量，提高集群利用率。</li>
+</ol>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111500.png" alt="Dubbo 能力概览"></p>
+<p>另外，Dubbo 除了能够应用在分布式系统中，也可以应用在现在比较火的微服务系统中。不过，由于 Spring Cloud 在微服务中应用更加广泛，所以，我觉得一般我们提 Dubbo 的话，大部分是分布式系统的情况。</p>
+<h3 id="分布式基础"><a href="#分布式基础" class="headerlink" title="分布式基础"></a>分布式基础</h3><h4 id="什么是分布式"><a href="#什么是分布式" class="headerlink" title="什么是分布式?"></a>什么是分布式?</h4><p>分布式或者说 SOA 分布式重要的就是面向服务，说简单的分布式就是我们把整个系统拆分成不同的服务然后将这些服务放在不同的服务器上减轻单体服务的压力提高并发量和性能。比如电商系统可以简单地拆分成订单系统、商品系统、登录系统等等，拆分之后的每个服务可以部署在不同的机器上，如果某一个服务的访问量比较大的话也可以将这个服务同时部署在多台机器上。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111501.png" alt="分布式事务示意图"></p>
+<h4 id="为什么要分布式"><a href="#为什么要分布式" class="headerlink" title="为什么要分布式?"></a>为什么要分布式?</h4><p>从开发角度来讲单体应用的代码都集中在一起，而分布式系统的代码根据业务被拆分。所以，每个团队可以负责一个服务的开发，这样提升了开发效率。另外，代码根据业务拆分之后更加便于维护和扩展。</p>
+<p>另外，我觉得将系统拆分成分布式之后不光便于系统扩展和维护，更能提高整个系统的性能。你想一想嘛？把整个系统拆分成不同的服务&#x2F;系统，然后每个服务&#x2F;系统 单独部署在一台服务器上，是不是很大程度上提高了系统性能呢？</p>
+<h3 id="Dubbo-架构"><a href="#Dubbo-架构" class="headerlink" title="Dubbo 架构"></a>Dubbo 架构</h3><h4 id="Dubbo-架构中的核心角色有哪些？"><a href="#Dubbo-架构中的核心角色有哪些？" class="headerlink" title="Dubbo 架构中的核心角色有哪些？"></a>Dubbo 架构中的核心角色有哪些？</h4><p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111502.png" alt="dubbo-relation"></p>
+<p>上述节点简单介绍以及他们之间的关系：</p>
+<ul>
+<li><strong>Container：</strong> 服务运行容器，负责加载、运行服务提供者。必须。</li>
+<li><strong>Provider：</strong> 暴露服务的服务提供方，会向注册中心注册自己提供的服务。必须。</li>
+<li><strong>Consumer：</strong> 调用远程服务的服务消费方，会向注册中心订阅自己所需的服务。必须。</li>
+<li><strong>Registry：</strong> 服务注册与发现的注册中心。注册中心会返回服务提供者地址列表给消费者。非必须。</li>
+<li><strong>Monitor：</strong> 统计服务的调用次数和调用时间的监控中心。服务消费者和提供者会定时发送统计数据到监控中心。 非必须。</li>
+</ul>
+<h4 id="Dubbo-中的-Invoker-概念了解么？"><a href="#Dubbo-中的-Invoker-概念了解么？" class="headerlink" title="Dubbo 中的 Invoker 概念了解么？"></a>Dubbo 中的 Invoker 概念了解么？</h4><p><code>Invoker</code> 是 Dubbo 领域模型中非常重要的一个概念，你如果阅读过 Dubbo 源码的话，你会无数次看到这玩意。就比如下面我要说的负载均衡这块的源码中就有大量 <code>Invoker</code> 的身影。</p>
+<p>简单来说，<code>Invoker</code> 就是 Dubbo 对远程调用的抽象。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111503.png" alt="dubbo_rpc_invoke.jpg"></p>
+<p>按照 Dubbo 官方的话来说，<code>Invoker</code> 分为</p>
+<ul>
+<li>服务提供</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Invoker</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>服务消费</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Invoker</span></span><br></pre></td></tr></table></figure>
+
+<p>假如我们需要调用一个远程方法，我们需要动态代理来屏蔽远程调用的细节吧！我们屏蔽掉的这些细节就依赖对应的 <code>Invoker</code> 实现， <code>Invoker</code> 实现了真正的远程服务调用。</p>
+<h4 id="Dubbo-的工作原理了解么？"><a href="#Dubbo-的工作原理了解么？" class="headerlink" title="Dubbo 的工作原理了解么？"></a>Dubbo 的工作原理了解么？</h4><p>下图是 Dubbo 的整体设计，从下至上分为十层，各层均为单向依赖。<br>左边淡蓝背景的为服务消费方使用的接口，右边淡绿色背景的为服务提供方使用的接口，位于中轴线上的为双方都用到的接口。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111504.png" alt="dubbo-framework"></p>
+<ul>
+<li><strong>config 配置层</strong>：Dubbo 相关的配置。支持代码配置，同时也支持基于 Spring 来做配置，以</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">ServiceConfig</span></span><br></pre></td></tr></table></figure>
+<p>,</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">ReferenceConfig</span></span><br></pre></td></tr></table></figure>
+<p>为中心</p>
+<ul>
+<li><strong>proxy 服务代理层</strong>：调用远程方法像调用本地的方法一样简单的一个关键，真实调用过程依赖代理类，以</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">ServiceProxy</span></span><br></pre></td></tr></table></figure>
+<p>为中心。</p>
+<ul>
+<li><strong>registry 注册中心层</strong>：封装服务地址的注册与发现。</li>
+<li><strong>cluster 路由层</strong>：封装多个提供者的路由及负载均衡，并桥接注册中心，以</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Invoker</span></span><br></pre></td></tr></table></figure>
+<p>为中心。</p>
+<ul>
+<li><strong>monitor 监控层</strong>：RPC 调用次数和调用时间监控，以</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Statistics</span></span><br></pre></td></tr></table></figure>
+<p>为中心。</p>
+<ul>
+<li><strong>protocol 远程调用层</strong>：封装 RPC 调用，以</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Invocation</span></span><br></pre></td></tr></table></figure>
+<p>,</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Result</span></span><br></pre></td></tr></table></figure>
+<p>为中心。</p>
+<ul>
+<li><strong>exchange 信息交换层</strong>：封装请求响应模式，同步转异步，以</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Request</span></span><br></pre></td></tr></table></figure>
+<p>,</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Response</span></span><br></pre></td></tr></table></figure>
+<p>为中心。</p>
+<ul>
+<li><strong>transport 网络传输层</strong>：抽象 mina 和 netty 为统一接口，以</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Message</span></span><br></pre></td></tr></table></figure>
+<p>为中心。</p>
+<ul>
+<li><strong>serialize 数据序列化层</strong>：对需要在网络传输的数据进行序列化。</li>
+</ul>
+<h4 id="Dubbo-的-SPI-机制了解么？-如何扩展-Dubbo-中的默认实现？"><a href="#Dubbo-的-SPI-机制了解么？-如何扩展-Dubbo-中的默认实现？" class="headerlink" title="Dubbo 的 SPI 机制了解么？ 如何扩展 Dubbo 中的默认实现？"></a>Dubbo 的 SPI 机制了解么？ 如何扩展 Dubbo 中的默认实现？</h4><p>SPI（Service Provider Interface） 机制被大量用在开源项目中，它可以帮助我们动态寻找服务&#x2F;功能（比如负载均衡策略）的实现。</p>
+<p>SPI 的具体原理是这样的：我们将接口的实现类放在配置文件中，我们在程序运行过程中读取配置文件，通过反射加载实现类。这样，我们可以在运行的时候，动态替换接口的实现类。和 IoC 的解耦思想是类似的。</p>
+<p>Java 本身就提供了 SPI 机制的实现。不过，Dubbo 没有直接用，而是对 Java 原生的 SPI 机制进行了增强，以便更好满足自己的需求。</p>
+<p><strong>那我们如何扩展 Dubbo 中的默认实现呢？</strong></p>
+<p>比如说我们想要实现自己的负载均衡策略，我们创建对应的实现类 <code>XxxLoadBalance</code> 实现 <code>LoadBalance</code> 接口或者 <code>AbstractLoadBalance</code> 类。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package com.<span class="property">xxx</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.<span class="property">apache</span>.<span class="property">dubbo</span>.<span class="property">rpc</span>.<span class="property">cluster</span>.<span class="property">LoadBalance</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">apache</span>.<span class="property">dubbo</span>.<span class="property">rpc</span>.<span class="property">Invoker</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">apache</span>.<span class="property">dubbo</span>.<span class="property">rpc</span>.<span class="property">Invocation</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">apache</span>.<span class="property">dubbo</span>.<span class="property">rpc</span>.<span class="property">RpcException</span>;</span><br><span class="line"></span><br><span class="line">public <span class="keyword">class</span> <span class="title class_">XxxLoadBalance</span> implements <span class="title class_">LoadBalance</span> &#123;</span><br><span class="line">    </span><br><span class="line">    public &lt;T&gt; <span class="title class_">Invoker</span>&lt;T&gt; <span class="title function_">select</span>(<span class="title class_">List</span>&lt;<span class="title class_">Invoker</span>&lt;T&gt;&gt; invokers, <span class="title class_">Invocation</span> invocation) throws <span class="title class_">RpcException</span> &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们将这个实现类的路径写入到<code>resources</code> 目录下的 <code>META-INF/dubbo/org.apache.dubbo.rpc.cluster.LoadBalance</code>文件中即可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line"> |-main</span><br><span class="line">    |-java</span><br><span class="line">        |-com</span><br><span class="line">            |-xxx</span><br><span class="line">                |-<span class="title class_">XxxLoadBalance</span>.<span class="property">java</span> (实现<span class="title class_">LoadBalance</span>接口)</span><br><span class="line">    |-resources</span><br><span class="line">        |-<span class="variable constant_">META</span>-<span class="variable constant_">INF</span></span><br><span class="line">            |-dubbo</span><br><span class="line">                |-org.<span class="property">apache</span>.<span class="property">dubbo</span>.<span class="property">rpc</span>.<span class="property">cluster</span>.<span class="property">LoadBalance</span> (纯文本文件，内容为：xxx=com.<span class="property">xxx</span>.<span class="property">XxxLoadBalance</span>)</span><br></pre></td></tr></table></figure>
+
+<p>org.apache.dubbo.rpc.cluster.LoadBalance</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxx=com.<span class="property">xxx</span>.<span class="property">XxxLoadBalance</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Dubbo-的微内核架构了解吗？"><a href="#Dubbo-的微内核架构了解吗？" class="headerlink" title="Dubbo 的微内核架构了解吗？"></a>Dubbo 的微内核架构了解吗？</h4><p>Dubbo 采用 微内核（Microkernel） + 插件（Plugin） 模式，简单来说就是微内核架构。微内核只负责组装插件。</p>
+<p><strong>何为微内核架构呢？</strong> 《软件架构模式》 这本书是这样介绍的：<br>微内核架构模式（有时被称为插件架构模式）是实现基于产品应用程序的一种自然模式。基于产品的应用程序是已经打包好并且拥有不同版本，可作为第三方插件下载的。然后，很多公司也在开发、发布自己内部商业应用像有版本号、说明及可加载插件式的应用软件（这也是这种模式的特征）。微内核系统可让用户添加额外的应用如插件，到核心应用，继而提供了可扩展性和功能分离的用法。</p>
+<p>微内核架构包含两类组件：<strong>核心系统（core system）</strong> 和 <strong>插件模块（plug-in modules）</strong>。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111505.png" alt="img"></p>
+<p>核心系统提供系统所需核心能力，插件模块可以扩展系统的功能。因此， 基于微内核架构的系统，非常易于扩展功能。</p>
+<p>我们常见的一些 IDE，都可以看作是基于微内核架构设计的。绝大多数 IDE 比如 IDEA、VSCode 都提供了插件来丰富自己的功能。</p>
+<p>正是因为 Dubbo 基于微内核架构，才使得我们可以随心所欲替换 Dubbo 的功能点。比如你觉得 Dubbo 的序列化模块实现的不满足自己要求，没关系啊！你自己实现一个序列化模块就好了啊！</p>
+<p>通常情况下，微核心都会采用 Factory、IoC、OSGi 等方式管理插件生命周期。Dubbo 不想依赖 Spring 等 IoC 容器，也不想自己造一个小的 IoC 容器（过度设计），因此采用了一种最简单的 Factory 方式管理插件：<strong>JDK 标准的 SPI 扩展机制</strong> （<code>java.util.ServiceLoader</code>）。</p>
+<h4 id="关于-Dubbo-架构的一些自测小问题"><a href="#关于-Dubbo-架构的一些自测小问题" class="headerlink" title="关于 Dubbo 架构的一些自测小问题"></a>关于 Dubbo 架构的一些自测小问题</h4><h5 id="注册中心的作用了解么？"><a href="#注册中心的作用了解么？" class="headerlink" title="注册中心的作用了解么？"></a>注册中心的作用了解么？</h5><p>注册中心负责服务地址的注册与查找，相当于目录服务，服务提供者和消费者只在启动时与注册中心交互。</p>
+<h5 id="服务提供者宕机后，注册中心会做什么？"><a href="#服务提供者宕机后，注册中心会做什么？" class="headerlink" title="服务提供者宕机后，注册中心会做什么？"></a>服务提供者宕机后，注册中心会做什么？</h5><p>注册中心会立即推送事件通知消费者。</p>
+<h5 id="监控中心的作用呢？"><a href="#监控中心的作用呢？" class="headerlink" title="监控中心的作用呢？"></a>监控中心的作用呢？</h5><p>监控中心负责统计各服务调用次数，调用时间等。</p>
+<h5 id="注册中心和监控中心都宕机的话，服务都会挂掉吗？"><a href="#注册中心和监控中心都宕机的话，服务都会挂掉吗？" class="headerlink" title="注册中心和监控中心都宕机的话，服务都会挂掉吗？"></a>注册中心和监控中心都宕机的话，服务都会挂掉吗？</h5><p>不会。两者都宕机也不影响已运行的提供者和消费者，消费者在本地缓存了提供者列表。注册中心和监控中心都是可选的，服务消费者可以直连服务提供者。</p>
+<h3 id="Dubbo-的负载均衡策略"><a href="#Dubbo-的负载均衡策略" class="headerlink" title="Dubbo 的负载均衡策略"></a>Dubbo 的负载均衡策略</h3><h4 id="什么是负载均衡？"><a href="#什么是负载均衡？" class="headerlink" title="什么是负载均衡？"></a>什么是负载均衡？</h4><p>先来看一下稍微官方点的解释。下面这段话摘自维基百科对负载均衡的定义：<br>负载均衡改善了跨多个计算资源（例如计算机，计算机集群，网络链接，中央处理单元或磁盘驱动）的工作负载分布。负载平衡旨在优化资源使用，最大化吞吐量，最小化响应时间，并避免任何单个资源的过载。使用具有负载平衡而不是单个组件的多个组件可以通过冗余提高可靠性和可用性。负载平衡通常涉及专用软件或硬件。</p>
+<p><strong>上面讲的大家可能不太好理解，再用通俗的话给大家说一下。</strong></p>
+<p>我们的系统中的某个服务的访问量特别大，我们将这个服务部署在了多台服务器上，当客户端发起请求的时候，多台服务器都可以处理这个请求。那么，如何正确选择处理该请求的服务器就很关键。假如，你就要一台服务器来处理该服务的请求，那该服务部署在多台服务器的意义就不复存在了。负载均衡就是为了避免单个服务器响应同一请求，容易造成服务器宕机、崩溃等问题，我们从负载均衡的这四个字就能明显感受到它的意义。</p>
+<h4 id="Dubbo-提供的负载均衡策略有哪些？"><a href="#Dubbo-提供的负载均衡策略有哪些？" class="headerlink" title="Dubbo 提供的负载均衡策略有哪些？"></a>Dubbo 提供的负载均衡策略有哪些？</h4><p>在集群负载均衡时，Dubbo 提供了多种均衡策略，默认为 <code>random</code> 随机调用。我们还可以自行扩展负载均衡策略（参考 Dubbo SPI 机制）。</p>
+<p>在 Dubbo 中，所有负载均衡实现类均继承自 <code>AbstractLoadBalance</code>，该类实现了 <code>LoadBalance</code> 接口，并封装了一些公共的逻辑。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public abstract <span class="keyword">class</span> <span class="title class_">AbstractLoadBalance</span> implements <span class="title class_">LoadBalance</span> &#123;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> int <span class="title function_">calculateWarmupWeight</span>(<span class="params">int uptime, int warmup, int weight</span>) &#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">Override</span></span><br><span class="line">    public &lt;T&gt; <span class="title class_">Invoker</span>&lt;T&gt; <span class="title function_">select</span>(<span class="params">List&lt;Invoker&lt;T&gt;&gt; invokers, URL url, Invocation invocation</span>) &#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected abstract &lt;T&gt; <span class="title class_">Invoker</span>&lt;T&gt; <span class="title function_">doSelect</span>(<span class="title class_">List</span>&lt;<span class="title class_">Invoker</span>&lt;T&gt;&gt; invokers, <span class="variable constant_">URL</span> url, <span class="title class_">Invocation</span> invocation);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    int <span class="title function_">getWeight</span>(<span class="params">Invoker&lt;?&gt; invoker, Invocation invocation</span>) &#123;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>AbstractLoadBalance</code> 的实现类有下面这些：</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111506.png" alt="img"></p>
+<h5 id="RandomLoadBalance"><a href="#RandomLoadBalance" class="headerlink" title="RandomLoadBalance"></a>RandomLoadBalance</h5><p>根据权重随机选择（对加权随机算法的实现）。这是 Dubbo 默认采用的一种负载均衡策略。</p>
+<p><code>RandomLoadBalance</code> 具体的实现原理非常简单，假如有两个提供相同服务的服务器 S1,S2，S1 的权重为 7，S2 的权重为 3。</p>
+<p>我们把这些权重值分布在坐标区间会得到：S1-&gt;[0, 7) ，S2-&gt;[7, 10)。我们生成[0, 10) 之间的随机数，随机数落到对应的区间，我们就选择对应的服务器来处理请求。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111507.png" alt="RandomLoadBalance"></p>
+<p><code>RandomLoadBalance</code> 的源码非常简单，简单花几分钟时间看一下。<br>以下源码来自 Dubbo master 分支上的最新的版本 2.7.9。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">class</span> <span class="title class_">RandomLoadBalance</span> <span class="keyword">extends</span> <span class="title class_ inherited__">AbstractLoadBalance</span> &#123;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    public <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">NAME</span> = <span class="string">&quot;random&quot;</span>;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">Override</span></span><br><span class="line">    protected &lt;T&gt; <span class="title class_">Invoker</span>&lt;T&gt; <span class="title function_">doSelect</span>(<span class="params">List&lt;Invoker&lt;T&gt;&gt; invokers, URL url, Invocation invocation</span>) &#123;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">        int length = invokers.<span class="title function_">size</span>();</span><br><span class="line">        boolean sameWeight = <span class="literal">true</span>;</span><br><span class="line">        int[] weights = <span class="keyword">new</span> int[length];</span><br><span class="line">        int totalWeight = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 下面这个for循环的主要作用就是计算所有该服务的提供者的权重之和 totalWeight（），</span></span><br><span class="line">        <span class="comment">// 除此之外，还会检测每个服务提供者的权重是否相同</span></span><br><span class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">    </span><br><span class="line">            int weight = <span class="title function_">getWeight</span>(invokers.<span class="title function_">get</span>(i), invocation);</span><br><span class="line">            totalWeight += weight;</span><br><span class="line">            weights[i] = totalWeight;</span><br><span class="line">            <span class="keyword">if</span> (sameWeight &amp;&amp; totalWeight != weight * (i + <span class="number">1</span>)) &#123;</span><br><span class="line">    </span><br><span class="line">                sameWeight = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (totalWeight &gt; <span class="number">0</span> &amp;&amp; !sameWeight) &#123;</span><br><span class="line">    </span><br><span class="line">            <span class="comment">// 随机生成一个 [0, totalWeight) 区间内的数字</span></span><br><span class="line">            int offset = <span class="title class_">ThreadLocalRandom</span>.<span class="title function_">current</span>().<span class="title function_">nextInt</span>(totalWeight);</span><br><span class="line">            <span class="comment">// 判断会落在哪个服务提供者的区间</span></span><br><span class="line">            <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">    </span><br><span class="line">                <span class="keyword">if</span> (offset &lt; weights[i]) &#123;</span><br><span class="line">    </span><br><span class="line">                    <span class="keyword">return</span> invokers.<span class="title function_">get</span>(i);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> invokers.<span class="title function_">get</span>(<span class="title class_">ThreadLocalRandom</span>.<span class="title function_">current</span>().<span class="title function_">nextInt</span>(length));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="LeastActiveLoadBalance"><a href="#LeastActiveLoadBalance" class="headerlink" title="LeastActiveLoadBalance"></a>LeastActiveLoadBalance</h5><p><code>LeastActiveLoadBalance</code> 直译过来就是<strong>最小活跃数负载均衡</strong>。</p>
+<p>这个名字起得有点不直观，不仔细看官方对活跃数的定义，你压根不知道这玩意是干嘛的。</p>
+<p>我这么说吧！初始状态下所有服务提供者的活跃数均为 0（每个服务提供者的中特定方法都对应一个活跃数，我在后面的源码中会提到），每收到一个请求后，对应的服务提供者的活跃数 +1，当这个请求处理完之后，活跃数 -1。</p>
+<p>因此，&#x2F;*&#x2F;*Dubbo 就认为谁的活跃数越少，谁的处理速度就越快，性能也越好，这样的话，我就优先把请求给活跃数少的服务提供者处理。</p>
+<p><strong>如果有多个服务提供者的活跃数相等怎么办？</strong></p>
+<p>很简单，那就再走一遍 <code>RandomLoadBalance</code> 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">class</span> <span class="title class_">LeastActiveLoadBalance</span> <span class="keyword">extends</span> <span class="title class_ inherited__">AbstractLoadBalance</span> &#123;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    public <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">NAME</span> = <span class="string">&quot;leastactive&quot;</span>;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">Override</span></span><br><span class="line">    protected &lt;T&gt; <span class="title class_">Invoker</span>&lt;T&gt; <span class="title function_">doSelect</span>(<span class="params">List&lt;Invoker&lt;T&gt;&gt; invokers, URL url, Invocation invocation</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        int length = invokers.<span class="title function_">size</span>();</span><br><span class="line">        int leastActive = -<span class="number">1</span>;</span><br><span class="line">        int leastCount = <span class="number">0</span>;</span><br><span class="line">        int[] leastIndexes = <span class="keyword">new</span> int[length];</span><br><span class="line">        int[] weights = <span class="keyword">new</span> int[length];</span><br><span class="line">        int totalWeight = <span class="number">0</span>;</span><br><span class="line">        int firstWeight = <span class="number">0</span>;</span><br><span class="line">        boolean sameWeight = <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// 这个 for 循环的主要作用是遍历 invokers 列表，找出活跃数最小的 Invoker</span></span><br><span class="line">        <span class="comment">// 如果有多个 Invoker 具有相同的最小活跃数，还会记录下这些 Invoker 在 invokers 集合中的下标，并累加它们的权重，比较它们的权重值是否相等</span></span><br><span class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">    </span><br><span class="line">            <span class="title class_">Invoker</span>&lt;T&gt; invoker = invokers.<span class="title function_">get</span>(i);</span><br><span class="line">            <span class="comment">// 获取 invoker 对应的活跃(active)数</span></span><br><span class="line">            int active = <span class="title class_">RpcStatus</span>.<span class="title function_">getStatus</span>(invoker.<span class="title function_">getUrl</span>(), invocation.<span class="title function_">getMethodName</span>()).<span class="title function_">getActive</span>();</span><br><span class="line">            int afterWarmup = <span class="title function_">getWeight</span>(invoker, invocation);</span><br><span class="line">            weights[i] = afterWarmup;</span><br><span class="line">            <span class="keyword">if</span> (leastActive == -<span class="number">1</span> || active &lt; leastActive) &#123;</span><br><span class="line">    </span><br><span class="line">                leastActive = active;</span><br><span class="line">                leastCount = <span class="number">1</span>;</span><br><span class="line">                leastIndexes[<span class="number">0</span>] = i;</span><br><span class="line">                totalWeight = afterWarmup;</span><br><span class="line">                firstWeight = afterWarmup;</span><br><span class="line">                sameWeight = <span class="literal">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (active == leastActive) &#123;</span><br><span class="line">    </span><br><span class="line">                leastIndexes[leastCount++] = i;</span><br><span class="line">                totalWeight += afterWarmup;</span><br><span class="line">                <span class="keyword">if</span> (sameWeight &amp;&amp; afterWarmup != firstWeight) &#123;</span><br><span class="line">    </span><br><span class="line">                    sameWeight = <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       <span class="comment">// 如果只有一个 Invoker 具有最小的活跃数，此时直接返回该 Invoker 即可</span></span><br><span class="line">        <span class="keyword">if</span> (leastCount == <span class="number">1</span>) &#123;</span><br><span class="line">    </span><br><span class="line">            <span class="keyword">return</span> invokers.<span class="title function_">get</span>(leastIndexes[<span class="number">0</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果有多个 Invoker 具有相同的最小活跃数，但它们之间的权重不同</span></span><br><span class="line">        <span class="comment">// 这里的处理方式就和  RandomLoadBalance 一致了</span></span><br><span class="line">        <span class="keyword">if</span> (!sameWeight &amp;&amp; totalWeight &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    </span><br><span class="line">            int offsetWeight = <span class="title class_">ThreadLocalRandom</span>.<span class="title function_">current</span>().<span class="title function_">nextInt</span>(totalWeight);</span><br><span class="line">            <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; leastCount; i++) &#123;</span><br><span class="line">    </span><br><span class="line">                int leastIndex = leastIndexes[i];</span><br><span class="line">                offsetWeight -= weights[leastIndex];</span><br><span class="line">                <span class="keyword">if</span> (offsetWeight &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    </span><br><span class="line">                    <span class="keyword">return</span> invokers.<span class="title function_">get</span>(leastIndex);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> invokers.<span class="title function_">get</span>(leastIndexes[<span class="title class_">ThreadLocalRandom</span>.<span class="title function_">current</span>().<span class="title function_">nextInt</span>(leastCount)]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>活跃数是通过 <code>RpcStatus</code> 中的一个 <code>ConcurrentMap</code> 保存的，根据 URL 以及服务提供者被调用的方法的名称，我们便可以获取到对应的活跃数。也就是说服务提供者中的每一个方法的活跃数都是互相独立的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">class</span> <span class="title class_">RpcStatus</span> &#123;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    private <span class="keyword">static</span> final <span class="title class_">ConcurrentMap</span>&lt;<span class="title class_">String</span>, <span class="title class_">ConcurrentMap</span>&lt;<span class="title class_">String</span>, <span class="title class_">RpcStatus</span>&gt;&gt; <span class="variable constant_">METHOD_STATISTICS</span> =</span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;<span class="title class_">String</span>, <span class="title class_">ConcurrentMap</span>&lt;<span class="title class_">String</span>, <span class="title class_">RpcStatus</span>&gt;&gt;();</span><br><span class="line"></span><br><span class="line">   public <span class="keyword">static</span> <span class="title class_">RpcStatus</span> <span class="title function_">getStatus</span>(<span class="params">URL url, <span class="built_in">String</span> methodName</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="title class_">String</span> uri = url.<span class="title function_">toIdentityString</span>();</span><br><span class="line">        <span class="title class_">ConcurrentMap</span>&lt;<span class="title class_">String</span>, <span class="title class_">RpcStatus</span>&gt; map = <span class="variable constant_">METHOD_STATISTICS</span>.<span class="title function_">computeIfAbsent</span>(uri, k -&gt; <span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;());</span><br><span class="line">        <span class="keyword">return</span> map.<span class="title function_">computeIfAbsent</span>(methodName, k -&gt; <span class="keyword">new</span> <span class="title class_">RpcStatus</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    public int <span class="title function_">getActive</span>(<span class="params"></span>) &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> active.<span class="title function_">get</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="ConsistentHashLoadBalance"><a href="#ConsistentHashLoadBalance" class="headerlink" title="ConsistentHashLoadBalance"></a>ConsistentHashLoadBalance</h5><p><code>ConsistentHashLoadBalance</code> 小伙伴们应该也不会陌生，在分库分表、各种集群中就经常使用这个负载均衡策略。</p>
+<p><code>ConsistentHashLoadBalance</code> 即<strong>一致性 Hash 负载均衡策略</strong>。 <code>ConsistentHashLoadBalance</code> 中没有权重的概念，具体是哪个服务提供者处理请求是由你的请求的参数决定的，也就是说相同参数的请求总是发到同一个服务提供者。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111508.png" alt="img"></p>
+<p>另外，Dubbo 为了避免数据倾斜问题（节点不够分散，大量请求落到同一节点），还引入了虚拟节点的概念。通过虚拟节点可以让节点更加分散，有效均衡各个节点的请求量。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111509.png" alt="img"></p>
+<h5 id="RoundRobinLoadBalance"><a href="#RoundRobinLoadBalance" class="headerlink" title="RoundRobinLoadBalance"></a>RoundRobinLoadBalance</h5><p>加权轮询负载均衡。</p>
+<p>轮询就是把请求依次分配给每个服务提供者。加权轮询就是在轮询的基础上，让更多的请求落到权重更大的服务提供者上。比如假如有两个提供相同服务的服务器 S1,S2，S1 的权重为 7，S2 的权重为 3。</p>
+<p>如果我们有 10 次请求，那么 7 次会被 S1 处理，3 次被 S2 处理。</p>
+<p>但是，如果是 <code>RandomLoadBalance</code> 的话，很可能存在 10 次请求有 9 次都被 S1 处理的情况（概率性问题）。</p>
+<p>Dubbo 中的 <code>RoundRobinLoadBalance</code> 的代码实现被修改重建了好几次，Dubbo-2.6.5 版本的 <code>RoundRobinLoadBalance</code> 为平滑加权轮询算法。</p>
+<h3 id="Dubbo-序列化协议"><a href="#Dubbo-序列化协议" class="headerlink" title="Dubbo 序列化协议"></a>Dubbo 序列化协议</h3><h4 id="Dubbo-支持哪些序列化方式呢？"><a href="#Dubbo-支持哪些序列化方式呢？" class="headerlink" title="Dubbo 支持哪些序列化方式呢？"></a>Dubbo 支持哪些序列化方式呢？</h4><p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111510.png" alt="Dubbo 支持的序列化协议"></p>
+<p>Dubbo 支持多种序列化方式：JDK 自带的序列化、hessian2、JSON、Kryo、FST、Protostuff，ProtoBuf 等等。</p>
+<p>Dubbo 默认使用的序列化方式是 hessian2。</p>
+<h4 id="谈谈你对这些序列化协议了解？"><a href="#谈谈你对这些序列化协议了解？" class="headerlink" title="谈谈你对这些序列化协议了解？"></a>谈谈你对这些序列化协议了解？</h4><p>一般我们不会直接使用 JDK 自带的序列化方式。主要原因有两个：</p>
+<ol>
+<li><strong>不支持跨语言调用</strong> : 如果调用的是其他语言开发的服务的时候就不支持了。</li>
+<li><strong>性能差</strong>：相比于其他序列化框架性能更低，主要原因是序列化之后的字节数组体积较大，导致传输成本加大。</li>
+</ol>
+<p>JSON 序列化由于性能问题，我们一般也不会考虑使用。</p>
+<p>像 Protostuff，ProtoBuf、hessian2 这些都是跨语言的序列化方式，如果有跨语言需求的话可以考虑使用。</p>
+<p>Kryo 和 FST 这两种序列化方式是 Dubbo 后来才引入的，性能非常好。不过，这两者都是专门针对 Java 语言的。Dubbo 官网的一篇文章中提到说推荐使用 Kryo 作为生产环境的序列化方式。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142111511.png" alt="序列化协议的性能对比"></p>
+<h3 id="作者声明"><a href="#作者声明" class="headerlink" title="作者声明"></a>作者声明</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如有问题，欢迎指正！</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">jhj</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/f6253398.html">http://example.com/post/f6253398.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">jhj-coding</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/dubbo/">dubbo</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/b71bddf.html" title="RPC基础"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">RPC基础</div></div></a></div><div class="next-post pull-right"><a href="/post/4a341b9c.html" title="CDN 内容分发网络"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">CDN 内容分发网络</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jhj</div><div class="author-info__description">努力学习，努力爱你!</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/jhj-coding"><i class="iconfont icon-gitee"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://gitee.com/jhj-coding" target="_blank" title="gitee"><i class="iconfont icon-gitee" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:jhjcoding@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/qq.jpg" target="_blank" title="qq"><i class="fa-brands fa-qq" style="color: #hdhfbb;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dubbo"><span class="toc-number">1.</span> <span class="toc-text">Dubbo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dubbo-%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">Dubbo 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Dubbo"><span class="toc-number">1.1.1.</span> <span class="toc-text">什么是 Dubbo?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8-Dubbo"><span class="toc-number">1.1.2.</span> <span class="toc-text">为什么要用 Dubbo?</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E5%9F%BA%E7%A1%80"><span class="toc-number">1.2.</span> <span class="toc-text">分布式基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E5%B8%83%E5%BC%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text">什么是分布式?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%86%E5%B8%83%E5%BC%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">为什么要分布式?</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dubbo-%E6%9E%B6%E6%9E%84"><span class="toc-number">1.3.</span> <span class="toc-text">Dubbo 架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Dubbo-%E6%9E%B6%E6%9E%84%E4%B8%AD%E7%9A%84%E6%A0%B8%E5%BF%83%E8%A7%92%E8%89%B2%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.3.1.</span> <span class="toc-text">Dubbo 架构中的核心角色有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dubbo-%E4%B8%AD%E7%9A%84-Invoker-%E6%A6%82%E5%BF%B5%E4%BA%86%E8%A7%A3%E4%B9%88%EF%BC%9F"><span class="toc-number">1.3.2.</span> <span class="toc-text">Dubbo 中的 Invoker 概念了解么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dubbo-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%BA%86%E8%A7%A3%E4%B9%88%EF%BC%9F"><span class="toc-number">1.3.3.</span> <span class="toc-text">Dubbo 的工作原理了解么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dubbo-%E7%9A%84-SPI-%E6%9C%BA%E5%88%B6%E4%BA%86%E8%A7%A3%E4%B9%88%EF%BC%9F-%E5%A6%82%E4%BD%95%E6%89%A9%E5%B1%95-Dubbo-%E4%B8%AD%E7%9A%84%E9%BB%98%E8%AE%A4%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="toc-number">1.3.4.</span> <span class="toc-text">Dubbo 的 SPI 机制了解么？ 如何扩展 Dubbo 中的默认实现？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dubbo-%E7%9A%84%E5%BE%AE%E5%86%85%E6%A0%B8%E6%9E%B6%E6%9E%84%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F"><span class="toc-number">1.3.5.</span> <span class="toc-text">Dubbo 的微内核架构了解吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-Dubbo-%E6%9E%B6%E6%9E%84%E7%9A%84%E4%B8%80%E4%BA%9B%E8%87%AA%E6%B5%8B%E5%B0%8F%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.6.</span> <span class="toc-text">关于 Dubbo 架构的一些自测小问题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%E7%9A%84%E4%BD%9C%E7%94%A8%E4%BA%86%E8%A7%A3%E4%B9%88%EF%BC%9F"><span class="toc-number">1.3.6.1.</span> <span class="toc-text">注册中心的作用了解么？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85%E5%AE%95%E6%9C%BA%E5%90%8E%EF%BC%8C%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%E4%BC%9A%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.3.6.2.</span> <span class="toc-text">服务提供者宕机后，注册中心会做什么？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%91%E6%8E%A7%E4%B8%AD%E5%BF%83%E7%9A%84%E4%BD%9C%E7%94%A8%E5%91%A2%EF%BC%9F"><span class="toc-number">1.3.6.3.</span> <span class="toc-text">监控中心的作用呢？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%E5%92%8C%E7%9B%91%E6%8E%A7%E4%B8%AD%E5%BF%83%E9%83%BD%E5%AE%95%E6%9C%BA%E7%9A%84%E8%AF%9D%EF%BC%8C%E6%9C%8D%E5%8A%A1%E9%83%BD%E4%BC%9A%E6%8C%82%E6%8E%89%E5%90%97%EF%BC%9F"><span class="toc-number">1.3.6.4.</span> <span class="toc-text">注册中心和监控中心都宕机的话，服务都会挂掉吗？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dubbo-%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AD%96%E7%95%A5"><span class="toc-number">1.4.</span> <span class="toc-text">Dubbo 的负载均衡策略</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%EF%BC%9F"><span class="toc-number">1.4.1.</span> <span class="toc-text">什么是负载均衡？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dubbo-%E6%8F%90%E4%BE%9B%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AD%96%E7%95%A5%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.4.2.</span> <span class="toc-text">Dubbo 提供的负载均衡策略有哪些？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#RandomLoadBalance"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">RandomLoadBalance</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#LeastActiveLoadBalance"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">LeastActiveLoadBalance</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ConsistentHashLoadBalance"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">ConsistentHashLoadBalance</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#RoundRobinLoadBalance"><span class="toc-number">1.4.2.4.</span> <span class="toc-text">RoundRobinLoadBalance</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dubbo-%E5%BA%8F%E5%88%97%E5%8C%96%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.5.</span> <span class="toc-text">Dubbo 序列化协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Dubbo-%E6%94%AF%E6%8C%81%E5%93%AA%E4%BA%9B%E5%BA%8F%E5%88%97%E5%8C%96%E6%96%B9%E5%BC%8F%E5%91%A2%EF%BC%9F"><span class="toc-number">1.5.1.</span> <span class="toc-text">Dubbo 支持哪些序列化方式呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%88%E8%B0%88%E4%BD%A0%E5%AF%B9%E8%BF%99%E4%BA%9B%E5%BA%8F%E5%88%97%E5%8C%96%E5%8D%8F%E8%AE%AE%E4%BA%86%E8%A7%A3%EF%BC%9F"><span class="toc-number">1.5.2.</span> <span class="toc-text">谈谈你对这些序列化协议了解？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E8%80%85%E5%A3%B0%E6%98%8E"><span class="toc-number">1.6.</span> <span class="toc-text">作者声明</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/167997d8.html" title="jconsole与jvisualvm"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jconsole与jvisualvm"/></a><div class="content"><a class="title" href="/post/167997d8.html" title="jconsole与jvisualvm">jconsole与jvisualvm</a><time datetime="2023-12-18T09:11:18.000Z" title="发表于 2023-12-18 17:11:18">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/1bfbf0ea.html" title="压力测试详解"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="压力测试详解"/></a><div class="content"><a class="title" href="/post/1bfbf0ea.html" title="压力测试详解">压力测试详解</a><time datetime="2023-12-18T06:26:44.000Z" title="发表于 2023-12-18 14:26:44">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阿里云部署k8s with kubesphere"/></a><div class="content"><a class="title" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere">阿里云部署k8s with kubesphere</a><time datetime="2023-12-17T09:21:04.000Z" title="发表于 2023-12-17 17:21:04">2023-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/2d8b6a16.html" title="性能测试入门"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="性能测试入门"/></a><div class="content"><a class="title" href="/post/2d8b6a16.html" title="性能测试入门">性能测试入门</a><time datetime="2023-12-10T08:15:58.000Z" title="发表于 2023-12-10 16:15:58">2023-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/6998f00a.html" title="冗余设计思想"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="冗余设计思想"/></a><div class="content"><a class="title" href="/post/6998f00a.html" title="冗余设计思想">冗余设计思想</a><time datetime="2023-12-10T08:06:13.000Z" title="发表于 2023-12-10 16:06:13">2023-12-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024  <i id="heartbeat" class="fa fas fa-heartbeat"></i> jhj</div><div class="footer_custom_text">welcome to my blob</div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.31/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/custom.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="//code.tidio.co/th7rc6a4lyprr1ddkuejkobcxcttlbcr.js" async="async"></script><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = true
+
+  if (isChatBtn) {
+    let isShow = false
+    const close = () => {
+      window.tidioChatApi.hide()
+      isShow = false
+    }
+    
+    const open = () => {
+      window.tidioChatApi.open()
+      window.tidioChatApi.show()
+      isShow = true
+    }
+
+    const onTidioChatApiReady = () => {
+      window.tidioChatApi.hide()
+      window.tidioChatApi.on("close", close)
+    }
+    if (window.tidioChatApi) {
+      window.tidioChatApi.on("ready", onTidioChatApiReady)
+    } else {
+      document.addEventListener("tidioChat-ready", onTidioChatApiReady)
+    }
+
+    window.chatBtnFn = () => {
+      if (!window.tidioChatApi) return
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        window.tidioChatApi && window.tidioChatApi.hide()
+      },
+      show: () => {
+        window.tidioChatApi && window.tidioChatApi.show()
+      }
+    }
+  }
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.65.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.13.0"></script></div></div></body></html>

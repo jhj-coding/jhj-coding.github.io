@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>常见加密算法 | jhj-coding</title><meta name="author" content="jhj,hnjzjhj@163.com"><meta name="copyright" content="jhj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="常见加密算法加密算法是一种用数学方法对数据进行变换的技术，目的是保护数据的安全，防止被未经授权的人读取或修改。加密算法可以分为三大类：对称加密算法、非对称加密算法和哈希算法（也叫摘要算法）。 哈希算法哈希算法也叫哈希函数、散列函数或摘要算法，它的作用是对任意长度的数据生成一个固定长度的唯一标识，也叫哈希值、散列值或消息摘要（后文统称为哈希值）。  哈希值的作用是可以用来验证数据的完整性和一致性。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见加密算法">
+<meta property="og:url" content="http://example.com/post/e6c63869.html">
+<meta property="og:site_name" content="jhj-coding">
+<meta property="og:description" content="常见加密算法加密算法是一种用数学方法对数据进行变换的技术，目的是保护数据的安全，防止被未经授权的人读取或修改。加密算法可以分为三大类：对称加密算法、非对称加密算法和哈希算法（也叫摘要算法）。 哈希算法哈希算法也叫哈希函数、散列函数或摘要算法，它的作用是对任意长度的数据生成一个固定长度的唯一标识，也叫哈希值、散列值或消息摘要（后文统称为哈希值）。  哈希值的作用是可以用来验证数据的完整性和一致性。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png">
+<meta property="article:published_time" content="2023-11-28T07:09:15.000Z">
+<meta property="article:modified_time" content="2024-03-14T13:23:47.599Z">
+<meta property="article:author" content="jhj">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/post/e6c63869.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"MN792LJJVS","apiKey":"e946d312db0afe9b3f7d3e71f5f7585b","indexName":"jhj","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: jhj","link":"链接: ","source":"来源: jhj-coding","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '常见加密算法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-14 21:23:47'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4464920_sugj9c5f13.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.1.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png')"><nav id="nav"><span id="blog-info"><a href="/" title="jhj-coding"><span class="site-name">jhj-coding</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">常见加密算法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-28T07:09:15.000Z" title="发表于 2023-11-28 15:09:15">2023-11-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-14T13:23:47.599Z" title="更新于 2024-03-14 21:23:47">2024-03-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/">Java</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/SpringBoot/">SpringBoot</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/SpringBoot/SpringCloud/">SpringCloud</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="常见加密算法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="常见加密算法"><a href="#常见加密算法" class="headerlink" title="常见加密算法"></a>常见加密算法</h2><p>加密算法是一种用数学方法对数据进行变换的技术，目的是保护数据的安全，防止被未经授权的人读取或修改。加密算法可以分为三大类：对称加密算法、非对称加密算法和哈希算法（也叫摘要算法）。</p>
+<h3 id="哈希算法"><a href="#哈希算法" class="headerlink" title="哈希算法"></a>哈希算法</h3><p>哈希算法也叫哈希函数、散列函数或摘要算法，它的作用是对任意长度的数据生成一个固定长度的唯一标识，也叫哈希值、散列值或消息摘要（后文统称为哈希值）。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142123802.png" alt="哈希算法效果演示"></p>
+<p>哈希值的作用是可以用来验证数据的完整性和一致性。</p>
+<p>举两个实际的例子：</p>
+<ul>
+<li>我们下载一个文件时，可以通过比较文件的哈希值和官方提供的哈希值是否一致，来判断文件是否被篡改或损坏；</li>
+<li>保存密码到数据库时使用哈希算法进行加密，可以通过比较用户输入密码的哈希值和数据库保存的哈希值是否一致，来判断密码是否正确。</li>
+</ul>
+<p>这种算法的特点是不可逆：</p>
+<ul>
+<li>不能从哈希值还原出原始数据。</li>
+<li>原始数据的任何改变都会导致哈希值的巨大变化。</li>
+</ul>
+<p>哈希算法主要下面几类：</p>
+<ul>
+<li>MD（Message Digest，消息摘要算法）：比如 MD5。</li>
+<li>SHA（Secure Hash Algorithm，安全哈希算法）：比如 SHA-1、SHA-256。</li>
+<li>MAC（Message Authentication Code，消息认证码算法）：比如 HMAC(Hash Message Authentication Code)。</li>
+<li>其他：国密算法（SM3）、密码哈希算法（Bcrypt）。</li>
+</ul>
+<p>国密算法常见的如 SM2、SM3、SM4，其中 SM2 为非对称加密算法，SM4 为对称加密算法，SM3 为哈希算法（安全性及效率和 SHA-256 相当，但更适合国内的应用环境）。</p>
+<p>哈希算法一般是不需要密钥的，但也存在部分特殊哈希算法需要密钥。例如，MAC 算法就是一种基于密钥的哈希算法，它在哈希算法的基础上增加了一个密钥，使得只有知道密钥的人才能验证数据的完整性和来源。</p>
+<h4 id="MD"><a href="#MD" class="headerlink" title="MD"></a>MD</h4><p>MD 算法有多个版本，包括 MD2、MD4、MD5 等，其中 MD5 是最常用的版本，它可以生成一个 128 位（16 字节）的哈希值。从安全性上说：MD5 &gt; MD4 &gt; MD2。除了这些版本，还有一些基于 MD4 或 MD5 改进的算法，如 RIPEMD、HAVAL 等。</p>
+<p>即使是最安全 MD 算法 MD5 也存在被破解的风险，攻击者可以通过暴力破解或彩虹表攻击等方式，找到与原始数据相同的哈希值，从而破解数据。</p>
+<p>为了增加破解难度，通常可以选择加盐。盐（Salt）在密码学中，是指通过在密码任意固定位置插入特定的字符串，让哈希后的结果和使用原始密码的哈希结果不相符，这种过程称之为“加盐”。</p>
+<p>加盐之后就安全了吗？并不一定，这只是增加了破解难度，不代表无法破解。而且，MD5 算法本身就存在弱碰撞（Collision）问题，即多个不同的输入产生相同的 MD5 值。</p>
+<p>因此，MD 算法已经不被推荐使用，建议使用更安全的哈希算法比如 SHA-2、Bcrypt。</p>
+<p>Java 提供了对 MD 算法系列的支持，包括 MD2、MD5。</p>
+<p>MD5 代码示例（未加盐）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">String</span> originalString = <span class="string">&quot;Java学习 + 面试指南：javaguide.cn&quot;</span>;</span><br><span class="line"><span class="comment">// 创建MD5摘要对象</span></span><br><span class="line"><span class="title class_">MessageDigest</span> messageDigest = <span class="title class_">MessageDigest</span>.<span class="title function_">getInstance</span>(<span class="string">&quot;MD5&quot;</span>);</span><br><span class="line">messageDigest.<span class="title function_">update</span>(originalString.<span class="title function_">getBytes</span>(<span class="title class_">StandardCharsets</span>.<span class="property">UTF_8</span>));</span><br><span class="line"><span class="comment">// 计算哈希值</span></span><br><span class="line">byte[] result = messageDigest.<span class="title function_">digest</span>();</span><br><span class="line"><span class="comment">// 将哈希值转换为十六进制字符串</span></span><br><span class="line"><span class="title class_">String</span> hexString = <span class="keyword">new</span> <span class="title class_">HexBinaryAdapter</span>().<span class="title function_">marshal</span>(result);</span><br><span class="line"><span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;Original String: &quot;</span> + originalString);</span><br><span class="line"><span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;SHA-256 Hash: &quot;</span> + hexString.<span class="title function_">toLowerCase</span>());</span><br></pre></td></tr></table></figure>
+
+<h4 id="SHA"><a href="#SHA" class="headerlink" title="SHA"></a>SHA</h4><p>SHA（Secure Hash Algorithm）系列算法是一组密码哈希函数，用于将任意长度的数据映射为固定长度的哈希值。SHA 系列算法由美国国家安全局（NSA）于 1993 年设计，目前共有 SHA-1、SHA-2、SHA-3 三种版本。</p>
+<p>SHA-1 算法将任意长度的数据映射为 160 位的哈希值。然而，SHA-1 算法存在一些严重的缺陷，比如安全性低，容易受到碰撞攻击和长度扩展攻击。因此，SHA-1 算法已经不再被推荐使用。 SHA-2 家族（如 SHA-256、SHA-384、SHA-512 等）和 SHA-3 系列是 SHA-1 算法的替代方案，它们都提供了更高的安全性和更长的哈希值长度。</p>
+<p>SHA-2 家族是在 SHA-1 算法的基础上改进而来的，它们采用了更复杂的运算过程和更多的轮次，使得攻击者更难以通过预计算或巧合找到碰撞。</p>
+<p>为了寻找一种更安全和更先进的密码哈希函数，美国国家标准与技术研究院（National Institute of Standards and Technology，简称 NIST）在 2007 年公开征集 SHA-3 的候选算法。NIST 一共收到了 64 个算法方案，经过多轮的评估和筛选，最终在 2012 年宣布 Keccak 算法胜出，成为 SHA-3 的标准算法（SHA-3 与 SHA-2 算法没有直接的关系）。 Keccak 算法具有与 MD 和 SHA-1&#x2F;2 完全不同的设计思路，即海绵结构（Sponge Construction），使得传统攻击方法无法直接应用于 SHA-3 的攻击中（能够抵抗目前已知的所有攻击方式包括碰撞攻击、长度扩展攻击、差分攻击等）。</p>
+<p>由于 SHA-2 算法还没有出现重大的安全漏洞，而且在软件中的效率更高，所以大多数人还是倾向于使用 SHA-2 算法。</p>
+<p>相比 MD5 算法，SHA-2 算法之所以更强，主要有两个原因：</p>
+<ul>
+<li>哈希值长度更长：例如 SHA-256 算法的哈希值长度为 256 位，而 MD5 算法的哈希值长度为 128 位，这就提高了攻击者暴力破解或者彩虹表攻击的难度。</li>
+<li>更强的碰撞抗性：SHA 算法采用了更复杂的运算过程和更多的轮次，使得攻击者更难以通过预计算或巧合找到碰撞。目前还没有找到任何两个不同的数据，它们的 SHA-256 哈希值相同。</li>
+</ul>
+<p>当然，SHA-2 也不是绝对安全的，也有被暴力破解或者彩虹表攻击的风险，所以，在实际的应用中，加盐还是必不可少的。</p>
+<p>Java 提供了对 SHA 算法系列的支持，包括 SHA-1、SHA-256、SHA-384 和 SHA-512。</p>
+<p>SHA-256 代码示例（未加盐）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">String</span> originalString = <span class="string">&quot;Java学习 + 面试指南：javaguide.cn&quot;</span>;</span><br><span class="line"><span class="comment">// 创建SHA-256摘要对象</span></span><br><span class="line"><span class="title class_">MessageDigest</span> messageDigest = <span class="title class_">MessageDigest</span>.<span class="title function_">getInstance</span>(<span class="string">&quot;SHA-256&quot;</span>);</span><br><span class="line">messageDigest.<span class="title function_">update</span>(originalString.<span class="title function_">getBytes</span>());</span><br><span class="line"><span class="comment">// 计算哈希值</span></span><br><span class="line">byte[] result = messageDigest.<span class="title function_">digest</span>();</span><br><span class="line"><span class="comment">// 将哈希值转换为十六进制字符串</span></span><br><span class="line"><span class="title class_">String</span> hexString = <span class="keyword">new</span> <span class="title class_">HexBinaryAdapter</span>().<span class="title function_">marshal</span>(result);</span><br><span class="line"><span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;Original String: &quot;</span> + originalString);</span><br><span class="line"><span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;SHA-256 Hash: &quot;</span> + hexString.<span class="title function_">toLowerCase</span>());</span><br></pre></td></tr></table></figure>
+
+<h4 id="Bcrypt"><a href="#Bcrypt" class="headerlink" title="Bcrypt"></a>Bcrypt</h4><p>Bcrypt 算法是一种基于 Blowfish 加密算法的密码哈希函数，专门为密码加密而设计，安全性高。</p>
+<p>由于 Bcrypt 采用了 salt（盐） 和 cost（成本） 两种机制，它可以有效地防止彩虹表攻击和暴力破解攻击，从而保证密码的安全性。salt 是一个随机生成的字符串，用于和密码混合，增加密码的复杂度和唯一性。cost 是一个数值参数，用于控制 Bcrypt 算法的迭代次数，增加密码哈希的计算时间和资源消耗。</p>
+<p>Bcrypt 算法可以根据实际情况进行调整加密的复杂度，可以设置不同的 cost 值和 salt 值，从而满足不同的安全需求，灵活性很高。</p>
+<p>Java 应用程序的安全框架 Spring Security 支持多种密码编码器，其中 <code>BCryptPasswordEncoder</code> 是官方推荐的一种，它使用 BCrypt 算法对用户的密码进行加密存储。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="title class_">Bean</span></span><br><span class="line">public <span class="title class_">PasswordEncoder</span> <span class="title function_">passwordEncoder</span>(<span class="params"></span>)&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">BCryptPasswordEncoder</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h3><p>对称加密算法是指加密和解密使用同一个密钥的算法，也叫共享密钥加密算法。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142123803.png" alt="对称加密"></p>
+<p>常见的对称加密算法有 DES、3DES、AES 等。</p>
+<h4 id="DES-和-3DES"><a href="#DES-和-3DES" class="headerlink" title="DES 和 3DES"></a>DES 和 3DES</h4><p>DES（Data Encryption Standard）使用 64 位的密钥(有效秘钥长度为 56 位,8 位奇偶校验位)和 64 位的明文进行加密。</p>
+<p>虽然 DES 一次只能加密 64 位，但我们只需要把明文划分成 64 位一组的块，就可以实现任意长度明文的加密。如果明文长度不是 64 位的倍数，必须进行填充，常用的模式有 PKCS5Padding, PKCS7Padding, NOPADDING。</p>
+<p>DES 加密算法的基本思想是将 64 位的明文分成两半，然后对每一半进行多轮的变换，最后再合并成 64 位的密文。这些变换包括置换、异或、选择、移位等操作，每一轮都使用了一个子密钥，而这些子密钥都是由同一个 56 位的主密钥生成的。DES 加密算法总共进行了 16 轮变换，最后再进行一次逆置换，得到最终的密文。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142123804.png" alt="DES（Data Encryption Standard）"></p>
+<p>这是一个经典的对称加密算法，但也有明显的缺陷，即 56 位的密钥安全性不足，已被证实可以在短时间内破解。</p>
+<p>为了提高 DES 算法的安全性，人们提出了一些变种或者替代方案，例如 3DES（Triple DES）。</p>
+<p>3DES（Triple DES）是 DES 向 AES 过渡的加密算法，它使用 2 个或者 3 个 56 位的密钥对数据进行三次加密。3DES 相当于是对每个数据块应用三次 DES 的对称加密算法。</p>
+<p>为了兼容普通的 DES，3DES 并没有直接使用 加密-&gt;加密-&gt;加密 的方式，而是采用了加密-&gt;解密-&gt;加密 的方式。当三种密钥均相同时，前两步相互抵消，相当于仅实现了一次加密，因此可实现对普通 DES 加密算法的兼容。3DES 比 DES 更为安全，但其处理速度不高。</p>
+<h4 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h4><p>AES（Advanced Encryption Standard）算法是一种更先进的对称密钥加密算法，它使用 128 位、192 位或 256 位的密钥对数据进行加密或解密，密钥越长，安全性越高。</p>
+<p>AES 也是一种分组(或者叫块)密码，分组长度只能是 128 位，也就是说，每个分组为 16 个字节。AES 加密算法有多种工作模式（mode of operation），如：ECB、CBC、OFB、CFB、CTR、XTS、OCB、GCM（目前使用最广泛的模式）。不同的模式参数和加密流程不同，但是核心仍然是 AES 算法。</p>
+<p>和 DES 类似，对于不是 128 位倍数的明文需要进行填充，常用的填充模式有 PKCS5Padding, PKCS7Padding, NOPADDING。不过，AES-GCM 是流加密算法，可以对任意长度的明文进行加密，所以对应的填充模式为 NoPadding，即无需填充。</p>
+<p>AES 的速度比 3DES 快，而且更安全。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142123805.png" alt="AES（Advanced Encryption Standard）"></p>
+<p>DES 算法和 AES 算法简单对比（图片来自于：RSA vs. AES Encryption: Key Differences Explainedopen in new window<a target="_blank" rel="noopener" href="https://cheapsslweb.com/blog/rsa-vs-aes-encryption%EF%BC%89%EF%BC%9A">https://cheapsslweb.com/blog/rsa-vs-aes-encryption）：</a></p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142123806.png" alt="DES 和 AES 对比"></p>
+<p>基于 Java 实现 AES 算法代码示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">private <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">AES_ALGORITHM</span> = <span class="string">&quot;AES&quot;</span>;</span><br><span class="line"><span class="comment">// AES密钥</span></span><br><span class="line">private <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">AES_SECRET_KEY</span> = <span class="string">&quot;4128D9CDAC7E2F82951CBAF7FDFE675B&quot;</span>;</span><br><span class="line"><span class="comment">// AES加密模式为GCM，填充方式为NoPadding</span></span><br><span class="line"><span class="comment">// AES-GCM 是流加密（Stream cipher）算法，所以对应的填充模式为 NoPadding，即无需填充。</span></span><br><span class="line">private <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">AES_TRANSFORMATION</span> = <span class="string">&quot;AES/GCM/NoPadding&quot;</span>;</span><br><span class="line"><span class="comment">// 加密器</span></span><br><span class="line">private <span class="keyword">static</span> <span class="title class_">Cipher</span> encryptionCipher;</span><br><span class="line"><span class="comment">// 解密器</span></span><br><span class="line">private <span class="keyword">static</span> <span class="title class_">Cipher</span> decryptionCipher;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 完成一些初始化工作</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">init</span>() throws <span class="title class_">Exception</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 将AES密钥转换为SecretKeySpec对象</span></span><br><span class="line">    <span class="title class_">SecretKeySpec</span> secretKeySpec = <span class="keyword">new</span> <span class="title class_">SecretKeySpec</span>(<span class="variable constant_">AES_SECRET_KEY</span>.<span class="title function_">getBytes</span>(), <span class="variable constant_">AES_ALGORITHM</span>);</span><br><span class="line">    <span class="comment">// 使用指定的AES加密模式和填充方式获取对应的加密器并初始化</span></span><br><span class="line">    encryptionCipher = <span class="title class_">Cipher</span>.<span class="title function_">getInstance</span>(<span class="variable constant_">AES_TRANSFORMATION</span>);</span><br><span class="line">    encryptionCipher.<span class="title function_">init</span>(<span class="title class_">Cipher</span>.<span class="property">ENCRYPT_MODE</span>, secretKeySpec);</span><br><span class="line">    <span class="comment">// 使用指定的AES加密模式和填充方式获取对应的解密器并初始化</span></span><br><span class="line">    decryptionCipher = <span class="title class_">Cipher</span>.<span class="title function_">getInstance</span>(<span class="variable constant_">AES_TRANSFORMATION</span>);</span><br><span class="line">    decryptionCipher.<span class="title function_">init</span>(<span class="title class_">Cipher</span>.<span class="property">DECRYPT_MODE</span>, secretKeySpec, <span class="keyword">new</span> <span class="title class_">GCMParameterSpec</span>(<span class="number">128</span>, encryptionCipher.<span class="title function_">getIV</span>()));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 加密</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="keyword">static</span> <span class="title class_">String</span> <span class="title function_">encrypt</span>(<span class="title class_">String</span> data) throws <span class="title class_">Exception</span> &#123;</span><br><span class="line">    </span><br><span class="line">    byte[] dataInBytes = data.<span class="title function_">getBytes</span>();</span><br><span class="line">    <span class="comment">// 加密数据</span></span><br><span class="line">    byte[] encryptedBytes = encryptionCipher.<span class="title function_">doFinal</span>(dataInBytes);</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Base64</span>.<span class="title function_">getEncoder</span>().<span class="title function_">encodeToString</span>(encryptedBytes);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 解密</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="keyword">static</span> <span class="title class_">String</span> <span class="title function_">decrypt</span>(<span class="title class_">String</span> encryptedData) throws <span class="title class_">Exception</span> &#123;</span><br><span class="line">    </span><br><span class="line">    byte[] dataInBytes = <span class="title class_">Base64</span>.<span class="title function_">getDecoder</span>().<span class="title function_">decode</span>(encryptedData);</span><br><span class="line">    <span class="comment">// 解密数据</span></span><br><span class="line">    byte[] decryptedBytes = decryptionCipher.<span class="title function_">doFinal</span>(dataInBytes);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(decryptedBytes, <span class="title class_">StandardCharsets</span>.<span class="property">UTF_8</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span>(<span class="title class_">String</span>[] args) throws <span class="title class_">Exception</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="title class_">String</span> originalString = <span class="string">&quot;Java学习 + 面试指南：javaguide.cn&quot;</span>;</span><br><span class="line">    <span class="title function_">init</span>();</span><br><span class="line">    <span class="title class_">String</span> encryptedData = <span class="title function_">encrypt</span>(originalString);</span><br><span class="line">    <span class="title class_">String</span> decryptedData = <span class="title function_">decrypt</span>(encryptedData);</span><br><span class="line">    <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;Original String: &quot;</span> + originalString);</span><br><span class="line">    <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;AES Encrypted Data : &quot;</span> + encryptedData);</span><br><span class="line">    <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;AES Decrypted Data : &quot;</span> + decryptedData);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h3><p>非对称加密算法是指加密和解密使用不同的密钥的算法，也叫公开密钥加密算法。这两个密钥互不相同，一个称为公钥，另一个称为私钥。公钥可以公开给任何人使用，私钥则要保密。</p>
+<p>如果用公钥加密数据，只能用对应的私钥解密（加密）；如果用私钥加密数据，只能用对应的公钥解密（签名）。这样就可以实现数据的安全传输和身份认证。</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142123807.png" alt="非对称加密"></p>
+<p>常见的非对称加密算法有 RSA、DSA、ECC 等。</p>
+<h4 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h4><p>RSA（Rivest–Shamir–Adleman algorithm）算法是一种基于大数分解的困难性的非对称加密算法，它需要选择两个大素数作为私钥的一部分，然后计算出它们的乘积作为公钥的一部分（寻求两个大素数比较简单，而将它们的乘积进行因式分解却极其困难）。</p>
+<p>RSA 算法的安全性依赖于大数分解的难度，目前已经有 512 位和 768 位的 RSA 公钥被成功分解，因此建议使用 2048 位或以上的密钥长度。</p>
+<p>RSA 算法的优点是简单易用，可以用于数据加密和数字签名；缺点是运算速度慢，不适合大量数据的加密。</p>
+<p>RSA 算法是是目前应用最广泛的非对称加密算法，像 SSL&#x2F;TLS、SSH 等协议中就用到了 RSA 算法。</p>
+<p>基于 Java 实现 RSA 算法代码示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">private <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">RSA_ALGORITHM</span> = <span class="string">&quot;RSA&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 生成RSA密钥对</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="keyword">static</span> <span class="title class_">KeyPair</span> <span class="title function_">generateKeyPair</span>() throws <span class="title class_">NoSuchAlgorithmException</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="title class_">KeyPairGenerator</span> keyPairGenerator = <span class="title class_">KeyPairGenerator</span>.<span class="title function_">getInstance</span>(<span class="variable constant_">RSA_ALGORITHM</span>);</span><br><span class="line">    <span class="comment">// 密钥大小为2048位</span></span><br><span class="line">    keyPairGenerator.<span class="title function_">initialize</span>(<span class="number">2048</span>);</span><br><span class="line">    <span class="keyword">return</span> keyPairGenerator.<span class="title function_">generateKeyPair</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用公钥加密数据</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="keyword">static</span> <span class="title class_">String</span> <span class="title function_">encrypt</span>(<span class="title class_">String</span> data, <span class="title class_">PublicKey</span> publicKey) throws <span class="title class_">Exception</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="title class_">Cipher</span> cipher = <span class="title class_">Cipher</span>.<span class="title function_">getInstance</span>(<span class="variable constant_">RSA_ALGORITHM</span>);</span><br><span class="line">    cipher.<span class="title function_">init</span>(<span class="title class_">Cipher</span>.<span class="property">ENCRYPT_MODE</span>, publicKey);</span><br><span class="line">    byte[] encryptedData = cipher.<span class="title function_">doFinal</span>(data.<span class="title function_">getBytes</span>(<span class="title class_">StandardCharsets</span>.<span class="property">UTF_8</span>));</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Base64</span>.<span class="title function_">getEncoder</span>().<span class="title function_">encodeToString</span>(encryptedData);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用私钥解密数据</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="keyword">static</span> <span class="title class_">String</span> <span class="title function_">decrypt</span>(<span class="title class_">String</span> encryptedData, <span class="title class_">PrivateKey</span> privateKey) throws <span class="title class_">Exception</span> &#123;</span><br><span class="line">    </span><br><span class="line">    byte[] decodedData = <span class="title class_">Base64</span>.<span class="title function_">getDecoder</span>().<span class="title function_">decode</span>(encryptedData);</span><br><span class="line">    <span class="title class_">Cipher</span> cipher = <span class="title class_">Cipher</span>.<span class="title function_">getInstance</span>(<span class="variable constant_">RSA_ALGORITHM</span>);</span><br><span class="line">    cipher.<span class="title function_">init</span>(<span class="title class_">Cipher</span>.<span class="property">DECRYPT_MODE</span>, privateKey);</span><br><span class="line">    byte[] decryptedData = cipher.<span class="title function_">doFinal</span>(decodedData);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(decryptedData, <span class="title class_">StandardCharsets</span>.<span class="property">UTF_8</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span>(<span class="title class_">String</span>[] args) throws <span class="title class_">Exception</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="title class_">KeyPair</span> keyPair = <span class="title function_">generateKeyPair</span>();</span><br><span class="line">    <span class="title class_">PublicKey</span> publicKey = keyPair.<span class="title function_">getPublic</span>();</span><br><span class="line">    <span class="title class_">PrivateKey</span> privateKey = keyPair.<span class="title function_">getPrivate</span>();</span><br><span class="line">    <span class="title class_">String</span> originalString = <span class="string">&quot;Java学习 + 面试指南：javaguide.cn&quot;</span>;</span><br><span class="line">    <span class="title class_">String</span> encryptedData = <span class="title function_">encrypt</span>(originalString, publicKey);</span><br><span class="line">    <span class="title class_">String</span> decryptedData = <span class="title function_">decrypt</span>(encryptedData, privateKey);</span><br><span class="line">    <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;Original String: &quot;</span> + originalString);</span><br><span class="line">    <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;RSA Encrypted Data : &quot;</span> + encryptedData);</span><br><span class="line">    <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="string">&quot;RSA Decrypted Data : &quot;</span> + decryptedData);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="DSA"><a href="#DSA" class="headerlink" title="DSA"></a>DSA</h4><p>DSA（Digital Signature Algorithm）算法是一种基于离散对数的困难性的非对称加密算法，它需要选择一个素数 q 和一个 q 的倍数 p 作为私钥的一部分，然后计算出一个模 p 的原根 g 和一个模 q 的整数 y 作为公钥的一部分。DSA 算法的安全性依赖于离散对数的难度，目前已经有 1024 位的 DSA 公钥被成功破解，因此建议使用 2048 位或以上的密钥长度。</p>
+<p>DSA 算法的优点是数字签名速度快，适合生成数字证书；缺点是不能用于数据加密，且签名过程需要随机数。</p>
+<p>DSA 算法签名过程：</p>
+<ol>
+<li>使用消息摘要算法对要发送的数据进行加密，生成一个信息摘要，也就是一个短的、唯一的、不可逆的数据表示。</li>
+<li>发送方用自己的 DSA 私钥对信息摘要再进行加密，形成一个数字签名，也就是一个可以证明数据来源和完整性的数据附加。</li>
+<li>将原始数据和数字签名一起通过互联网传送给接收方。</li>
+<li>接收方用发送方的公钥对数字签名进行解密，得到信息摘要。同时，接收方也用消息摘要算法对收到的原始数据进行加密，得到另一个信息摘要。接收方将两个信息摘要进行比较，如果两者一致，则说明在传送过程中数据没有被篡改或损坏；否则，则说明数据已经失去了安全性和保密性。</li>
+</ol>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142123808.png" alt="DSA 算法签名过程"></p>
+<h3 id="作者声明"><a href="#作者声明" class="headerlink" title="作者声明"></a>作者声明</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如有问题，欢迎指正！</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">jhj</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/e6c63869.html">http://example.com/post/e6c63869.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">jhj-coding</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/java/">java</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/11de7df3.html" title="MyBatis常见面试题总结"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MyBatis常见面试题总结</div></div></a></div><div class="next-post pull-right"><a href="/post/e95bbc47.html" title="敏感词过滤方案"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">敏感词过滤方案</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/e32c9fec.html" title="ConcurrentHashMap源码分析"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-12</div><div class="title">ConcurrentHashMap源码分析</div></div></a></div><div><a href="/post/e787ea05.html" title="CopyOnWriteArrayList源码分析"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-13</div><div class="title">CopyOnWriteArrayList源码分析</div></div></a></div><div><a href="/post/790f419d.html" title="DelayQueue源码分析"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-14</div><div class="title">DelayQueue源码分析</div></div></a></div><div><a href="/post/cf4734be.html" title="Future"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-29</div><div class="title">Future</div></div></a></div><div><a href="/post/6001717d.html" title="Gossip 协议"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-03</div><div class="title">Gossip 协议</div></div></a></div><div><a href="/post/f98de0e4.html" title="GeoServer安装"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/default_bg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-28</div><div class="title">GeoServer安装</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jhj</div><div class="author-info__description">努力学习，努力爱你!</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/jhj-coding"><i class="iconfont icon-gitee"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://gitee.com/jhj-coding" target="_blank" title="gitee"><i class="iconfont icon-gitee" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:jhjcoding@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/qq.jpg" target="_blank" title="qq"><i class="fa-brands fa-qq" style="color: #hdhfbb;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">常见加密算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">哈希算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MD"><span class="toc-number">1.1.1.</span> <span class="toc-text">MD</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SHA"><span class="toc-number">1.1.2.</span> <span class="toc-text">SHA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bcrypt"><span class="toc-number">1.1.3.</span> <span class="toc-text">Bcrypt</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">对称加密</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DES-%E5%92%8C-3DES"><span class="toc-number">1.2.1.</span> <span class="toc-text">DES 和 3DES</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AES"><span class="toc-number">1.2.2.</span> <span class="toc-text">AES</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.3.</span> <span class="toc-text">非对称加密</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RSA"><span class="toc-number">1.3.1.</span> <span class="toc-text">RSA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DSA"><span class="toc-number">1.3.2.</span> <span class="toc-text">DSA</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E8%80%85%E5%A3%B0%E6%98%8E"><span class="toc-number">1.4.</span> <span class="toc-text">作者声明</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/167997d8.html" title="jconsole与jvisualvm"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jconsole与jvisualvm"/></a><div class="content"><a class="title" href="/post/167997d8.html" title="jconsole与jvisualvm">jconsole与jvisualvm</a><time datetime="2023-12-18T09:11:18.000Z" title="发表于 2023-12-18 17:11:18">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/1bfbf0ea.html" title="压力测试详解"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="压力测试详解"/></a><div class="content"><a class="title" href="/post/1bfbf0ea.html" title="压力测试详解">压力测试详解</a><time datetime="2023-12-18T06:26:44.000Z" title="发表于 2023-12-18 14:26:44">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阿里云部署k8s with kubesphere"/></a><div class="content"><a class="title" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere">阿里云部署k8s with kubesphere</a><time datetime="2023-12-17T09:21:04.000Z" title="发表于 2023-12-17 17:21:04">2023-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/2d8b6a16.html" title="性能测试入门"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="性能测试入门"/></a><div class="content"><a class="title" href="/post/2d8b6a16.html" title="性能测试入门">性能测试入门</a><time datetime="2023-12-10T08:15:58.000Z" title="发表于 2023-12-10 16:15:58">2023-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/6998f00a.html" title="冗余设计思想"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="冗余设计思想"/></a><div class="content"><a class="title" href="/post/6998f00a.html" title="冗余设计思想">冗余设计思想</a><time datetime="2023-12-10T08:06:13.000Z" title="发表于 2023-12-10 16:06:13">2023-12-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024  <i id="heartbeat" class="fa fas fa-heartbeat"></i> jhj</div><div class="footer_custom_text">welcome to my blob</div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.31/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/custom.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="//code.tidio.co/th7rc6a4lyprr1ddkuejkobcxcttlbcr.js" async="async"></script><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = true
+
+  if (isChatBtn) {
+    let isShow = false
+    const close = () => {
+      window.tidioChatApi.hide()
+      isShow = false
+    }
+    
+    const open = () => {
+      window.tidioChatApi.open()
+      window.tidioChatApi.show()
+      isShow = true
+    }
+
+    const onTidioChatApiReady = () => {
+      window.tidioChatApi.hide()
+      window.tidioChatApi.on("close", close)
+    }
+    if (window.tidioChatApi) {
+      window.tidioChatApi.on("ready", onTidioChatApiReady)
+    } else {
+      document.addEventListener("tidioChat-ready", onTidioChatApiReady)
+    }
+
+    window.chatBtnFn = () => {
+      if (!window.tidioChatApi) return
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        window.tidioChatApi && window.tidioChatApi.hide()
+      },
+      show: () => {
+        window.tidioChatApi && window.tidioChatApi.show()
+      }
+    }
+  }
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.65.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.13.0"></script></div></div></body></html>

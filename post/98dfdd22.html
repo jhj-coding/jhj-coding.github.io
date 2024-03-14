@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据脱敏方案 | jhj-coding</title><meta name="author" content="jhj,hnjzjhj@163.com"><meta name="copyright" content="jhj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="数据脱敏方案什么是数据脱敏数据脱敏的定义数据脱敏百度百科中是这样定义的：数据脱敏，指对某些敏感信息通过脱敏规则进行数据的变形，实现敏感隐私数据的可靠保护。这样就可以在开发、测试和其它非生产环境以及外包环境中安全地使用脱敏后的真实数据集。在涉及客户安全数据或者一些商业性敏感数据的情况下，在不违反系统规则条件下，对真实数据进行改造并提供测试使用，如身份证号、手机号、卡号、客户号等个人信息都需要进行数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据脱敏方案">
+<meta property="og:url" content="http://example.com/post/98dfdd22.html">
+<meta property="og:site_name" content="jhj-coding">
+<meta property="og:description" content="数据脱敏方案什么是数据脱敏数据脱敏的定义数据脱敏百度百科中是这样定义的：数据脱敏，指对某些敏感信息通过脱敏规则进行数据的变形，实现敏感隐私数据的可靠保护。这样就可以在开发、测试和其它非生产环境以及外包环境中安全地使用脱敏后的真实数据集。在涉及客户安全数据或者一些商业性敏感数据的情况下，在不违反系统规则条件下，对真实数据进行改造并提供测试使用，如身份证号、手机号、卡号、客户号等个人信息都需要进行数据">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png">
+<meta property="article:published_time" content="2023-11-28T08:55:10.000Z">
+<meta property="article:modified_time" content="2024-03-14T13:23:18.252Z">
+<meta property="article:author" content="jhj">
+<meta property="article:tag" content="后端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/post/98dfdd22.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"MN792LJJVS","apiKey":"e946d312db0afe9b3f7d3e71f5f7585b","indexName":"jhj","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: jhj","link":"链接: ","source":"来源: jhj-coding","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据脱敏方案',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-14 21:23:18'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4464920_sugj9c5f13.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.1.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png')"><nav id="nav"><span id="blog-info"><a href="/" title="jhj-coding"><span class="site-name">jhj-coding</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据脱敏方案</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-28T08:55:10.000Z" title="发表于 2023-11-28 16:55:10">2023-11-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-14T13:23:18.252Z" title="更新于 2024-03-14 21:23:18">2024-03-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/">Java</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/SpringBoot/">SpringBoot</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/SpringBoot/SpringCloud/">SpringCloud</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据脱敏方案"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="数据脱敏方案"><a href="#数据脱敏方案" class="headerlink" title="数据脱敏方案"></a>数据脱敏方案</h2><h3 id="什么是数据脱敏"><a href="#什么是数据脱敏" class="headerlink" title="什么是数据脱敏"></a>什么是数据脱敏</h3><h4 id="数据脱敏的定义"><a href="#数据脱敏的定义" class="headerlink" title="数据脱敏的定义"></a>数据脱敏的定义</h4><p>数据脱敏百度百科中是这样定义的：<br>数据脱敏，指对某些敏感信息通过脱敏规则进行数据的变形，实现敏感隐私数据的可靠保护。这样就可以在开发、测试和其它非生产环境以及外包环境中安全地使用脱敏后的真实数据集。在涉及客户安全数据或者一些商业性敏感数据的情况下，在不违反系统规则条件下，对真实数据进行改造并提供测试使用，如身份证号、手机号、卡号、客户号等个人信息都需要进行数据脱敏。是数据库安全技术之一。</p>
+<p>总的来说，数据脱敏是指对某些敏感信息通过脱敏规则进行数据的变形，实现敏感隐私数据的可靠保护。</p>
+<p>在数据脱敏过程中，通常会采用不同的算法和技术，以根据不同的需求和场景对数据进行处理。例如，对于身份证号码，可以使用掩码算法（masking）将前几位数字保留，其他位用 “X” 或 “&#x2F;*” 代替；对于姓名，可以使用伪造（pseudonymization）算法，将真实姓名替换成随机生成的假名。</p>
+<h4 id="常用脱敏规则"><a href="#常用脱敏规则" class="headerlink" title="常用脱敏规则"></a>常用脱敏规则</h4><p>常用脱敏规则是为了保护敏感数据的安全性，在处理和存储敏感数据时对其进行变换或修改。</p>
+<p>下面是几种常见的脱敏规则：</p>
+<ul>
+<li>替换(常用)：将敏感数据中的特定字符或字符序列替换为其他字符。例如，将信用卡号中的中间几位数字替换为星号（&#x2F;*）或其他字符。</li>
+<li>删除：将敏感数据中的部分内容随机删除。比如，将电话号码的随机 3 位数字进行删除。</li>
+<li>重排：将原始数据中的某些字符或字段的顺序打乱。例如，将身份证号码的随机位交错互换。</li>
+<li>加噪：在数据中注入一些误差或者噪音，达到对数据脱敏的效果。例如，在敏感数据中添加一些随机生成的字符。</li>
+<li>加密（常用）：使用加密算法将敏感数据转换为密文。例如，将银行卡号用 MD5 或 SHA-256 等哈希函数进行散列。</li>
+</ul>
+<h3 id="常用脱敏工具"><a href="#常用脱敏工具" class="headerlink" title="常用脱敏工具"></a>常用脱敏工具</h3><h4 id="Hutool"><a href="#Hutool" class="headerlink" title="Hutool"></a>Hutool</h4><p>Hutool 一个 Java 基础工具类，对文件、流、加密解密、转码、正则、线程、XML 等 JDK 方法进行封装，组成各种 Util 工具类，同时提供以下组件：<br>模块 介绍 hutool-aop JDK 动态代理封装，提供非 IOC 下的切面支持 hutool-bloomFilter 布隆过滤，提供一些 Hash 算法的布隆过滤 hutool-cache 简单缓存实现 hutool-core 核心，包括 Bean 操作、日期、各种 Util 等 hutool-cron 定时任务模块，提供类 Crontab 表达式的定时任务 hutool-crypto 加密解密模块，提供对称、非对称和摘要算法封装 hutool-db JDBC 封装后的数据操作，基于 ActiveRecord 思想 hutool-dfa 基于 DFA 模型的多关键字查找 hutool-extra 扩展模块，对第三方封装（模板引擎、邮件、Servlet、二维码、Emoji、FTP、分词等） hutool-http 基于 HttpUrlConnection 的 Http 客户端封装 hutool-log 自动识别日志实现的日志门面 hutool-script 脚本执行封装，例如 Javascript hutool-setting 功能更强大的 Setting 配置文件和 Properties 封装 hutool-system 系统参数调用封装（JVM 信息等） hutool-json JSON 实现 hutool-captcha 图片验证码实现 hutool-poi 针对 POI 中 Excel 和 Word 的封装 hutool-socket 基于 Java 的 NIO 和 AIO 的 Socket 封装 hutool-jwt JSON Web Token (JWT) 封装实现</p>
+<p>可以根据需求对每个模块单独引入，也可以通过引入<code>hutool-all</code>方式引入所有模块，本文所使用的数据脱敏工具就是在 <code>hutool.core</code> 模块。</p>
+<p>现阶段最新版本的 Hutool 支持的脱敏数据类型如下，基本覆盖了常见的敏感信息。</p>
+<ol>
+<li>用户 id</li>
+<li>中文姓名</li>
+<li>身份证号</li>
+<li>座机号</li>
+<li>手机号</li>
+<li>地址</li>
+<li>电子邮件</li>
+<li>密码</li>
+<li>中国大陆车牌，包含普通车辆、新能源车辆</li>
+<li>银行卡</li>
+</ol>
+<h5 id="一行代码实现脱敏"><a href="#一行代码实现脱敏" class="headerlink" title="一行代码实现脱敏"></a>一行代码实现脱敏</h5><p>Hutool 提供的脱敏方法如下图所示：</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142123875.png" alt="img"></p>
+<p>注意：Hutool 脱敏是通过 &#x2F;* 来代替敏感信息的，具体实现是在 StrUtil.hide 方法中，如果我们想要自定义隐藏符号，则可以把 Hutool 的源码拷出来，重新实现即可。</p>
+<p>这里以手机号、银行卡号、身份证号、密码信息的脱敏为例，下面是对应的测试代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.<span class="property">hutool</span>.<span class="property">core</span>.<span class="property">util</span>.<span class="property">DesensitizedUtil</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">junit</span>.<span class="property">Test</span>;</span><br><span class="line"><span class="keyword">import</span> org.<span class="property">springframework</span>.<span class="property">boot</span>.<span class="property">test</span>.<span class="property">context</span>.<span class="property">Spring</span> <span class="title class_">BootTest</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: Hutool实现数据脱敏</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">@<span class="title class_">Spring</span> <span class="title class_">BootTest</span></span><br><span class="line">public <span class="keyword">class</span> <span class="title class_">HuToolDesensitizationTest</span> &#123;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    @<span class="title class_">Test</span></span><br><span class="line">    public <span class="keyword">void</span> <span class="title function_">testPhoneDesensitization</span>(<span class="params"></span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="title class_">String</span> phone=<span class="string">&quot;13723231234&quot;</span>;</span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">mobilePhone</span>(phone)); <span class="comment">//输出：137****1234</span></span><br><span class="line">    &#125;</span><br><span class="line">    @<span class="title class_">Test</span></span><br><span class="line">    public <span class="keyword">void</span> <span class="title function_">testBankCardDesensitization</span>(<span class="params"></span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="title class_">String</span> bankCard=<span class="string">&quot;6217000130008255666&quot;</span>;</span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">bankCard</span>(bankCard)); <span class="comment">//输出：6217 **** **** *** 5666</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">Test</span></span><br><span class="line">    public <span class="keyword">void</span> <span class="title function_">testIdCardNumDesensitization</span>(<span class="params"></span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="title class_">String</span> idCardNum=<span class="string">&quot;411021199901102321&quot;</span>;</span><br><span class="line">        <span class="comment">//只显示前4位和后2位</span></span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">idCardNum</span>(idCardNum,<span class="number">4</span>,<span class="number">2</span>)); <span class="comment">//输出：4110************21</span></span><br><span class="line">    &#125;</span><br><span class="line">    @<span class="title class_">Test</span></span><br><span class="line">    public <span class="keyword">void</span> <span class="title function_">testPasswordDesensitization</span>(<span class="params"></span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="title class_">String</span> password=<span class="string">&quot;www.jd.com_35711&quot;</span>;</span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">password</span>(password)); <span class="comment">//输出：****************</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上就是使用 Hutool 封装好的工具类实现数据脱敏。</p>
+<h5 id="配合-JackSon-通过注解方式实现脱敏"><a href="#配合-JackSon-通过注解方式实现脱敏" class="headerlink" title="配合 JackSon 通过注解方式实现脱敏"></a>配合 JackSon 通过注解方式实现脱敏</h5><p>现在有了数据脱敏工具类，如果前端需要显示数据数据的地方比较多，我们不可能在每个地方都调用一个工具类，这样就显得代码太冗余了，那我们如何通过注解的方式优雅的完成数据脱敏呢？</p>
+<p>如果项目是基于 Spring Boot 的 web 项目，则可以利用 Spring Boot 自带的 jackson 自定义序列化实现。它的实现原来其实就是在 json 进行序列化渲染给前端时，进行脱敏。</p>
+<p><strong>第一步：脱敏策略的枚举。</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>:脱敏策略枚举</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public enum <span class="title class_">DesensitizationTypeEnum</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//自定义</span></span><br><span class="line">    <span class="variable constant_">MY_RULE</span>,</span><br><span class="line">    <span class="comment">//用户id</span></span><br><span class="line">    <span class="variable constant_">USER_ID</span>,</span><br><span class="line">    <span class="comment">//中文名</span></span><br><span class="line">    <span class="variable constant_">CHINESE_NAME</span>,</span><br><span class="line">    <span class="comment">//身份证号</span></span><br><span class="line">    <span class="variable constant_">ID_CARD</span>,</span><br><span class="line">    <span class="comment">//座机号</span></span><br><span class="line">    <span class="variable constant_">FIXED_PHONE</span>,</span><br><span class="line">    <span class="comment">//手机号</span></span><br><span class="line">    <span class="variable constant_">MOBILE_PHONE</span>,</span><br><span class="line">    <span class="comment">//地址</span></span><br><span class="line">    <span class="variable constant_">ADDRESS</span>,</span><br><span class="line">    <span class="comment">//电子邮件</span></span><br><span class="line">    <span class="variable constant_">EMAIL</span>,</span><br><span class="line">    <span class="comment">//密码</span></span><br><span class="line">    <span class="variable constant_">PASSWORD</span>,</span><br><span class="line">    <span class="comment">//中国大陆车牌，包含普通车辆、新能源车辆</span></span><br><span class="line">    <span class="variable constant_">CAR_LICENSE</span>,</span><br><span class="line">    <span class="comment">//银行卡</span></span><br><span class="line">    <span class="variable constant_">BANK_CARD</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面表示支持的脱敏类型。</p>
+<p><strong>第二步：定义一个用于脱敏的 Desensitization 注解。</strong></p>
+<ul>
+<li><pre><code class="js">
+</code></pre>
+</li>
+</ul>
+<p>@Retention (RetentionPolicy.RUNTIME)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">：运行时生效。</span><br><span class="line">* ```js </span><br><span class="line">@Target (ElementType.FIELD)</span><br></pre></td></tr></table></figure>
+<p>：可用在字段上。</p>
+<ul>
+<li><pre><code class="js">
+</code></pre>
+</li>
+</ul>
+<p>@JacksonAnnotationsInside</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">：此注解可以点进去看一下是一个元注解，主要是用户打包其他注解一起使用。</span><br><span class="line">* ```js </span><br><span class="line">@JsonSerialize</span><br></pre></td></tr></table></figure>
+<p>：上面说到过，该注解的作用就是可自定义序列化，可以用在注解上，方法上，字段上，类上，运行时生效等等，根据提供的序列化类里面的重写方法实现自定义序列化。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">@<span class="title class_">Target</span>(<span class="title class_">ElementType</span>.<span class="property">FIELD</span>)</span><br><span class="line">@<span class="title class_">Retention</span>(<span class="title class_">RetentionPolicy</span>.<span class="property">RUNTIME</span>)</span><br><span class="line">@<span class="title class_">JacksonAnnotationsInside</span></span><br><span class="line">@<span class="title class_">JsonSerialize</span>(using = <span class="title class_">DesensitizationSerialize</span>.<span class="property">class</span>)</span><br><span class="line">public @interface <span class="title class_">Desensitization</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 脱敏数据类型，在MY_RULE的时候，startInclude和endExclude生效</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="title class_">DesensitizationTypeEnum</span> <span class="title function_">type</span>() <span class="keyword">default</span> <span class="title class_">DesensitizationTypeEnum</span>.<span class="property">MY_RULE</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 脱敏开始位置（包含）</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    int <span class="title function_">startInclude</span>() <span class="keyword">default</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 脱敏结束位置（不包含）</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    int <span class="title function_">endExclude</span>() <span class="keyword">default</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注：只有使用了自定义的脱敏枚举 <code>MY_RULE</code> 的时候，开始位置和结束位置才生效。</p>
+<p><strong>第三步：创建自定的序列化类</strong></p>
+<p>这一步是我们实现数据脱敏的关键。自定义序列化类继承 <code>JsonSerializer</code>，实现 <code>ContextualSerializer</code> 接口，并重写两个方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 自定义序列化类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">@<span class="title class_">AllArgsConstructor</span></span><br><span class="line">@<span class="title class_">NoArgsConstructor</span></span><br><span class="line">public <span class="keyword">class</span> <span class="title class_">DesensitizationSerialize</span> <span class="keyword">extends</span> <span class="title class_ inherited__">JsonSerializer</span>&lt;<span class="title class_">String</span>&gt; implements <span class="title class_">ContextualSerializer</span> &#123;</span><br><span class="line">    </span><br><span class="line">    private <span class="title class_">DesensitizationTypeEnum</span> type;</span><br><span class="line"></span><br><span class="line">    private <span class="title class_">Integer</span> startInclude;</span><br><span class="line"></span><br><span class="line">    private <span class="title class_">Integer</span> endExclude;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">Override</span></span><br><span class="line">    public <span class="keyword">void</span> <span class="title function_">serialize</span>(<span class="title class_">String</span> str, <span class="title class_">JsonGenerator</span> jsonGenerator, <span class="title class_">SerializerProvider</span> serializerProvider) throws <span class="title class_">IOException</span> &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">switch</span> (type) &#123;</span><br><span class="line">    </span><br><span class="line">            <span class="comment">// 自定义类型脱敏</span></span><br><span class="line">            <span class="keyword">case</span> <span class="attr">MY_RULE</span>:</span><br><span class="line">                jsonGenerator.<span class="title function_">writeString</span>(<span class="title class_">CharSequenceUtil</span>.<span class="title function_">hide</span>(str, startInclude, endExclude));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// userId脱敏</span></span><br><span class="line">            <span class="keyword">case</span> <span class="attr">USER_ID</span>:</span><br><span class="line">                jsonGenerator.<span class="title function_">writeString</span>(<span class="title class_">String</span>.<span class="title function_">valueOf</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">userId</span>()));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 中文姓名脱敏</span></span><br><span class="line">            <span class="keyword">case</span> <span class="attr">CHINESE_NAME</span>:</span><br><span class="line">                jsonGenerator.<span class="title function_">writeString</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">chineseName</span>(<span class="title class_">String</span>.<span class="title function_">valueOf</span>(str)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 身份证脱敏</span></span><br><span class="line">            <span class="keyword">case</span> <span class="attr">ID_CARD</span>:</span><br><span class="line">                jsonGenerator.<span class="title function_">writeString</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">idCardNum</span>(<span class="title class_">String</span>.<span class="title function_">valueOf</span>(str), <span class="number">1</span>, <span class="number">2</span>));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 固定电话脱敏</span></span><br><span class="line">            <span class="keyword">case</span> <span class="attr">FIXED_PHONE</span>:</span><br><span class="line">                jsonGenerator.<span class="title function_">writeString</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">fixedPhone</span>(<span class="title class_">String</span>.<span class="title function_">valueOf</span>(str)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 手机号脱敏</span></span><br><span class="line">            <span class="keyword">case</span> <span class="attr">MOBILE_PHONE</span>:</span><br><span class="line">                jsonGenerator.<span class="title function_">writeString</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">mobilePhone</span>(<span class="title class_">String</span>.<span class="title function_">valueOf</span>(str)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 地址脱敏</span></span><br><span class="line">            <span class="keyword">case</span> <span class="attr">ADDRESS</span>:</span><br><span class="line">                jsonGenerator.<span class="title function_">writeString</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">address</span>(<span class="title class_">String</span>.<span class="title function_">valueOf</span>(str), <span class="number">8</span>));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 邮箱脱敏</span></span><br><span class="line">            <span class="keyword">case</span> <span class="attr">EMAIL</span>:</span><br><span class="line">                jsonGenerator.<span class="title function_">writeString</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">email</span>(<span class="title class_">String</span>.<span class="title function_">valueOf</span>(str)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 密码脱敏</span></span><br><span class="line">            <span class="keyword">case</span> <span class="attr">PASSWORD</span>:</span><br><span class="line">                jsonGenerator.<span class="title function_">writeString</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">password</span>(<span class="title class_">String</span>.<span class="title function_">valueOf</span>(str)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 中国车牌脱敏</span></span><br><span class="line">            <span class="keyword">case</span> <span class="attr">CAR_LICENSE</span>:</span><br><span class="line">                jsonGenerator.<span class="title function_">writeString</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">carLicense</span>(<span class="title class_">String</span>.<span class="title function_">valueOf</span>(str)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 银行卡脱敏</span></span><br><span class="line">            <span class="keyword">case</span> <span class="attr">BANK_CARD</span>:</span><br><span class="line">                jsonGenerator.<span class="title function_">writeString</span>(<span class="title class_">DesensitizedUtil</span>.<span class="title function_">bankCard</span>(<span class="title class_">String</span>.<span class="title function_">valueOf</span>(str)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="attr">default</span>:</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">Override</span></span><br><span class="line">    public <span class="title class_">JsonSerializer</span>&lt;?&gt; <span class="title function_">createContextual</span>(<span class="title class_">SerializerProvider</span> serializerProvider, <span class="title class_">BeanProperty</span> beanProperty) throws <span class="title class_">JsonMappingException</span> &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">if</span> (beanProperty != <span class="literal">null</span>) &#123;</span><br><span class="line">    </span><br><span class="line">            <span class="comment">// 判断数据类型是否为String类型</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="title class_">Objects</span>.<span class="title function_">equals</span>(beanProperty.<span class="title function_">getType</span>().<span class="title function_">getRawClass</span>(), <span class="title class_">String</span>.<span class="property">class</span>)) &#123;</span><br><span class="line">    </span><br><span class="line">                <span class="comment">// 获取定义的注解</span></span><br><span class="line">                <span class="title class_">Desensitization</span> desensitization = beanProperty.<span class="title function_">getAnnotation</span>(<span class="title class_">Desensitization</span>.<span class="property">class</span>);</span><br><span class="line">                <span class="comment">// 为null</span></span><br><span class="line">                <span class="keyword">if</span> (desensitization == <span class="literal">null</span>) &#123;</span><br><span class="line">    </span><br><span class="line">                    desensitization = beanProperty.<span class="title function_">getContextAnnotation</span>(<span class="title class_">Desensitization</span>.<span class="property">class</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 不为null</span></span><br><span class="line">                <span class="keyword">if</span> (desensitization != <span class="literal">null</span>) &#123;</span><br><span class="line">    </span><br><span class="line">                    <span class="comment">// 创建定义的序列化类的实例并且返回，入参为注解定义的type,开始位置，结束位置。</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">DesensitizationSerialize</span>(desensitization.<span class="title function_">type</span>(), desensitization.<span class="title function_">startInclude</span>(),</span><br><span class="line">                            desensitization.<span class="title function_">endExclude</span>());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> serializerProvider.<span class="title function_">findValueSerializer</span>(beanProperty.<span class="title function_">getType</span>(), beanProperty);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> serializerProvider.<span class="title function_">findNullValueSerializer</span>(<span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>经过上述三步，已经完成了通过注解实现数据脱敏了，下面我们来测试一下。</p>
+<p>首先定义一个要测试的 pojo，对应的字段加入要脱敏的策略。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>:</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">@<span class="title class_">Data</span></span><br><span class="line">@<span class="title class_">NoArgsConstructor</span></span><br><span class="line">@<span class="title class_">AllArgsConstructor</span></span><br><span class="line">public <span class="keyword">class</span> <span class="title class_">TestPojo</span> &#123;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    private <span class="title class_">String</span> userName;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">Desensitization</span>(type = <span class="title class_">DesensitizationTypeEnum</span>.<span class="property">MOBILE_PHONE</span>)</span><br><span class="line">    private <span class="title class_">String</span> phone;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">Desensitization</span>(type = <span class="title class_">DesensitizationTypeEnum</span>.<span class="property">PASSWORD</span>)</span><br><span class="line">    private <span class="title class_">String</span> password;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">Desensitization</span>(type = <span class="title class_">DesensitizationTypeEnum</span>.<span class="property">MY_RULE</span>, startInclude = <span class="number">0</span>, endExclude = <span class="number">2</span>)</span><br><span class="line">    private <span class="title class_">String</span> address;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来写一个测试的 controller</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@<span class="title class_">RestController</span></span><br><span class="line">public <span class="keyword">class</span> <span class="title class_">TestController</span> &#123;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    @<span class="title class_">RequestMapping</span>(<span class="string">&quot;/test&quot;</span>)</span><br><span class="line">    public <span class="title class_">TestPojo</span> <span class="title function_">testDesensitization</span>(<span class="params"></span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="title class_">TestPojo</span> testPojo = <span class="keyword">new</span> <span class="title class_">TestPojo</span>();</span><br><span class="line">        testPojo.<span class="title function_">setUserName</span>(<span class="string">&quot;我是用户名&quot;</span>);</span><br><span class="line">        testPojo.<span class="title function_">setAddress</span>(<span class="string">&quot;地球中国-北京市通州区京东总部2号楼&quot;</span>);</span><br><span class="line">        testPojo.<span class="title function_">setPhone</span>(<span class="string">&quot;13782946666&quot;</span>);</span><br><span class="line">        testPojo.<span class="title function_">setPassword</span>(<span class="string">&quot;sunyangwei123123123.&quot;</span>);</span><br><span class="line">        <span class="title class_">System</span>.<span class="property">out</span>.<span class="title function_">println</span>(testPojo);</span><br><span class="line">        <span class="keyword">return</span> testPojo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403142123876.png" alt="img"></p>
+<p>可以看到我们成功实现了数据脱敏。</p>
+<h4 id="Apache-ShardingSphere"><a href="#Apache-ShardingSphere" class="headerlink" title="Apache ShardingSphere"></a>Apache ShardingSphere</h4><p>ShardingSphere 是一套开源的分布式数据库中间件解决方案组成的生态圈，它由 Sharding-JDBC、Sharding-Proxy 和 Sharding-Sidecar（计划中）这 3 款相互独立的产品组成。 他们均提供标准化的数据分片、分布式事务和数据库治理功能 。</p>
+<p>Apache ShardingSphere 下面存在一个数据脱敏模块，此模块集成的常用的数据脱敏的功能。其基本原理是对用户输入的 SQL 进行解析拦截，并依靠用户的脱敏配置进行 SQL 的改写，从而实现对原文字段的加密及加密字段的解密。最终实现对用户无感的加解密存储、查询。</p>
+<p>通过 Apache ShardingSphere 可以自动化&amp;透明化数据脱敏过程，用户无需关注脱敏中间实现细节。并且，提供了多种内置、第三方(AKS)的脱敏策略，用户仅需简单配置即可使用。</p>
+<h4 id="FastJSON"><a href="#FastJSON" class="headerlink" title="FastJSON"></a>FastJSON</h4><p>平时开发 Web 项目的时候，除了默认的 Spring 自带的序列化工具，FastJson 也是一个很常用的 Spring Web Restful 接口序列化的工具。</p>
+<p>FastJSON 实现数据脱敏的方式主要有两种：</p>
+<ul>
+<li>基于注解</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="title class_">JSON</span>Field</span><br></pre></td></tr></table></figure>
+<p>实现：需要自定义一个用于脱敏的序列化的类，然后在需要脱敏的字段上通过</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="title class_">JSON</span>Field</span><br></pre></td></tr></table></figure>
+<p>中的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">serializeUsing</span><br></pre></td></tr></table></figure>
+<p>指定为我们自定义的序列化类型即可。</p>
+<ul>
+<li>基于序列化过滤器：需要实现</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">ValueFilter</span></span><br></pre></td></tr></table></figure>
+<p>接口，重写</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">process</span><br></pre></td></tr></table></figure>
+<p>方法完成自定义脱敏，然后在 JSON 转换时使用自定义的转换策略。</p>
+<h4 id="Mybatis-mate"><a href="#Mybatis-mate" class="headerlink" title="Mybatis-mate"></a>Mybatis-mate</h4><p>MybatisPlus 也提供了数据脱敏模块 mybatis-mate。mybatis-mate 为 MybatisPlus 企业级模块，使用之前需要配置授权码（付费），旨在更敏捷优雅处理数据。</p>
+<p>配置内容如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># <span class="title class_">Mybatis</span> <span class="title class_">Mate</span> 配置</span><br><span class="line">mybatis-<span class="attr">mate</span>:</span><br><span class="line">  <span class="attr">cert</span>:</span><br><span class="line">    <span class="attr">grant</span>: jxftsdfggggx</span><br><span class="line">    <span class="attr">license</span>: <span class="title class_">GKXP9</span>r4MCJhGID/<span class="title class_">DTGigcBcLmZjb1YZGjE</span>4GXaAoxbtGsPC20sxpEtiUr2F7Nb1ANTUekvF6Syo6DzraA4M4oac</span><br></pre></td></tr></table></figure>
+
+<h4 id="MyBatis-Flex"><a href="#MyBatis-Flex" class="headerlink" title="MyBatis-Flex"></a>MyBatis-Flex</h4><p>类似于 MybatisPlus，MyBatis-Flex 也是一个 MyBatis 增强框架。MyBatis-Flex 同样提供了数据脱敏功能，并且是可以免费使用的。</p>
+<p>MyBatis-Flex 提供了 <code>@ColumnMask()</code> 注解，以及内置的 9 种脱敏规则，开箱即用：</p>
+<ul>
+<li>用户名脱敏</li>
+<li>手机号脱敏</li>
+<li>固定电话脱敏</li>
+<li>身份证号脱敏</li>
+<li>车牌号脱敏</li>
+<li>地址脱敏</li>
+<li>邮件脱敏</li>
+<li>密码脱敏</li>
+<li>银行卡号脱敏<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 内置的数据脱敏方式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="keyword">class</span> <span class="title class_">Masks</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 手机号脱敏</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">MOBILE</span> = <span class="string">&quot;mobile&quot;</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 固定电话脱敏</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">FIXED_PHONE</span> = <span class="string">&quot;fixed_phone&quot;</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 身份证号脱敏</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">ID_CARD_NUMBER</span> = <span class="string">&quot;id_card_number&quot;</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 中文名脱敏</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">CHINESE_NAME</span> = <span class="string">&quot;chinese_name&quot;</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 地址脱敏</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">ADDRESS</span> = <span class="string">&quot;address&quot;</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 邮件脱敏</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">EMAIL</span> = <span class="string">&quot;email&quot;</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 密码脱敏</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">PASSWORD</span> = <span class="string">&quot;password&quot;</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 车牌号脱敏</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">CAR_LICENSE</span> = <span class="string">&quot;car_license&quot;</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 银行卡号脱敏</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="keyword">static</span> final <span class="title class_">String</span> <span class="variable constant_">BANK_CARD_NUMBER</span> = <span class="string">&quot;bank_card_number&quot;</span>;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>使用示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@<span class="title class_">Table</span>(<span class="string">&quot;tb_account&quot;</span>)</span><br><span class="line">public <span class="keyword">class</span> <span class="title class_">Account</span> &#123;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    @<span class="title class_">Id</span>(keyType = <span class="title class_">KeyType</span>.<span class="property">Auto</span>)</span><br><span class="line">    private <span class="title class_">Long</span> id;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">ColumnMask</span>(<span class="title class_">Masks</span>.<span class="property">CHINESE_NAME</span>)</span><br><span class="line">    private <span class="title class_">String</span> userName;</span><br><span class="line"></span><br><span class="line">    @<span class="title class_">ColumnMask</span>(<span class="title class_">Masks</span>.<span class="property">EMAIL</span>)</span><br><span class="line">    private <span class="title class_">String</span> email;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果这些内置的脱敏规则不满足你的要求的话，你还可以自定义脱敏规则。</p>
+<h3 id="作者声明"><a href="#作者声明" class="headerlink" title="作者声明"></a>作者声明</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如有问题，欢迎指正！</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">jhj</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/98dfdd22.html">http://example.com/post/98dfdd22.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">jhj-coding</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%90%8E%E7%AB%AF/">后端</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/e95bbc47.html" title="敏感词过滤方案"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">敏感词过滤方案</div></div></a></div><div class="next-post pull-right"><a href="/post/bbc1f16.html" title="Web 实时消息推送"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Web 实时消息推送</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jhj</div><div class="author-info__description">努力学习，努力爱你!</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">185</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">62</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/jhj-coding"><i class="iconfont icon-gitee"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://gitee.com/jhj-coding" target="_blank" title="gitee"><i class="iconfont icon-gitee" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:jhjcoding@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/qq.jpg" target="_blank" title="qq"><i class="fa-brands fa-qq" style="color: #hdhfbb;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E6%96%B9%E6%A1%88"><span class="toc-number">1.</span> <span class="toc-text">数据脱敏方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F"><span class="toc-number">1.1.</span> <span class="toc-text">什么是数据脱敏</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据脱敏的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%84%B1%E6%95%8F%E8%A7%84%E5%88%99"><span class="toc-number">1.1.2.</span> <span class="toc-text">常用脱敏规则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%84%B1%E6%95%8F%E5%B7%A5%E5%85%B7"><span class="toc-number">1.2.</span> <span class="toc-text">常用脱敏工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Hutool"><span class="toc-number">1.2.1.</span> <span class="toc-text">Hutool</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E8%84%B1%E6%95%8F"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">一行代码实现脱敏</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E5%90%88-JackSon-%E9%80%9A%E8%BF%87%E6%B3%A8%E8%A7%A3%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E8%84%B1%E6%95%8F"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">配合 JackSon 通过注解方式实现脱敏</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Apache-ShardingSphere"><span class="toc-number">1.2.2.</span> <span class="toc-text">Apache ShardingSphere</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FastJSON"><span class="toc-number">1.2.3.</span> <span class="toc-text">FastJSON</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mybatis-mate"><span class="toc-number">1.2.4.</span> <span class="toc-text">Mybatis-mate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MyBatis-Flex"><span class="toc-number">1.2.5.</span> <span class="toc-text">MyBatis-Flex</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E8%80%85%E5%A3%B0%E6%98%8E"><span class="toc-number">1.3.</span> <span class="toc-text">作者声明</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/167997d8.html" title="jconsole与jvisualvm"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jconsole与jvisualvm"/></a><div class="content"><a class="title" href="/post/167997d8.html" title="jconsole与jvisualvm">jconsole与jvisualvm</a><time datetime="2023-12-18T09:11:18.000Z" title="发表于 2023-12-18 17:11:18">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/1bfbf0ea.html" title="压力测试详解"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="压力测试详解"/></a><div class="content"><a class="title" href="/post/1bfbf0ea.html" title="压力测试详解">压力测试详解</a><time datetime="2023-12-18T06:26:44.000Z" title="发表于 2023-12-18 14:26:44">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阿里云部署k8s with kubesphere"/></a><div class="content"><a class="title" href="/post/7c7fd486.html" title="阿里云部署k8s with kubesphere">阿里云部署k8s with kubesphere</a><time datetime="2023-12-17T09:21:04.000Z" title="发表于 2023-12-17 17:21:04">2023-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/2d8b6a16.html" title="性能测试入门"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="性能测试入门"/></a><div class="content"><a class="title" href="/post/2d8b6a16.html" title="性能测试入门">性能测试入门</a><time datetime="2023-12-10T08:15:58.000Z" title="发表于 2023-12-10 16:15:58">2023-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/6998f00a.html" title="冗余设计思想"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="冗余设计思想"/></a><div class="content"><a class="title" href="/post/6998f00a.html" title="冗余设计思想">冗余设计思想</a><time datetime="2023-12-10T08:06:13.000Z" title="发表于 2023-12-10 16:06:13">2023-12-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/java.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024  <i id="heartbeat" class="fa fas fa-heartbeat"></i> jhj</div><div class="footer_custom_text">welcome to my blob</div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.31/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/custom.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="//code.tidio.co/th7rc6a4lyprr1ddkuejkobcxcttlbcr.js" async="async"></script><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = true
+
+  if (isChatBtn) {
+    let isShow = false
+    const close = () => {
+      window.tidioChatApi.hide()
+      isShow = false
+    }
+    
+    const open = () => {
+      window.tidioChatApi.open()
+      window.tidioChatApi.show()
+      isShow = true
+    }
+
+    const onTidioChatApiReady = () => {
+      window.tidioChatApi.hide()
+      window.tidioChatApi.on("close", close)
+    }
+    if (window.tidioChatApi) {
+      window.tidioChatApi.on("ready", onTidioChatApiReady)
+    } else {
+      document.addEventListener("tidioChat-ready", onTidioChatApiReady)
+    }
+
+    window.chatBtnFn = () => {
+      if (!window.tidioChatApi) return
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        window.tidioChatApi && window.tidioChatApi.hide()
+      },
+      show: () => {
+        window.tidioChatApi && window.tidioChatApi.show()
+      }
+    }
+  }
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.65.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.13.0"></script></div></div></body></html>
