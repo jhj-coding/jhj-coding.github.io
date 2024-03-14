@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>kubesphere | jhj-coding</title><meta name="author" content="jhj,hnjzjhj@163.com"><meta name="copyright" content="jhj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="文章目录  KubeSphere    简介   安装 多租户管理 WordPress DevOps 作者声明  KubeSphere默认的 dashboard 没啥用，我们用 kubesphere 可以打通全部的 devops 链路。Kubesphere 集成了很多套件，集群要求较高https:&#x2F;&#x2F;kubesphere.io&#x2F;https:&#x2F;&#x2F;kubesphere.io&#x2F;Kuboard 也很不错，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kubesphere">
+<meta property="og:url" content="http://example.com/post/dfc212cb.html">
+<meta property="og:site_name" content="jhj-coding">
+<meta property="og:description" content="文章目录  KubeSphere    简介   安装 多租户管理 WordPress DevOps 作者声明  KubeSphere默认的 dashboard 没啥用，我们用 kubesphere 可以打通全部的 devops 链路。Kubesphere 集成了很多套件，集群要求较高https:&#x2F;&#x2F;kubesphere.io&#x2F;https:&#x2F;&#x2F;kubesphere.io&#x2F;Kuboard 也很不错，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/e3b93f20428d89c8e48101501daae9cc98b67684/img/3869a1bf1a42471495519d5a7fc6c252.png">
+<meta property="article:published_time" content="2022-08-08T06:53:10.000Z">
+<meta property="article:modified_time" content="2024-03-14T08:26:12.988Z">
+<meta property="article:author" content="jhj">
+<meta property="article:tag" content="devops">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/jhj-coding/my-typora-picgo/raw/e3b93f20428d89c8e48101501daae9cc98b67684/img/3869a1bf1a42471495519d5a7fc6c252.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/post/dfc212cb.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"MN792LJJVS","apiKey":"e946d312db0afe9b3f7d3e71f5f7585b","indexName":"jhj","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: jhj","link":"链接: ","source":"来源: jhj-coding","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'kubesphere',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-14 16:26:12'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4464920_sugj9c5f13.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.1.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/e3b93f20428d89c8e48101501daae9cc98b67684/img/3869a1bf1a42471495519d5a7fc6c252.png')"><nav id="nav"><span id="blog-info"><a href="/" title="jhj-coding"><span class="site-name">jhj-coding</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">kubesphere</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-08T06:53:10.000Z" title="发表于 2022-08-08 14:53:10">2022-08-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-14T08:26:12.988Z" title="更新于 2024-03-14 16:26:12">2024-03-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/linux/">linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="kubesphere"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h4 id="文章目录"><a href="#文章目录" class="headerlink" title="文章目录"></a>文章目录</h4><ul>
+<li><ul>
+<li>KubeSphere</li>
+</ul>
+</li>
+<li><ul>
+<li>简介</li>
+</ul>
+</li>
+<li>安装</li>
+<li>多租户管理</li>
+<li>WordPress</li>
+<li>DevOps</li>
+<li>作者声明</li>
+</ul>
+<h3 id="KubeSphere"><a href="#KubeSphere" class="headerlink" title="KubeSphere"></a>KubeSphere</h3><p>默认的 dashboard 没啥用，我们用 kubesphere 可以打通全部的 devops 链路。<br>Kubesphere 集成了很多套件，集群要求较高<br><a target="_blank" rel="noopener" href="https://kubesphere.io/https://kubesphere.io/">https://kubesphere.io/https://kubesphere.io/</a><br>Kuboard 也很不错，集群要求不高<br><a target="_blank" rel="noopener" href="https://kuboard.cn/support/https://kuboard.cn/support/">https://kuboard.cn/support/https://kuboard.cn/support/</a></p>
+<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>KubeSphere 是一款面向云原生设计的开源项目，在目前主流容器调度平台 Kubernetes 之上构建的分布式多租户容器管理平台，提供简单易用的操作界面以及向导式操作方式，在降低用户使用容器调度平台学习成本的同时，极大降低开发、测试、运维的日常工作的复杂度。</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>1.<br>前提条件<br><a target="_blank" rel="noopener" href="https://kubesphere.io/docs/v2.1/zh-CN/installation/prerequisiteshttps://kubesphere.io/docs/v2.1/zh-CN/installation/prerequisites">https://kubesphere.io/docs/v2.1/zh-CN/installation/prerequisiteshttps://kubesphere.io/docs/v2.1/zh-CN/installation/prerequisites</a></p>
+<p>1.<br>安装前提环境</p>
+<ol>
+<li>安装 helm（master 节点执行）<br>Helm 是 Kubernetes 的包管理器。包管理器类似于我们在 Ubuntu 中使用的 apt、Centos中使用的 yum 或者 Python 中的 pip 一样，能快速查找、下载和安装软件包。Helm 由客户端组件 helm 和服务端组件 Tiller 组成, 能够将一组 K8S 资源打包统一管理, 是查找、共享和使用为 Kubernetes 构建的软件的最佳方式。<br>1）、安装<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">curl -<span class="variable constant_">SLO</span> <span class="attr">https</span>:<span class="comment">//get.helm.sh/helm-v2.16.3-linux-amd64.tar.gz</span></span><br><span class="line"></span><br><span class="line">tar xzvf helm-v2<span class="number">.16</span><span class="number">.2</span>-linux-amd64.<span class="property">tar</span>.<span class="property">gz</span></span><br><span class="line"></span><br><span class="line">mv linux-amd64/helm /usr/local/bin/</span><br><span class="line"></span><br><span class="line">mv linux-amd64/tiller /usr/local/bin/</span><br><span class="line"></span><br><span class="line">#验证成功</span><br><span class="line">helm version</span><br></pre></td></tr></table></figure></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>）、验证版本</span><br><span class="line"> helm version</span><br><span class="line"> <span class="number">3</span>）、创建权限（master 执行）</span><br><span class="line"> 创建 helm-rbac.<span class="property">yaml</span>，写入如下内容</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion</span>: v1</span><br><span class="line"><span class="attr">kind</span>: <span class="title class_">ServiceAccount</span></span><br><span class="line"><span class="attr">metadata</span>:</span><br><span class="line">  <span class="attr">name</span>: tiller</span><br><span class="line">  <span class="attr">namespace</span>: kube-system</span><br><span class="line">---</span><br><span class="line"><span class="attr">apiVersion</span>: rbac.<span class="property">authorization</span>.<span class="property">k8s</span>.<span class="property">io</span>/v1</span><br><span class="line"><span class="attr">kind</span>: <span class="title class_">ClusterRoleBinding</span></span><br><span class="line"><span class="attr">metadata</span>:</span><br><span class="line">  <span class="attr">name</span>: tiller</span><br><span class="line"><span class="attr">roleRef</span>:</span><br><span class="line">  <span class="attr">apiGroup</span>: rbac.<span class="property">authorization</span>.<span class="property">k8s</span>.<span class="property">io</span></span><br><span class="line">  <span class="attr">kind</span>: <span class="title class_">ClusterRole</span></span><br><span class="line">  <span class="attr">name</span>: cluster-admin  </span><br><span class="line"><span class="attr">subjects</span>: </span><br><span class="line">  - <span class="attr">kind</span>: <span class="title class_">ServiceAccount</span></span><br><span class="line">    <span class="attr">name</span>: tiller</span><br><span class="line">    <span class="attr">namespace</span>: kube-system</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#应用配置</span><br><span class="line">kubectl apply -f helm_rbac.<span class="property">yaml</span></span><br></pre></td></tr></table></figure>
+
+<p>2、安装 Tiller（master 执行）<br>1、初始化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helm init --upgrade -i registry.<span class="property">cn</span>-hangzhou.<span class="property">aliyuncs</span>.<span class="property">com</span>/google_containers/<span class="attr">tiller</span>:v2<span class="number">.16</span><span class="number">.3</span> --stable-repo-url <span class="attr">https</span>:<span class="comment">//kubernetes.oss-cn-hangzhou.aliyuncs.com/charts</span></span><br></pre></td></tr></table></figure>
+
+<p>–tiller-image 指定镜像，否则会被墙。大家使用这个镜像比较好<br>jessestuart&#x2F;tiller:v2.16.3<br>等待节点上部署的 tiller 完成即可</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#卸载</span><br><span class="line">#删除旧的helm，直接执行</span><br><span class="line">helm reset -f</span><br><span class="line"></span><br><span class="line">#删除</span><br><span class="line">rm -rf /root/.<span class="property">helm</span></span><br><span class="line"></span><br><span class="line"># 删除 与tiller相关的secrets,sa,clusterrolebinding</span><br><span class="line">kubectl get -n kube-system secrets,sa,clusterrolebinding -o name|grep tiller|xargs kubectl -n kube-system <span class="keyword">delete</span></span><br><span class="line"></span><br><span class="line"># 删除 与helm客户端相关的资源</span><br><span class="line">kubectl get all -n kube-system -l app=helm -o name|xargs kubectl <span class="keyword">delete</span> -n kube-system</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141618466.png" alt="在这里插入图片描述"><br>2、安装OpenEBS</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#创建<span class="title class_">OpenEBS</span>的namespace</span><br><span class="line">kubectl create ns openebs</span><br><span class="line">#使用helm安装</span><br><span class="line">helm init</span><br><span class="line">#换镜像地址</span><br><span class="line">helm repo remove stable</span><br><span class="line">helm repo add stable <span class="attr">http</span>:<span class="comment">//mirror.azure.cn/kubernetes/charts</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">helm install --namespace openebs stable/openebs --version <span class="number">1.5</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line">#改变storage<span class="keyword">class</span></span><br><span class="line"><span class="title class_">kubectl</span> patch storage<span class="keyword">class</span> <span class="title class_">openebs</span>-hostpath -p <span class="string">&#x27;&#123;&quot;metadata&quot;: &#123;&quot;annotations&quot;:&#123;&quot;storageclass.kubernetes.io/is-default-class&quot;:&quot;true&quot;&#125;&#125;&#125;&#x27;</span></span><br><span class="line">#重新打上污点</span><br><span class="line">kubectl taint nodes k8s-node1 node-role.<span class="property">kubernetes</span>.<span class="property">io</span>=<span class="attr">master</span>:<span class="title class_">NoSchedule</span></span><br></pre></td></tr></table></figure>
+<p>1.<br>最小化安装kubesphere<br>若您的集群可用的资源符合 CPU &gt; 1 Core，可用内存 &gt; 2 G，可以参考以下命令开启</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#将下面文件内容编辑到yaml中</span><br><span class="line">vi kubesphere-mini.<span class="property">yaml</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="attr">apiVersion</span>: v1</span><br><span class="line"><span class="attr">kind</span>: <span class="title class_">Namespace</span></span><br><span class="line"><span class="attr">metadata</span>:</span><br><span class="line">  <span class="attr">name</span>: kubesphere-system</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="attr">apiVersion</span>: v1</span><br><span class="line"><span class="attr">data</span>:</span><br><span class="line">  ks-config.<span class="property">yaml</span>: |</span><br><span class="line">    ---</span><br><span class="line">    <span class="attr">persistence</span>:</span><br><span class="line">      <span class="attr">storageClass</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="attr">etcd</span>:</span><br><span class="line">      <span class="attr">monitoring</span>: <span class="title class_">False</span></span><br><span class="line">      <span class="attr">endpointIps</span>: <span class="number">192.168</span><span class="number">.0</span><span class="number">.7</span>,<span class="number">192.168</span><span class="number">.0</span><span class="number">.8</span>,<span class="number">192.168</span><span class="number">.0</span><span class="number">.9</span></span><br><span class="line">      <span class="attr">port</span>: <span class="number">2379</span></span><br><span class="line">      <span class="attr">tlsEnable</span>: <span class="title class_">True</span></span><br><span class="line">    <span class="attr">common</span>:</span><br><span class="line">      <span class="attr">mysqlVolumeSize</span>: 20Gi</span><br><span class="line">      <span class="attr">minioVolumeSize</span>: 20Gi</span><br><span class="line">      <span class="attr">etcdVolumeSize</span>: 20Gi</span><br><span class="line">      <span class="attr">openldapVolumeSize</span>: 2Gi</span><br><span class="line">      <span class="attr">redisVolumSize</span>: 2Gi</span><br><span class="line">    <span class="attr">metrics_server</span>:</span><br><span class="line">      <span class="attr">enabled</span>: <span class="title class_">False</span></span><br><span class="line">    <span class="attr">console</span>:</span><br><span class="line">      <span class="attr">enableMultiLogin</span>: <span class="title class_">False</span>  # enable/disable multi login</span><br><span class="line">      <span class="attr">port</span>: <span class="number">30880</span></span><br><span class="line">    <span class="attr">monitoring</span>:</span><br><span class="line">      <span class="attr">prometheusReplicas</span>: <span class="number">1</span></span><br><span class="line">      <span class="attr">prometheusMemoryRequest</span>: 400Mi</span><br><span class="line">      <span class="attr">prometheusVolumeSize</span>: 20Gi</span><br><span class="line">      <span class="attr">grafana</span>:</span><br><span class="line">        <span class="attr">enabled</span>: <span class="title class_">False</span></span><br><span class="line">    <span class="attr">logging</span>:</span><br><span class="line">      <span class="attr">enabled</span>: <span class="title class_">False</span></span><br><span class="line">      <span class="attr">elasticsearchMasterReplicas</span>: <span class="number">1</span></span><br><span class="line">      <span class="attr">elasticsearchDataReplicas</span>: <span class="number">1</span></span><br><span class="line">      <span class="attr">logsidecarReplicas</span>: <span class="number">2</span></span><br><span class="line">      <span class="attr">elasticsearchMasterVolumeSize</span>: 4Gi</span><br><span class="line">      <span class="attr">elasticsearchDataVolumeSize</span>: 20Gi</span><br><span class="line">      <span class="attr">logMaxAge</span>: <span class="number">7</span></span><br><span class="line">      <span class="attr">elkPrefix</span>: logstash</span><br><span class="line">      <span class="attr">containersLogMountedPath</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">      <span class="attr">kibana</span>:</span><br><span class="line">        <span class="attr">enabled</span>: <span class="title class_">False</span></span><br><span class="line">    <span class="attr">openpitrix</span>:</span><br><span class="line">      <span class="attr">enabled</span>: <span class="title class_">False</span></span><br><span class="line">    <span class="attr">devops</span>:</span><br><span class="line">      <span class="attr">enabled</span>: <span class="title class_">False</span></span><br><span class="line">      <span class="attr">jenkinsMemoryLim</span>: 2Gi</span><br><span class="line">      <span class="attr">jenkinsMemoryReq</span>: 1500Mi</span><br><span class="line">      <span class="attr">jenkinsVolumeSize</span>: 8Gi</span><br><span class="line">      <span class="attr">jenkinsJavaOpts_Xms</span>: 512m</span><br><span class="line">      <span class="attr">jenkinsJavaOpts_Xmx</span>: 512m</span><br><span class="line">      <span class="attr">jenkinsJavaOpts_MaxRAM</span>: 2g</span><br><span class="line">      <span class="attr">sonarqube</span>:</span><br><span class="line">        <span class="attr">enabled</span>: <span class="title class_">False</span></span><br><span class="line">        <span class="attr">postgresqlVolumeSize</span>: 8Gi</span><br><span class="line">    <span class="attr">servicemesh</span>:</span><br><span class="line">      <span class="attr">enabled</span>: <span class="title class_">False</span></span><br><span class="line">    <span class="attr">notification</span>:</span><br><span class="line">      <span class="attr">enabled</span>: <span class="title class_">False</span></span><br><span class="line">    <span class="attr">alerting</span>:</span><br><span class="line">      <span class="attr">enabled</span>: <span class="title class_">False</span></span><br><span class="line"><span class="attr">kind</span>: <span class="title class_">ConfigMap</span></span><br><span class="line"><span class="attr">metadata</span>:</span><br><span class="line">  <span class="attr">name</span>: ks-installer</span><br><span class="line">  <span class="attr">namespace</span>: kubesphere-system</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="attr">apiVersion</span>: v1</span><br><span class="line"><span class="attr">kind</span>: <span class="title class_">ServiceAccount</span></span><br><span class="line"><span class="attr">metadata</span>:</span><br><span class="line">  <span class="attr">name</span>: ks-installer</span><br><span class="line">  <span class="attr">namespace</span>: kubesphere-system</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="attr">apiVersion</span>: rbac.<span class="property">authorization</span>.<span class="property">k8s</span>.<span class="property">io</span>/v1</span><br><span class="line"><span class="attr">kind</span>: <span class="title class_">ClusterRole</span></span><br><span class="line"><span class="attr">metadata</span>:</span><br><span class="line">  <span class="attr">creationTimestamp</span>: <span class="literal">null</span></span><br><span class="line">  <span class="attr">name</span>: ks-installer</span><br><span class="line"><span class="attr">rules</span>:</span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - <span class="string">&quot;&quot;</span></span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - apps</span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - extensions</span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - batch</span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - rbac.<span class="property">authorization</span>.<span class="property">k8s</span>.<span class="property">io</span></span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - apiregistration.<span class="property">k8s</span>.<span class="property">io</span></span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - apiextensions.<span class="property">k8s</span>.<span class="property">io</span></span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - tenant.<span class="property">kubesphere</span>.<span class="property">io</span></span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - certificates.<span class="property">k8s</span>.<span class="property">io</span></span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - devops.<span class="property">kubesphere</span>.<span class="property">io</span></span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - monitoring.<span class="property">coreos</span>.<span class="property">com</span></span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - logging.<span class="property">kubesphere</span>.<span class="property">io</span></span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - jaegertracing.<span class="property">io</span></span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - storage.<span class="property">k8s</span>.<span class="property">io</span></span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">- <span class="attr">apiGroups</span>:</span><br><span class="line">  - admissionregistration.<span class="property">k8s</span>.<span class="property">io</span></span><br><span class="line">  <span class="attr">resources</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line">  <span class="attr">verbs</span>:</span><br><span class="line">  - <span class="string">&#x27;*&#x27;</span></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="attr">kind</span>: <span class="title class_">ClusterRoleBinding</span></span><br><span class="line"><span class="attr">apiVersion</span>: rbac.<span class="property">authorization</span>.<span class="property">k8s</span>.<span class="property">io</span>/v1</span><br><span class="line"><span class="attr">metadata</span>:</span><br><span class="line">  <span class="attr">name</span>: ks-installer</span><br><span class="line"><span class="attr">subjects</span>:</span><br><span class="line">- <span class="attr">kind</span>: <span class="title class_">ServiceAccount</span></span><br><span class="line">  <span class="attr">name</span>: ks-installer</span><br><span class="line">  <span class="attr">namespace</span>: kubesphere-system</span><br><span class="line"><span class="attr">roleRef</span>:</span><br><span class="line">  <span class="attr">kind</span>: <span class="title class_">ClusterRole</span></span><br><span class="line">  <span class="attr">name</span>: ks-installer</span><br><span class="line">  <span class="attr">apiGroup</span>: rbac.<span class="property">authorization</span>.<span class="property">k8s</span>.<span class="property">io</span></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="attr">apiVersion</span>: apps/v1</span><br><span class="line"><span class="attr">kind</span>: <span class="title class_">Deployment</span></span><br><span class="line"><span class="attr">metadata</span>:</span><br><span class="line">  <span class="attr">name</span>: ks-installer</span><br><span class="line">  <span class="attr">namespace</span>: kubesphere-system</span><br><span class="line">  <span class="attr">labels</span>:</span><br><span class="line">    <span class="attr">app</span>: ks-install</span><br><span class="line"><span class="attr">spec</span>:</span><br><span class="line">  <span class="attr">replicas</span>: <span class="number">1</span></span><br><span class="line">  <span class="attr">selector</span>:</span><br><span class="line">    <span class="attr">matchLabels</span>:</span><br><span class="line">      <span class="attr">app</span>: ks-install</span><br><span class="line">  <span class="attr">template</span>:</span><br><span class="line">    <span class="attr">metadata</span>:</span><br><span class="line">      <span class="attr">labels</span>:</span><br><span class="line">        <span class="attr">app</span>: ks-install</span><br><span class="line">    <span class="attr">spec</span>:</span><br><span class="line">      <span class="attr">serviceAccountName</span>: ks-installer</span><br><span class="line">      <span class="attr">containers</span>:</span><br><span class="line">      - <span class="attr">name</span>: installer</span><br><span class="line">        <span class="attr">image</span>: kubesphere/ks-<span class="attr">installer</span>:v2<span class="number">.1</span><span class="number">.1</span></span><br><span class="line">        <span class="attr">imagePullPolicy</span>: <span class="string">&quot;Always&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#<span class="title class_">KubeSphere</span> 最小化安装：</span><br><span class="line">kubectl apply -f kubesphere-mini.<span class="property">yaml</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141618467.png" alt="在这里插入图片描述"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#等镜像准备好后</span><br><span class="line">#可用命令查看状态</span><br><span class="line">kubectl get pods --all-namespaces</span><br><span class="line">#查看安装日志，请耐心等待安装成功。</span><br><span class="line">kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath=<span class="string">&#x27;&#123;.items[0].metadata.name&#125;&#x27;</span>) -f</span><br><span class="line">#解决问题重启 installer</span><br><span class="line">kubectl <span class="keyword">delete</span> pod ks-installer-75b8d89dff-f7r2g -n</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141618468.png" alt="在这里插入图片描述"><br>成功 账号密码 admin P@88w0rd</p>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141618469.png" alt="在这里插入图片描述"></p>
+<ol>
+<li>完整安装<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#通过修改ks-installer的configmap可以选装组件</span><br><span class="line">kubectl edit cm -n kubesphere-system ks-installer</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141618470.png" alt="在这里插入图片描述"><br><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141618471.png" alt="在这里插入图片描述"></p>
+<h4 id="多租户管理"><a href="#多租户管理" class="headerlink" title="多租户管理"></a>多租户管理</h4><p>目前，平台的资源一共有三个层级，包括 集群 (Cluster)、 企业空间 (Workspace)、 项目 (Project) 和 DevOps Project (DevOps 工程)，层级关系如下图所示，即一个集群中可以创建多个企业空间，而每个企业空间，可以创建多个项目和 DevOps工程，而集群、企业空间、项目和 DevOps工程中，默认有多个不同的内置角色。<br><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141618472.png" alt="在这里插入图片描述"><br>使用参考官网 <a target="_blank" rel="noopener" href="https://v2-1.docs.kubesphere.io/docs/zh-CN/quick-start/admin-quick-start/https://v2-1.docs.kubesphere.io/docs/zh-CN/quick-start/admin-quick-start/">https://v2-1.docs.kubesphere.io/docs/zh-CN/quick-start/admin-quick-start/https://v2-1.docs.kubesphere.io/docs/zh-CN/quick-start/admin-quick-start/</a></p>
+<h4 id="WordPress"><a href="#WordPress" class="headerlink" title="WordPress"></a>WordPress</h4><p>WordPress 是使用 PHP 开发的博客平台，用户可以在支持 PHP 和 MySQL 数据库的环境中架设属于自己的网站。本文以创建一个 Wordpress 应用 为例，以创建 KubeSphere 应用的形式将 Wordpress 的组件（MySQL 和 Wordpress）创建后发布至 Kubernetes 中，并在集群外访问 Wordpress 服务。</p>
+<p>一个完整的 Wordpress 应用会包括以下 Kubernetes 对象，其中 MySQL 作为后端数据库，Wordpress 本身作为前端提供浏览器访问。<br><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141618473.png" alt="在这里插入图片描述"><br>参考官网<a target="_blank" rel="noopener" href="https://v2-1.docs.kubesphere.io/docs/zh-CN/quick-start/wordpress-deployment/https://v2-1.docs.kubesphere.io/docs/zh-CN/quick-start/wordpress-deployment/">https://v2-1.docs.kubesphere.io/docs/zh-CN/quick-start/wordpress-deployment/https://v2-1.docs.kubesphere.io/docs/zh-CN/quick-start/wordpress-deployment/</a></p>
+<h4 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h4><p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141618474.png" alt="在这里插入图片描述"><br>微服务，服务自治。<br>DevOps: Development 和 Operations 的组合</p>
+<ul>
+<li>DevOps 看作开发（软件工程）、技术运营和质量保障（QA）三者的交集。</li>
+<li>突出重视软件开发人员和运维人员的沟通合作，通过自动化流程来使得软件构建、测试、发布更加快捷、频繁和可靠。</li>
+<li>DevOps 希望做到的是软件产品交付过程中 IT 工具链的打通，使得各个团队减少时间损耗，更加高效地协同工作。专家们总结出了下面这个 DevOps 能力图，良好的闭环可以大大增加整体的产出。</li>
+</ul>
+<p><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141618475.png" alt="在这里插入图片描述"><br>持续集成（Continuous Integration）</p>
+<ul>
+<li><p>持续集成是指软件个人研发的部分向软件整体部分交付，频繁进行集成以便更快地发现其中的错误。“持续集成”源自于极限编程（XP），是 XP 最初的 12 种实践之一。</p>
+</li>
+<li><p>CI 需要具备这些：</p>
+</li>
+<li><p>全面的自动化测试。这是实践持续集成&amp;持续部署的基础，同时，选择合适的自动化测试工具也极其重要；</p>
+</li>
+<li><p>灵活的基础设施。容器，虚拟机的存在让开发人员和 QA 人员不必再大费周折；</p>
+</li>
+<li><p>版本控制工具。如 Git，CVS，SVN 等；</p>
+</li>
+<li><p>自动化的构建和软件发布流程的工具，如 Jenkins，flow.ci；</p>
+</li>
+<li><p>反馈机制。如构建&#x2F;测试的失败，可以快速地反馈到相关负责人，以尽快解决达到一个更稳定的版本。</p>
+</li>
+</ul>
+<p>持续交付（Continuous Delivery）</p>
+<p>持续交付在持续集成的基础上，将集成后的代码部署到更贴近真实运行环境的「类生产环境」（production-like environments）中。持续交付优先于整个产品生命周期的软件部署，建立在高水平自动化持续集成之上。<br>灰度发布。<br>持续交付和持续集成的优点非常相似：</p>
+<ul>
+<li>快速发布。能够应对业务需求，并更快地实现软件价值。</li>
+<li>编码-&gt;测试-&gt;上线-&gt;交付的频繁迭代周期缩短，同时获得迅速反馈；</li>
+<li>高质量的软件发布标准。整个交付过程标准化、可重复、可靠，</li>
+<li>整个交付过程进度可视化，方便团队人员了解项目成熟度；</li>
+<li>更先进的团队协作方式。从需求分析、产品的用户体验到交互 设计、开发、测试、运维等角色密切协作，相比于传统的瀑布式软件团队，更少浪费。</li>
+</ul>
+<p>持续部署（Continuous Deployment）</p>
+<p>持续部署是指当交付的代码通过评审之后，自动部署到生产环境中。持续部署是持续交付的最高阶段。这意味着，所有通过了一系列的自动化测试的改动都将自动部署到生产环境。它也可以被称为“Continuous Release”<br><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141618476.png" alt="在这里插入图片描述"><br>落地方案</p>
+<p>Maven+Github+Jenkins（Hudson[现由甲骨文维护]）+Docker<br><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/img/202403141618477.png" alt="在这里插入图片描述"><br>参考官网<a target="_blank" rel="noopener" href="https://v2-1.docs.kubesphere.io/docs/zh-CN/quick-start/devops-online/https://v2-1.docs.kubesphere.io/docs/zh-CN/quick-start/devops-online/">https://v2-1.docs.kubesphere.io/docs/zh-CN/quick-start/devops-online/https://v2-1.docs.kubesphere.io/docs/zh-CN/quick-start/devops-online/</a></p>
+<h3 id="作者声明"><a href="#作者声明" class="headerlink" title="作者声明"></a>作者声明</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如有问题，欢迎指正！</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">jhj</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/dfc212cb.html">http://example.com/post/dfc212cb.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">jhj-coding</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/devops/">devops</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/jhj-coding/my-typora-picgo/raw/e3b93f20428d89c8e48101501daae9cc98b67684/img/3869a1bf1a42471495519d5a7fc6c252.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/cbd3f8cf.html" title="k8s入门使用"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/e3b93f20428d89c8e48101501daae9cc98b67684/img/3869a1bf1a42471495519d5a7fc6c252.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">k8s入门使用</div></div></a></div><div class="next-post pull-right"><a href="/post/41cdf243.html" title="集群的基础形式"><img class="cover" src="https://gitee.com/jhj-coding/my-typora-picgo/raw/e3b93f20428d89c8e48101501daae9cc98b67684/img/3869a1bf1a42471495519d5a7fc6c252.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">集群的基础形式</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jhj</div><div class="author-info__description">努力学习，努力爱你!</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/jhj-coding"><i class="iconfont icon-gitee"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://gitee.com/jhj-coding" target="_blank" title="gitee"><i class="iconfont icon-gitee" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:jhjcoding@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/qq.jpg" target="_blank" title="qq"><i class="fa-brands fa-qq" style="color: #hdhfbb;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">文章目录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KubeSphere"><span class="toc-number"></span> <span class="toc-text">KubeSphere</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%A7%9F%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">多租户管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WordPress"><span class="toc-number">4.</span> <span class="toc-text">WordPress</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DevOps"><span class="toc-number">5.</span> <span class="toc-text">DevOps</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E8%80%85%E5%A3%B0%E6%98%8E"><span class="toc-number"></span> <span class="toc-text">作者声明</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/d4097377.html" title="JVM性能调优"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/master/my-typora-picgo/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JVM性能调优"/></a><div class="content"><a class="title" href="/post/d4097377.html" title="JVM性能调优">JVM性能调优</a><time datetime="2023-08-22T07:28:28.000Z" title="发表于 2023-08-22 15:28:28">2023-08-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/f40e081a.html" title="docker-compose 部署ELK"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/e3b93f20428d89c8e48101501daae9cc98b67684/img/3869a1bf1a42471495519d5a7fc6c252.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="docker-compose 部署ELK"/></a><div class="content"><a class="title" href="/post/f40e081a.html" title="docker-compose 部署ELK">docker-compose 部署ELK</a><time datetime="2023-03-12T06:37:01.000Z" title="发表于 2023-03-12 14:37:01">2023-03-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/8223a0b.html" title="springboot集成kafka"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/e3b93f20428d89c8e48101501daae9cc98b67684/img/3869a1bf1a42471495519d5a7fc6c252.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="springboot集成kafka"/></a><div class="content"><a class="title" href="/post/8223a0b.html" title="springboot集成kafka">springboot集成kafka</a><time datetime="2022-08-27T12:26:49.000Z" title="发表于 2022-08-27 20:26:49">2022-08-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/54b37ffd.html" title="vue项目打包"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/b5c6288e93aecc5a1ac85b106a09b570a1ffe73c/img/a7b426f027554ddcbce196b962043da2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue项目打包"/></a><div class="content"><a class="title" href="/post/54b37ffd.html" title="vue项目打包">vue项目打包</a><time datetime="2022-08-12T13:50:14.000Z" title="发表于 2022-08-12 21:50:14">2022-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/e567ff5d.html" title="k8s 集群安装"><img src="https://gitee.com/jhj-coding/my-typora-picgo/raw/e3b93f20428d89c8e48101501daae9cc98b67684/img/3869a1bf1a42471495519d5a7fc6c252.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="k8s 集群安装"/></a><div class="content"><a class="title" href="/post/e567ff5d.html" title="k8s 集群安装">k8s 集群安装</a><time datetime="2022-08-12T01:46:03.000Z" title="发表于 2022-08-12 09:46:03">2022-08-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/jhj-coding/my-typora-picgo/raw/e3b93f20428d89c8e48101501daae9cc98b67684/img/3869a1bf1a42471495519d5a7fc6c252.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024  <i id="heartbeat" class="fa fas fa-heartbeat"></i> jhj</div><div class="footer_custom_text">welcome to my blob</div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.jhj-coding.top/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.31/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/custom.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="//code.tidio.co/th7rc6a4lyprr1ddkuejkobcxcttlbcr.js" async="async"></script><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = true
+
+  if (isChatBtn) {
+    let isShow = false
+    const close = () => {
+      window.tidioChatApi.hide()
+      isShow = false
+    }
+    
+    const open = () => {
+      window.tidioChatApi.open()
+      window.tidioChatApi.show()
+      isShow = true
+    }
+
+    const onTidioChatApiReady = () => {
+      window.tidioChatApi.hide()
+      window.tidioChatApi.on("close", close)
+    }
+    if (window.tidioChatApi) {
+      window.tidioChatApi.on("ready", onTidioChatApiReady)
+    } else {
+      document.addEventListener("tidioChat-ready", onTidioChatApiReady)
+    }
+
+    window.chatBtnFn = () => {
+      if (!window.tidioChatApi) return
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        window.tidioChatApi && window.tidioChatApi.hide()
+      },
+      show: () => {
+        window.tidioChatApi && window.tidioChatApi.show()
+      }
+    }
+  }
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.65.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.13.0"></script></div></div></body></html>
