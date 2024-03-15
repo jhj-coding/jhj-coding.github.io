@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>jhj-coding</title>
+  <icon>https://www.github.jhj-coding.top/icon.png</icon>
+  
+  <link href="https://www.github.jhj-coding.top/atom.xml" rel="self"/>
+  
+  <link href="https://www.github.jhj-coding.top/"/>
+  <updated>2024-03-14T13:40:51.937Z</updated>
+  <id>https://www.github.jhj-coding.top/</id>
+  
+  <author>
+    <name>jhj</name>
+    <email>hnjzjhj@163.com</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jconsole与jvisualvm</title>
+    <link href="https://www.github.jhj-coding.top/post/167997d8.html"/>
+    <id>https://www.github.jhj-coding.top/post/167997d8.html</id>
+    <published>2023-12-18T09:11:18.000Z</published>
+    <updated>2024-03-14T13:40:51.937Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;jconsole&quot;&gt;&lt;a href=&quot;#jconsole&quot; class=&quot;headerlink&quot; title=&quot;jconsole&quot;&gt;&lt;/a&gt;jconsole&lt;/h3&gt;&lt;p&gt;环境变量配置好后 直接输入在cmd 输入jconsole 即可&lt;br&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://www.github.jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>压力测试详解</title>
+    <link href="https://www.github.jhj-coding.top/post/1bfbf0ea.html"/>
+    <id>https://www.github.jhj-coding.top/post/1bfbf0ea.html</id>
+    <published>2023-12-18T06:26:44.000Z</published>
+    <updated>2024-03-14T13:40:52.021Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;压力测试&quot;&gt;&lt;a href=&quot;#压力测试&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="压力测试" scheme="https://www.github.jhj-coding.top/tags/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云部署k8s with kubesphere</title>
+    <link href="https://www.github.jhj-coding.top/post/7c7fd486.html"/>
+    <id>https://www.github.jhj-coding.top/post/7c7fd486.html</id>
+    <published>2023-12-17T09:21:04.000Z</published>
+    <updated>2024-03-14T13:40:52.104Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;阿里云ESC&quot;&gt;&lt;a href=&quot;#阿里云ESC&quot; class=&quot;headerlink&quot; title=&quot;阿里云ESC&quot;&gt;&lt;/a&gt;阿里云ESC&lt;/h3&gt;&lt;p&gt;创建实例&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="云计算" scheme="https://www.github.jhj-coding.top/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>性能测试入门</title>
+    <link href="https://www.github.jhj-coding.top/post/2d8b6a16.html"/>
+    <id>https://www.github.jhj-coding.top/post/2d8b6a16.html</id>
+    <published>2023-12-10T08:15:58.000Z</published>
+    <updated>2024-03-14T13:40:52.054Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;性能测试入门&quot;&gt;&lt;a href=&quot;#性能测试入门&quot; class=&quot;headerlink&quot; title=&quot;性能测试入门&quot;&gt;&lt;/a&gt;性能测试入门&lt;/h2&gt;&lt;h3 id=&quot;一-不同角色看网站性能&quot;&gt;&lt;a href=&quot;#一-不同角色看网站性能&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://www.github.jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>冗余设计思想</title>
+    <link href="https://www.github.jhj-coding.top/post/6998f00a.html"/>
+    <id>https://www.github.jhj-coding.top/post/6998f00a.html</id>
+    <published>2023-12-10T08:06:13.000Z</published>
+    <updated>2024-03-14T13:40:52.004Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;冗余设计&quot;&gt;&lt;a href=&quot;#冗余设计&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="数据库" scheme="https://www.github.jhj-coding.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高可用系统</title>
+    <link href="https://www.github.jhj-coding.top/post/5285dd9c.html"/>
+    <id>https://www.github.jhj-coding.top/post/5285dd9c.html</id>
+    <published>2023-12-10T08:02:00.000Z</published>
+    <updated>2024-03-14T13:40:52.104Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;高可用系统&quot;&gt;&lt;a href=&quot;#高可用系统&quot; class=&quot;headerlink&quot; title=&quot;高可用系统&quot;&gt;&lt;/a&gt;高可用系统&lt;/h2&gt;&lt;h3 id=&quot;什么是高可用？可用性的判断标准是啥？&quot;&gt;&lt;a href=&quot;#什么是高可用？可用性的判断标准是啥？&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="开发语言" scheme="https://www.github.jhj-coding.top/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CDN 内容分发网络</title>
+    <link href="https://www.github.jhj-coding.top/post/4a341b9c.html"/>
+    <id>https://www.github.jhj-coding.top/post/4a341b9c.html</id>
+    <published>2023-12-10T07:54:18.000Z</published>
+    <updated>2024-03-14T13:40:51.714Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;CDN常见问题&quot;&gt;&lt;a href=&quot;#CDN常见问题&quot; class=&quot;headerlink&quot; title=&quot;CDN常见问题&quot;&gt;&lt;/a&gt;CDN常见问题&lt;/h2&gt;&lt;h3 id=&quot;什么是-CDN-？&quot;&gt;&lt;a href=&quot;#什么是-CDN-？&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="网络" scheme="https://www.github.jhj-coding.top/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dubbo</title>
+    <link href="https://www.github.jhj-coding.top/post/f6253398.html"/>
+    <id>https://www.github.jhj-coding.top/post/f6253398.html</id>
+    <published>2023-12-10T07:31:02.000Z</published>
+    <updated>2024-03-14T13:40:51.737Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Dubbo&quot;&gt;&lt;a href=&quot;#Dubbo&quot; class=&quot;headerlink&quot; title=&quot;Dubbo&quot;&gt;&lt;/a&gt;Dubbo&lt;/h2&gt;&lt;h3 id=&quot;Dubbo-基础&quot;&gt;&lt;a href=&quot;#Dubbo-基础&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="dubbo" scheme="https://www.github.jhj-coding.top/tags/dubbo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RPC基础</title>
+    <link href="https://www.github.jhj-coding.top/post/b71bddf.html"/>
+    <id>https://www.github.jhj-coding.top/post/b71bddf.html</id>
+    <published>2023-12-05T13:43:02.000Z</published>
+    <updated>2024-03-14T13:40:51.859Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;RPC基础知识&quot;&gt;&lt;a href=&quot;#RPC基础知识&quot; class=&quot;headerlink&quot; title=&quot;RPC基础知识&quot;&gt;&lt;/a&gt;RPC基础知识&lt;/h2&gt;&lt;h3 id=&quot;RPC-是什么&quot;&gt;&lt;a href=&quot;#RPC-是什么&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="网络" scheme="https://www.github.jhj-coding.top/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分布式锁介绍</title>
+    <link href="https://www.github.jhj-coding.top/post/c94bceda.html"/>
+    <id>https://www.github.jhj-coding.top/post/c94bceda.html</id>
+    <published>2023-12-05T11:15:31.000Z</published>
+    <updated>2024-03-14T13:40:52.020Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;分布式锁介绍&quot;&gt;&lt;a href=&quot;#分布式锁介绍&quot; class=&quot;headerlink&quot; title=&quot;分布式锁介绍&quot;&gt;&lt;/a&gt;分布式锁介绍&lt;/h2&gt;&lt;h3 id=&quot;为什么需要分布式锁？&quot;&gt;&lt;a href=&quot;#为什么需要分布式锁？&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="分布式" scheme="https://www.github.jhj-coding.top/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分布式 ID</title>
+    <link href="https://www.github.jhj-coding.top/post/f5518be.html"/>
+    <id>https://www.github.jhj-coding.top/post/f5518be.html</id>
+    <published>2023-12-05T10:38:08.000Z</published>
+    <updated>2024-03-14T13:40:52.004Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;分布式-ID-介绍&quot;&gt;&lt;a href=&quot;#分布式-ID-介绍&quot; class=&quot;headerlink&quot; title=&quot;分布式 ID 介绍&quot;&gt;&lt;/a&gt;分布式 ID 介绍&lt;/h3&gt;&lt;h4 id=&quot;什么是-ID？&quot;&gt;&lt;a href=&quot;#什么是-ID？&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="分布式" scheme="https://www.github.jhj-coding.top/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Cloud Gateway常见问题</title>
+    <link href="https://www.github.jhj-coding.top/post/f33b8738.html"/>
+    <id>https://www.github.jhj-coding.top/post/f33b8738.html</id>
+    <published>2023-12-05T08:56:48.000Z</published>
+    <updated>2024-03-14T13:40:51.871Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Spring-Cloud-Gateway常见问题&quot;&gt;&lt;a href=&quot;#Spring-Cloud-Gateway常见问题&quot; class=&quot;headerlink&quot; title=&quot;Spring Cloud Gateway常见问题&quot;&gt;&lt;/a&gt;Spring Cloud</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://www.github.jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>api 网关</title>
+    <link href="https://www.github.jhj-coding.top/post/704abbcc.html"/>
+    <id>https://www.github.jhj-coding.top/post/704abbcc.html</id>
+    <published>2023-12-05T08:10:30.000Z</published>
+    <updated>2024-03-14T13:40:51.904Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;API网关&quot;&gt;&lt;a href=&quot;#API网关&quot; class=&quot;headerlink&quot; title=&quot;API网关&quot;&gt;&lt;/a&gt;API网关&lt;/h2&gt;&lt;h3 id=&quot;什么是网关？&quot;&gt;&lt;a href=&quot;#什么是网关？&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://www.github.jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Gossip 协议</title>
+    <link href="https://www.github.jhj-coding.top/post/6001717d.html"/>
+    <id>https://www.github.jhj-coding.top/post/6001717d.html</id>
+    <published>2023-12-03T09:00:00.000Z</published>
+    <updated>2024-03-14T13:40:51.754Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Gossip-协议&quot;&gt;&lt;a href=&quot;#Gossip-协议&quot; class=&quot;headerlink&quot; title=&quot;Gossip 协议&quot;&gt;&lt;/a&gt;Gossip 协议&lt;/h2&gt;&lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://www.github.jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Raft 算法</title>
+    <link href="https://www.github.jhj-coding.top/post/bb8d01ed.html"/>
+    <id>https://www.github.jhj-coding.top/post/bb8d01ed.html</id>
+    <published>2023-12-02T16:18:10.000Z</published>
+    <updated>2024-03-14T13:40:51.859Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Raft-算法&quot;&gt;&lt;a href=&quot;#Raft-算法&quot; class=&quot;headerlink&quot; title=&quot;Raft 算法&quot;&gt;&lt;/a&gt;Raft 算法&lt;/h2&gt;&lt;h3 id=&quot;1-背景&quot;&gt;&lt;a href=&quot;#1-背景&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="算法" scheme="https://www.github.jhj-coding.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Paxos 算法</title>
+    <link href="https://www.github.jhj-coding.top/post/5bf1141f.html"/>
+    <id>https://www.github.jhj-coding.top/post/5bf1141f.html</id>
+    <published>2023-12-02T15:01:05.000Z</published>
+    <updated>2024-03-14T13:40:51.857Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Paxos-算法&quot;&gt;&lt;a href=&quot;#Paxos-算法&quot; class=&quot;headerlink&quot; title=&quot;Paxos 算法&quot;&gt;&lt;/a&gt;Paxos 算法&lt;/h2&gt;&lt;h3 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://www.github.jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CAP &amp; BASE理论</title>
+    <link href="https://www.github.jhj-coding.top/post/4d60196d.html"/>
+    <id>https://www.github.jhj-coding.top/post/4d60196d.html</id>
+    <published>2023-12-02T14:51:02.000Z</published>
+    <updated>2024-03-14T13:40:51.717Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;CAP-BASE理论详解&quot;&gt;&lt;a href=&quot;#CAP-BASE理论详解&quot; class=&quot;headerlink&quot; title=&quot;CAP &amp;amp; BASE理论详解&quot;&gt;&lt;/a&gt;CAP &amp;amp; BASE理论详解&lt;/h2&gt;&lt;h3 id=&quot;CAP-理论&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="开发语言" scheme="https://www.github.jhj-coding.top/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web 实时消息推送</title>
+    <link href="https://www.github.jhj-coding.top/post/bbc1f16.html"/>
+    <id>https://www.github.jhj-coding.top/post/bbc1f16.html</id>
+    <published>2023-12-01T13:58:08.000Z</published>
+    <updated>2024-03-14T13:40:51.904Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Web-实时消息推送详解&quot;&gt;&lt;a href=&quot;#Web-实时消息推送详解&quot; class=&quot;headerlink&quot; title=&quot;Web 实时消息推送详解&quot;&gt;&lt;/a&gt;Web 实时消息推送详解&lt;/h2&gt;&lt;h3 id=&quot;什么是消息推送？&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://www.github.jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据脱敏方案</title>
+    <link href="https://www.github.jhj-coding.top/post/98dfdd22.html"/>
+    <id>https://www.github.jhj-coding.top/post/98dfdd22.html</id>
+    <published>2023-11-28T08:55:10.000Z</published>
+    <updated>2024-03-14T13:40:52.071Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据脱敏方案&quot;&gt;&lt;a href=&quot;#数据脱敏方案&quot; class=&quot;headerlink&quot; title=&quot;数据脱敏方案&quot;&gt;&lt;/a&gt;数据脱敏方案&lt;/h2&gt;&lt;h3 id=&quot;什么是数据脱敏&quot;&gt;&lt;a href=&quot;#什么是数据脱敏&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="后端" scheme="https://www.github.jhj-coding.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>敏感词过滤方案</title>
+    <link href="https://www.github.jhj-coding.top/post/e95bbc47.html"/>
+    <id>https://www.github.jhj-coding.top/post/e95bbc47.html</id>
+    <published>2023-11-28T07:20:11.000Z</published>
+    <updated>2024-03-14T13:40:52.054Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;敏感词过滤方案&quot;&gt;&lt;a href=&quot;#敏感词过滤方案&quot; class=&quot;headerlink&quot; title=&quot;敏感词过滤方案&quot;&gt;&lt;/a&gt;敏感词过滤方案&lt;/h2&gt;&lt;p&gt;敏感词过滤用的使用比较多的 &lt;strong&gt;Trie 树算法&lt;/strong&gt; 和</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.github.jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://www.github.jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://www.github.jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+</feed>
