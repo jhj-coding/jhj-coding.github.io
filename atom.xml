@@ -6,7 +6,7 @@
   <link href="https://jhj-coding.top/atom.xml" rel="self"/>
   
   <link href="https://jhj-coding.top/"/>
-  <updated>2024-03-14T13:40:51.937Z</updated>
+  <updated>2024-05-10T17:06:37.165Z</updated>
   <id>https://jhj-coding.top/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker安装mysql chown: changing ownership of &#39;/var/lib/mysql/&#39;: Permission denied</title>
+    <link href="https://jhj-coding.top/post/c7d03c1a.html"/>
+    <id>https://jhj-coding.top/post/c7d03c1a.html</id>
+    <published>2024-05-10T16:51:30.000Z</published>
+    <updated>2024-05-10T17:06:37.165Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;centos7 第一次安装docker-compose后，使用进行安装mysql 一直在重启，利用 docker logs -f 查看日志&lt;/p&gt;
+&lt;p&gt;发现错误 chown: changing ownership of</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="https://jhj-coding.top/categories/linux/"/>
+    
+    
+    <category term="linux" scheme="https://jhj-coding.top/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://jhj-coding.top/post/0.html"/>
+    <id>https://jhj-coding.top/post/0.html</id>
+    <published>2024-03-16T13:01:51.189Z</published>
+    <updated>2024-03-16T13:05:01.017Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;异常机制为什么耗时&quot;&gt;&lt;a href=&quot;#异常机制为什么耗时&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>jconsole与jvisualvm</title>
@@ -523,64 +571,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;Web-实时消息推送详解&quot;&gt;&lt;a href=&quot;#Web-实时消息推送详解&quot; class=&quot;headerlink&quot; title=&quot;Web 实时消息推送详解&quot;&gt;&lt;/a&gt;Web 实时消息推送详解&lt;/h2&gt;&lt;h3 id=&quot;什么是消息推送？&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
-    
-    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
-    
-    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
-    
-    
-    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据脱敏方案</title>
-    <link href="https://jhj-coding.top/post/98dfdd22.html"/>
-    <id>https://jhj-coding.top/post/98dfdd22.html</id>
-    <published>2023-11-28T08:55:10.000Z</published>
-    <updated>2024-03-14T13:40:52.071Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;数据脱敏方案&quot;&gt;&lt;a href=&quot;#数据脱敏方案&quot; class=&quot;headerlink&quot; title=&quot;数据脱敏方案&quot;&gt;&lt;/a&gt;数据脱敏方案&lt;/h2&gt;&lt;h3 id=&quot;什么是数据脱敏&quot;&gt;&lt;a href=&quot;#什么是数据脱敏&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
-    
-    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
-    
-    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
-    
-    
-    <category term="后端" scheme="https://jhj-coding.top/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>敏感词过滤方案</title>
-    <link href="https://jhj-coding.top/post/e95bbc47.html"/>
-    <id>https://jhj-coding.top/post/e95bbc47.html</id>
-    <published>2023-11-28T07:20:11.000Z</published>
-    <updated>2024-03-14T13:40:52.054Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;敏感词过滤方案&quot;&gt;&lt;a href=&quot;#敏感词过滤方案&quot; class=&quot;headerlink&quot; title=&quot;敏感词过滤方案&quot;&gt;&lt;/a&gt;敏感词过滤方案&lt;/h2&gt;&lt;p&gt;敏感词过滤用的使用比较多的 &lt;strong&gt;Trie 树算法&lt;/strong&gt; 和</summary>
         
       
     
