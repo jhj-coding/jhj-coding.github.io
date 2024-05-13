@@ -6,7 +6,7 @@
   <link href="https://jhj-coding.top/atom.xml" rel="self"/>
   
   <link href="https://jhj-coding.top/"/>
-  <updated>2024-05-10T17:06:37.165Z</updated>
+  <updated>2024-05-10T17:07:36.960Z</updated>
   <id>https://jhj-coding.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://jhj-coding.top/post/c7d03c1a.html"/>
     <id>https://jhj-coding.top/post/c7d03c1a.html</id>
     <published>2024-05-10T16:51:30.000Z</published>
-    <updated>2024-05-10T17:06:37.165Z</updated>
+    <updated>2024-05-10T17:07:36.960Z</updated>
     
     
       
@@ -44,11 +44,11 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://jhj-coding.top/post/0.html"/>
-    <id>https://jhj-coding.top/post/0.html</id>
-    <published>2024-03-16T13:01:51.189Z</published>
-    <updated>2024-03-16T13:05:01.017Z</updated>
+    <title>异常机制为什么耗时</title>
+    <link href="https://jhj-coding.top/post/3e9a00f8.html"/>
+    <id>https://jhj-coding.top/post/3e9a00f8.html</id>
+    <published>2024-05-10T16:51:30.000Z</published>
+    <updated>2024-05-13T16:07:59.744Z</updated>
     
     
       
@@ -61,6 +61,10 @@
     
     
     
+    <category term="java" scheme="https://jhj-coding.top/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
     
   </entry>
   
