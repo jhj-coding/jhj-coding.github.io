@@ -6,7 +6,7 @@
   <link href="https://jhj-coding.top/atom.xml" rel="self"/>
   
   <link href="https://jhj-coding.top/"/>
-  <updated>2024-05-22T14:50:49.933Z</updated>
+  <updated>2024-06-22T04:52:01.452Z</updated>
   <id>https://jhj-coding.top/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Spring 事务失效</title>
+    <link href="https://jhj-coding.top/post/69b390b5.html"/>
+    <id>https://jhj-coding.top/post/69b390b5.html</id>
+    <published>2024-06-22T04:35:09.000Z</published>
+    <updated>2024-06-22T04:52:01.452Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;总结点-什么情况下会导致事务失效&quot;&gt;&lt;a href=&quot;#总结点-什么情况下会导致事务失效&quot; class=&quot;headerlink&quot; title=&quot;总结点 什么情况下会导致事务失效&quot;&gt;&lt;/a&gt;总结点</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nacos配置文件优先级</title>
+    <link href="https://jhj-coding.top/post/20b0cab5.html"/>
+    <id>https://jhj-coding.top/post/20b0cab5.html</id>
+    <published>2024-06-16T15:24:04.000Z</published>
+    <updated>2024-06-22T04:52:01.452Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h3&gt;&lt;p&gt;项目应用名配置文件 ——优先于》扩展配置文件——优先于》共享配置文件——优先于》本地配置文件&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>实现多级树形结构查询 比如分类（父分类、子分类）</title>
@@ -530,64 +589,6 @@
     
     
     <category term="算法" scheme="https://jhj-coding.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Paxos 算法</title>
-    <link href="https://jhj-coding.top/post/5bf1141f.html"/>
-    <id>https://jhj-coding.top/post/5bf1141f.html</id>
-    <published>2023-12-02T15:01:05.000Z</published>
-    <updated>2024-03-14T13:40:51.857Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Paxos-算法&quot;&gt;&lt;a href=&quot;#Paxos-算法&quot; class=&quot;headerlink&quot; title=&quot;Paxos 算法&quot;&gt;&lt;/a&gt;Paxos 算法&lt;/h2&gt;&lt;h3 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
-    
-    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
-    
-    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
-    
-    
-    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CAP &amp; BASE理论</title>
-    <link href="https://jhj-coding.top/post/4d60196d.html"/>
-    <id>https://jhj-coding.top/post/4d60196d.html</id>
-    <published>2023-12-02T14:51:02.000Z</published>
-    <updated>2024-03-14T13:40:51.717Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;CAP-BASE理论详解&quot;&gt;&lt;a href=&quot;#CAP-BASE理论详解&quot; class=&quot;headerlink&quot; title=&quot;CAP &amp;amp; BASE理论详解&quot;&gt;&lt;/a&gt;CAP &amp;amp; BASE理论详解&lt;/h2&gt;&lt;h3 id=&quot;CAP-理论&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
-    
-    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
-    
-    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
-    
-    
-    <category term="开发语言" scheme="https://jhj-coding.top/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
