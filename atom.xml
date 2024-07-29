@@ -6,7 +6,7 @@
   <link href="https://jhj-coding.top/atom.xml" rel="self"/>
   
   <link href="https://jhj-coding.top/"/>
-  <updated>2024-06-22T04:52:01.452Z</updated>
+  <updated>2024-07-29T13:21:41.630Z</updated>
   <id>https://jhj-coding.top/</id>
   
   <author>
@@ -15,6 +15,210 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>认证授权auth</title>
+    <link href="https://jhj-coding.top/post/34e89c39.html"/>
+    <id>https://jhj-coding.top/post/34e89c39.html</id>
+    <published>2024-07-07T10:48:22.000Z</published>
+    <updated>2024-07-29T13:21:41.630Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;什么是认证授权&quot;&gt;&lt;a href=&quot;#什么是认证授权&quot; class=&quot;headerlink&quot; title=&quot;什么是认证授权&quot;&gt;&lt;/a&gt;什么是认证授权&lt;/h3&gt;&lt;p&gt;认证授权包含 认证和授权两部分。&lt;/p&gt;
+&lt;h5 id=&quot;什么是用户身份认证？&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实现不同的数据库之间的同步方式</title>
+    <link href="https://jhj-coding.top/post/338dabf2.html"/>
+    <id>https://jhj-coding.top/post/338dabf2.html</id>
+    <published>2024-07-07T04:12:35.000Z</published>
+    <updated>2024-07-29T13:21:41.617Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;第一种-实时同步&quot;&gt;&lt;a href=&quot;#第一种-实时同步&quot; class=&quot;headerlink&quot; title=&quot;第一种 实时同步&quot;&gt;&lt;/a&gt;第一种</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>熔断降级处理</title>
+    <link href="https://jhj-coding.top/post/5c6cb86e.html"/>
+    <id>https://jhj-coding.top/post/5c6cb86e.html</id>
+    <published>2024-07-06T10:38:49.000Z</published>
+    <updated>2024-07-29T13:21:41.626Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;什么是熔断降级&quot;&gt;&lt;a href=&quot;#什么是熔断降级&quot; class=&quot;headerlink&quot; title=&quot;什么是熔断降级&quot;&gt;&lt;/a&gt;什么是熔断降级&lt;/h3&gt;&lt;h5 id=&quot;微服务雪崩效应&quot;&gt;&lt;a href=&quot;#微服务雪崩效应&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分布式事务实现技术及考虑点</title>
+    <link href="https://jhj-coding.top/post/19957570.html"/>
+    <id>https://jhj-coding.top/post/19957570.html</id>
+    <published>2024-07-02T16:13:43.000Z</published>
+    <updated>2024-07-29T13:21:41.610Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;什么是分布式事务？&quot;&gt;&lt;a href=&quot;#什么是分布式事务？&quot; class=&quot;headerlink&quot; title=&quot;什么是分布式事务？&quot;&gt;&lt;/a&gt;什么是分布式事务？&lt;/h3&gt;&lt;h6 id=&quot;首先理解什么是本地事务&quot;&gt;&lt;a href=&quot;#首先理解什么是本地事务&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xxl-job使用二</title>
+    <link href="https://jhj-coding.top/post/f930e0.html"/>
+    <id>https://jhj-coding.top/post/f930e0.html</id>
+    <published>2024-06-29T16:28:39.000Z</published>
+    <updated>2024-07-29T13:21:41.610Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;在业务中怎么使用分片广播让每个分片并行处理任务&quot;&gt;&lt;a href=&quot;#在业务中怎么使用分片广播让每个分片并行处理任务&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xxl-job 分布式任务调度 基本使用</title>
+    <link href="https://jhj-coding.top/post/d6e7b4b0.html"/>
+    <id>https://jhj-coding.top/post/d6e7b4b0.html</id>
+    <published>2024-06-25T16:55:51.000Z</published>
+    <updated>2024-07-29T13:21:41.607Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;xxl-job&quot;&gt;&lt;a href=&quot;#xxl-job&quot; class=&quot;headerlink&quot; title=&quot;xxl-job&quot;&gt;&lt;/a&gt;xxl-job&lt;/h3&gt;&lt;p&gt;是一个分布式任务调度平台，使用非常方便。&lt;br&gt;官网：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文件传输 断点续传</title>
+    <link href="https://jhj-coding.top/post/e264c79b.html"/>
+    <id>https://jhj-coding.top/post/e264c79b.html</id>
+    <published>2024-06-23T16:22:17.000Z</published>
+    <updated>2024-07-29T13:21:41.622Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;什么是断点续传&quot;&gt;&lt;a href=&quot;#什么是断点续传&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
+    
+    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
+    
+    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
+    
+    
+    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>Spring 事务失效</title>
@@ -386,209 +590,6 @@
     
     
     <category term="dubbo" scheme="https://jhj-coding.top/tags/dubbo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RPC基础</title>
-    <link href="https://jhj-coding.top/post/b71bddf.html"/>
-    <id>https://jhj-coding.top/post/b71bddf.html</id>
-    <published>2023-12-05T13:43:02.000Z</published>
-    <updated>2024-03-14T13:40:51.859Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;RPC基础知识&quot;&gt;&lt;a href=&quot;#RPC基础知识&quot; class=&quot;headerlink&quot; title=&quot;RPC基础知识&quot;&gt;&lt;/a&gt;RPC基础知识&lt;/h2&gt;&lt;h3 id=&quot;RPC-是什么&quot;&gt;&lt;a href=&quot;#RPC-是什么&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
-    
-    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
-    
-    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
-    
-    
-    <category term="网络" scheme="https://jhj-coding.top/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>分布式锁介绍</title>
-    <link href="https://jhj-coding.top/post/c94bceda.html"/>
-    <id>https://jhj-coding.top/post/c94bceda.html</id>
-    <published>2023-12-05T11:15:31.000Z</published>
-    <updated>2024-03-14T13:40:52.020Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;分布式锁介绍&quot;&gt;&lt;a href=&quot;#分布式锁介绍&quot; class=&quot;headerlink&quot; title=&quot;分布式锁介绍&quot;&gt;&lt;/a&gt;分布式锁介绍&lt;/h2&gt;&lt;h3 id=&quot;为什么需要分布式锁？&quot;&gt;&lt;a href=&quot;#为什么需要分布式锁？&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
-    
-    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
-    
-    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
-    
-    
-    <category term="分布式" scheme="https://jhj-coding.top/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>分布式 ID</title>
-    <link href="https://jhj-coding.top/post/f5518be.html"/>
-    <id>https://jhj-coding.top/post/f5518be.html</id>
-    <published>2023-12-05T10:38:08.000Z</published>
-    <updated>2024-03-14T13:40:52.004Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;分布式-ID-介绍&quot;&gt;&lt;a href=&quot;#分布式-ID-介绍&quot; class=&quot;headerlink&quot; title=&quot;分布式 ID 介绍&quot;&gt;&lt;/a&gt;分布式 ID 介绍&lt;/h3&gt;&lt;h4 id=&quot;什么是-ID？&quot;&gt;&lt;a href=&quot;#什么是-ID？&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
-    
-    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
-    
-    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
-    
-    
-    <category term="分布式" scheme="https://jhj-coding.top/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring Cloud Gateway常见问题</title>
-    <link href="https://jhj-coding.top/post/f33b8738.html"/>
-    <id>https://jhj-coding.top/post/f33b8738.html</id>
-    <published>2023-12-05T08:56:48.000Z</published>
-    <updated>2024-03-14T13:40:51.871Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Spring-Cloud-Gateway常见问题&quot;&gt;&lt;a href=&quot;#Spring-Cloud-Gateway常见问题&quot; class=&quot;headerlink&quot; title=&quot;Spring Cloud Gateway常见问题&quot;&gt;&lt;/a&gt;Spring Cloud</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
-    
-    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
-    
-    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
-    
-    
-    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>api 网关</title>
-    <link href="https://jhj-coding.top/post/704abbcc.html"/>
-    <id>https://jhj-coding.top/post/704abbcc.html</id>
-    <published>2023-12-05T08:10:30.000Z</published>
-    <updated>2024-03-14T13:40:51.904Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;API网关&quot;&gt;&lt;a href=&quot;#API网关&quot; class=&quot;headerlink&quot; title=&quot;API网关&quot;&gt;&lt;/a&gt;API网关&lt;/h2&gt;&lt;h3 id=&quot;什么是网关？&quot;&gt;&lt;a href=&quot;#什么是网关？&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
-    
-    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
-    
-    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
-    
-    
-    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Gossip 协议</title>
-    <link href="https://jhj-coding.top/post/6001717d.html"/>
-    <id>https://jhj-coding.top/post/6001717d.html</id>
-    <published>2023-12-03T09:00:00.000Z</published>
-    <updated>2024-03-14T13:40:51.754Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Gossip-协议&quot;&gt;&lt;a href=&quot;#Gossip-协议&quot; class=&quot;headerlink&quot; title=&quot;Gossip 协议&quot;&gt;&lt;/a&gt;Gossip 协议&lt;/h2&gt;&lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
-    
-    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
-    
-    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
-    
-    
-    <category term="java" scheme="https://jhj-coding.top/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Raft 算法</title>
-    <link href="https://jhj-coding.top/post/bb8d01ed.html"/>
-    <id>https://jhj-coding.top/post/bb8d01ed.html</id>
-    <published>2023-12-02T16:18:10.000Z</published>
-    <updated>2024-03-14T13:40:51.859Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Raft-算法&quot;&gt;&lt;a href=&quot;#Raft-算法&quot; class=&quot;headerlink&quot; title=&quot;Raft 算法&quot;&gt;&lt;/a&gt;Raft 算法&lt;/h2&gt;&lt;h3 id=&quot;1-背景&quot;&gt;&lt;a href=&quot;#1-背景&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://jhj-coding.top/categories/Java/"/>
-    
-    <category term="SpringBoot" scheme="https://jhj-coding.top/categories/Java/SpringBoot/"/>
-    
-    <category term="SpringCloud" scheme="https://jhj-coding.top/categories/Java/SpringBoot/SpringCloud/"/>
-    
-    
-    <category term="算法" scheme="https://jhj-coding.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
